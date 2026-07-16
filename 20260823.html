@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>8/23 八甲田山區移動日｜青森親子夏旅</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sora:#EAF6FB; --sora-deep:#CFEAF5;
+    --ink:#33424F; --ink-soft:#7A8B99;
+    --ringo:#E8574C; --ringo-deep:#C93E35;
+    --mizu:#2E9BA6; --ha:#6FBF73; --kin:#F2B84B; --momo:#FBD9D3;
+    --day:#5E8F6A; /* 8/23 主題色：八甲田(山) */
+    --radius-card:22px; --radius-sm:16px; --radius-pill:999px;
+    --shadow:0 4px 14px rgba(51,66,79,.10);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--sora); color:var(--ink);
+    font-family:'Noto Sans TC',sans-serif;
+    max-width:520px; margin-inline:auto;
+    padding-bottom:calc(80px + env(safe-area-inset-bottom));
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.brand{font-family:'Zen Maru Gothic','Noto Sans TC',sans-serif;}
+  a{color:var(--mizu); text-decoration:none;}
+  .fade-in{animation:fadeIn .5s ease both;}
+  @media (prefers-reduced-motion: reduce){ .fade-in{animation:none;} }
+  @keyframes fadeIn{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
+
+  /* 頁首 */
+  header.day-head{
+    background:linear-gradient(160deg, var(--day), #4a7458);
+    color:#fff; padding:18px 20px 26px; position:relative; overflow:hidden;
+  }
+  header.day-head .back-link{
+    color:#fff; font-size:14px; font-weight:500; display:inline-flex; align-items:center; gap:4px; opacity:.95;
+  }
+  header.day-head .head-row{ display:flex; align-items:center; gap:14px; margin-top:14px;}
+  header.day-head .day-icon{
+    width:76px; height:76px; flex:0 0 auto; background:rgba(255,255,255,.18);
+    border-radius:22px; display:flex; align-items:center; justify-content:center; font-size:40px;
+  }
+  header.day-head .day-badge{
+    display:inline-block; background:rgba(255,255,255,.22); padding:3px 12px;
+    border-radius:var(--radius-pill); font-size:12px; font-weight:700; letter-spacing:.05em; margin-bottom:4px;
+  }
+  header.day-head h1{ font-size:22px; margin:2px 0 2px; font-weight:900; }
+  header.day-head .sub{ font-size:13px; opacity:.92; }
+  .deco-ridge{
+    position:absolute; left:0; right:0; bottom:-1px; height:34px;
+    background:var(--sora); border-radius:50% 50% 0 0 / 100% 100% 0 0; transform:scale(1.4);
+  }
+
+  main{ padding:16px; }
+
+  .card{
+    background:#fff; border-radius:var(--radius-card); box-shadow:var(--shadow);
+    padding:16px; margin-bottom:16px;
+  }
+  .card:active{ transform:scale(.98); }
+
+  .chip{
+    display:inline-flex; align-items:center; gap:4px; background:var(--sora-deep); color:var(--ink);
+    font-size:12px; font-weight:700; padding:4px 10px; border-radius:var(--radius-pill);
+  }
+  .chip.done{ background:#E3F5E5; color:#2F7A3D; }
+  .chip.wip{ background:var(--momo); color:var(--ringo-deep); }
+
+  .summary-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  .weather-note{
+    background:var(--sora-deep); border-radius:var(--radius-sm); padding:10px 12px; font-size:13px; color:var(--ink-soft);
+    display:flex; gap:8px; align-items:center;
+  }
+
+  h2.section-title{ font-size:16px; margin:22px 0 10px; padding-left:2px; display:flex; align-items:center; gap:6px;}
+
+  /* 時間軸 */
+  .timeline{ position:relative; padding-left:22px; }
+  .timeline::before{
+    content:''; position:absolute; left:7px; top:6px; bottom:6px; width:2px; background:var(--sora-deep);
+  }
+  .t-item{ position:relative; margin-bottom:14px; }
+  .t-item::before{
+    content:''; position:absolute; left:-22px; top:4px; width:12px; height:12px; border-radius:50%;
+    background:var(--day); border:3px solid var(--sora);
+  }
+  .t-card{ background:#fff; border-radius:var(--radius-card); box-shadow:var(--shadow); padding:14px 16px; }
+  .t-time{ font-weight:900; color:var(--day); font-size:14px; }
+  .t-title{ font-weight:700; margin:2px 0 4px; font-size:15px; display:flex; align-items:center; gap:6px;}
+  .t-note{ font-size:13px; color:var(--ink-soft); line-height:1.5; }
+  .t-tags{ margin-top:8px; display:flex; gap:6px; flex-wrap:wrap; }
+
+  .map-btn{
+    display:inline-flex; align-items:center; gap:5px; background:var(--ringo); color:#fff;
+    font-size:12.5px; font-weight:700; padding:7px 14px; border-radius:var(--radius-pill);
+    margin-top:8px; margin-right:6px;
+  }
+  .map-btn:active{ background:var(--ringo-deep); }
+  .map-btn.outline{ background:#fff; color:var(--ringo); border:1.5px solid var(--ringo); }
+
+  details.rain{
+    background:#fff; border-radius:var(--radius-card); box-shadow:var(--shadow); padding:14px 16px; margin-bottom:16px;
+  }
+  details.rain summary{ font-weight:700; cursor:pointer; list-style:none; display:flex; align-items:center; gap:6px;}
+  details.rain summary::-webkit-details-marker{ display:none; }
+  details.rain summary::after{ content:'▾'; margin-left:auto; color:var(--ink-soft); }
+  details.rain[open] summary::after{ content:'▴'; }
+  details.rain p{ font-size:13.5px; color:var(--ink-soft); line-height:1.6; margin:10px 0 0; }
+
+  .food-card{ background:#fff; border-radius:var(--radius-card); box-shadow:var(--shadow); padding:14px 16px; margin-bottom:12px;}
+  .food-card h3{ font-size:14.5px; margin:0 0 4px; display:flex; align-items:center; gap:6px;}
+  .food-card p{ font-size:13px; color:var(--ink-soft); margin:2px 0; line-height:1.55;}
+  .food-tag{ font-size:11.5px; font-weight:700; }
+
+  .warn-box{
+    background:var(--momo); border-radius:var(--radius-sm); padding:12px 14px; font-size:13px; color:var(--ringo-deep);
+    line-height:1.6; margin-top:10px; display:flex; gap:8px;
+  }
+  .ok-box{
+    background:#E3F5E5; border-radius:var(--radius-sm); padding:12px 14px; font-size:13px; color:#2F7A3D;
+    line-height:1.6; margin-top:10px; display:flex; gap:8px;
+  }
+
+  .fact-list{ font-size:13px; color:var(--ink-soft); line-height:1.8; padding-left:18px; margin:0;}
+
+  /* 底部導航 */
+  nav.bottom-nav{
+    position:fixed; left:50%; transform:translateX(-50%); bottom:0; width:100%; max-width:520px;
+    background:rgba(255,255,255,.92); backdrop-filter:blur(10px);
+    display:flex; height:64px; padding-bottom:env(safe-area-inset-bottom);
+    box-shadow:0 -4px 14px rgba(51,66,79,.08);
+  }
+  nav.bottom-nav a{
+    flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    font-size:11px; color:var(--ink-soft); gap:2px; font-weight:500;
+  }
+  nav.bottom-nav a .ico{ font-size:19px; }
+  nav.bottom-nav a.active{ color:var(--ringo); font-weight:700; }
+</style>
+</head>
+<body>
+
+<header class="day-head">
+  <a class="back-link" href="202608-aomori_index.html">← 回首頁</a>
+  <div class="head-row">
+    <div class="day-icon">🚗</div>
+    <div>
+      <span class="day-badge">DAY 3・8月23日（日）</span>
+      <h1>八甲田山區移動日</h1>
+      <div class="sub">青森市 → 十和田湖畔｜租車</div>
+    </div>
+  </div>
+  <div class="deco-ridge"></div>
+</header>
+
+<main>
+
+  <section class="card fade-in">
+    <div class="summary-row">
+      <span class="chip done">✅ 定案</span>
+      <span class="chip">🚗 開車為主</span>
+      <span class="chip">🎡 八甲田纜車</span>
+      <span class="chip">🏨 換宿 Towadakohan Sakura</span>
+    </div>
+    <div class="weather-note">🌤 出發前記得查八甲田當日天氣與纜車是否正常運行（山區易起霧）</div>
+  </section>
+
+  <div class="ok-box">✅ 千人風呂（酸ヶ湯混浴）已確認<b>跳過</b>，行程直接前往下一站，時間更寬鬆</div>
+  <div class="warn-box">⚠️ 晚餐<b>不含</b>在Towadakohan Sakura訂房內（只包早餐），已備妥兩種方案，詳見下方「晚餐」</div>
+
+  <h2 class="section-title">🕐 時間軸</h2>
+  <div class="timeline">
+
+    <div class="t-item">
+      <div class="t-card">
+        <div class="t-time">07:30</div>
+        <div class="t-title">😴 起床</div>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-card">
+        <div class="t-time">08:00–08:30</div>
+        <div class="t-title">🍽️ Richmond Hotel 早餐</div>
+        <div class="t-note">⚠️ 確切供餐時段待現場確認</div>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-card">
+        <div class="t-time">08:30</div>
+        <div class="t-title">🚶 退房前順路購買晚餐備案（可選）</div>
+        <div class="t-note">飯店1樓／步行5分內即有便利商店，若選晚餐方案B可在此採買（詳見下方晚餐區塊）</div>
+        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%92%E6%A3%AE%E7%B8%A3%E9%9D%92%E6%A3%AE%E5%B8%82%E9%95%B7%E5%B3%B61-6-6" target="_blank">📍 Richmond Hotel周邊</a>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-card">
+        <div class="t-time">08:30–09:00</div>
+        <div class="t-title">🚗 退房、行李裝車出發</div>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-card">
+        <div class="t-time">09:00–09:50</div>
+        <div class="t-title">🚗 開車往八甲田纜車山麓駅</div>
+        <div class="t-note">約27km，開車約50分【推】</div>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%85%AB%E7%94%B2%E7%94%B0%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%82%A4%E5%B1%B1%E9%BA%93%E9%A7%85" target="_blank">📍 導航：八甲田纜車山麓駅</a>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-card">
+        <div class="t-time">09:50–11:20</div>
+        <div class="t-title">🎡 八甲田纜車＋山頂散策</div>
+        <div class="t-note">纜車來回搭乘＋山頂田茂萢湿原木道散策30–60分。營業9:00–16:20、間隔15–20分、單程約10分。來回票大人2,200円・小孩700円</div>
+        <div class="t-tags"><span class="chip done">【查】已查證</span></div>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-card">
+        <div class="t-time">11:20–12:20</div>
+        <div class="t-title">🍽️ 午餐：レストハウス八甲田</div>
+        <div class="t-note">山麓駅內，10:00–15:00營業，蕎麥／咖哩／丼類，不用額外開車。（候補：鬼面庵，見下方餐廳候補區塊）</div>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E3%83%AC%E3%82%B9%E3%83%88%E3%83%8F%E3%82%A6%E3%82%B9%E5%85%AB%E7%94%B2%E7%94%B0" target="_blank">📍 導航：レストハウス八甲田</a>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-card">
+        <div class="t-time">12:20–12:40</div>
+        <div class="t-title">🚗 開車經酸ヶ湯（路過不入浴）往睡蓮沼</div>
+        <div class="t-note">約12km，約20分【推】</div>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E7%9D%A1%E8%93%AE%E6%B2%BC" target="_blank">📍 導航：睡蓮沼</a>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-card">
+        <div class="t-time">12:40–13:05</div>
+        <div class="t-title">🎡 睡蓮沼景觀停留拍照</div>
+        <div class="t-note">路邊景觀點，約25分鐘</div>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-card">
+        <div class="t-time">13:05–13:35</div>
+        <div class="t-title">🚗 開車往燒山（奧入瀨入口）</div>
+        <div class="t-note">約20km，約30分【推】</div>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E7%84%BC%E5%B1%B1%20%E5%A5%A5%E5%85%A5%E7%80%AC" target="_blank">📍 導航：燒山</a>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-card">
+        <div class="t-time">13:35–14:25</div>
+        <div class="t-title">🚗 經石ヶ戸、子ノ口往休屋</div>
+        <div class="t-note">約19km，約35分【推】，沿途城ヶ倉大橋等視情況彈性稍停</div>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E4%BC%91%E5%B1%8B%20%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96" target="_blank">📍 導航：休屋</a>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-card">
+        <div class="t-time">14:45–15:30</div>
+        <div class="t-title">🏨 抵達 Towadakohan Sakura</div>
+        <div class="t-note">Check-in受理時間15:00–21:00（已依訂房確認），辦理入住後可用大浴場</div>
+        <div class="t-tags"><span class="chip done">【查】已查證</span></div>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E7%95%94%E4%BC%91%E5%B1%8B486" target="_blank">📍 導航：Towadakohan Sakura</a>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-card">
+        <div class="t-time">16:00–17:00</div>
+        <div class="t-title">🚶 湖畔散步</div>
+        <div class="t-note">乙女之像／十和田神社，20–30分，視小孩體力調整</div>
+        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E4%B9%99%E5%A5%B3%E3%81%AE%E5%83%8F" target="_blank">📍 導航：乙女之像</a>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-card">
+        <div class="t-time">18:00–19:30</div>
+        <div class="t-title">🍽️ 晚餐</div>
+        <div class="t-note">兩方案擇一，詳見下方「晚餐」區塊</div>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-card">
+        <div class="t-time">19:30–22:00</div>
+        <div class="t-title">🏨 房內休息</div>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-card">
+        <div class="t-time">22:30前</div>
+        <div class="t-title">😴 就寢</div>
+      </div>
+    </div>
+
+  </div>
+
+  <details class="rain">
+    <summary>☔ 雨天備案</summary>
+    <p>雲霧或雨天跳過纜車（山上無景），改在酸ヶ湯周邊（不入浴，路過拍照即可）停留較久，提早前往十和田湖畔飯店休息，大浴場泡湯放鬆。</p>
+  </details>
+
+  <h2 class="section-title">🍜 午餐候補（已查證，皆非海鮮）</h2>
+
+  <div class="food-card">
+    <h3>① レストハウス八甲田 <span class="chip done food-tag">建議首選</span></h3>
+    <p>纜車山麓駅內，10:00–15:00營業，蕎麥／咖哩／丼類。玩完纜車直接用餐，不用額外開車。</p>
+    <p class="food-tag" style="color:var(--ha)">✅ 非海鮮：蕎麥／咖哩／丼類皆可避開甲殼類貝類</p>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E3%83%AC%E3%82%B9%E3%83%88%E3%83%8F%E3%82%A6%E3%82%B9%E5%85%AB%E7%94%B2%E7%94%B0" target="_blank">📍 導航</a>
+  </div>
+
+  <div class="food-card">
+    <h3>② 鬼面庵（酸ヶ湯温泉旅館內）</h3>
+    <p>10:00–16:30（最後點餐16:15），酸ヶ湯蕎麦（十割蕎麥）、山菜蕎麥。離纜車約10分車程。</p>
+    <p class="food-tag" style="color:var(--ha)">✅ 非海鮮：蕎麥類品項，高湯可食（不必避）</p>
+    <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E9%85%B8%E3%83%B6%E6%B9%AF%E6%B8%A9%E6%B3%89" target="_blank">📍 導航</a>
+  </div>
+
+  <h2 class="section-title">🍽️ 晚餐（兩方案）</h2>
+
+  <div class="food-card">
+    <h3>方案A：寿司龍神（Sakura飯店附設） <span class="chip done food-tag">推薦</span></h3>
+    <p>2025/7新開幕，就在飯店裡，非住客也能用餐。營業 11:30–14:00（LO13:30）／<b>17:00–22:00（LO21:30）</b>，一般不需預約。</p>
+    <p class="food-tag" style="color:var(--ha)">✅ 非海鮮：官方特別提供「牛バラ焼き丼」牛肉蓋飯套餐，適合不吃生食/海鮮者</p>
+    <p>⚠️ 待現場確認：牛バラ焼き丼以外是否還有其他非海鮮品項可供小孩選擇</p>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E7%95%94%E4%BC%91%E5%B1%8B486" target="_blank">📍 導航</a>
+  </div>
+
+  <div class="food-card">
+    <h3>方案B：Richmond Hotel周邊超商，早上買好帶著走</h3>
+    <p>Richmond Hotel青森官方列為「コンビニ徒歩5分以内」，退房前下樓／步行採買即可，不繞路。</p>
+    <p style="color:var(--ringo-deep)">⚠️ 食安提醒：早上08:30買、傍晚18:00左右吃，中間約9–10小時多在車上，<b>不建議買生鮮飯糰/便當</b>，建議挑麵包、餅乾、常溫可放的零食飲料</p>
+    <p style="color:var(--ringo-deep)">⚠️ 山區與十和田湖畔沿路（八甲田、酸ヶ湯、睡蓮沼一帶）沒有查到任何便利商店，途中無法補買，需一次買齊</p>
+    <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%92%E6%A3%AE%E7%B8%A3%E9%9D%92%E6%A3%AE%E5%B8%82%E9%95%B7%E5%B3%B61-6-6" target="_blank">📍 導航：Richmond Hotel周邊</a>
+  </div>
+
+  <h2 class="section-title">✅ 已查證事實</h2>
+  <div class="card">
+    <ul class="fact-list">
+      <li>八甲田ロープウェー：9:00–16:20營業、間隔15–20分、單程約10分、來回票大人2,200円・小孩700円</li>
+      <li>レストハウス八甲田：10:00–15:00，蕎麥／咖哩／丼類</li>
+      <li>鬼面庵：10:00–16:30（LO16:15）</li>
+      <li>寿司龍神：11:30–14:00（LO13:30）／17:00–22:00（LO21:30），有非海鮮的牛バラ焼き丼</li>
+      <li>Towadakohan Sakura check-in時間：15:00–21:00（依Klook訂房QBF754033確認）</li>
+      <li>Richmond Hotel青森：官方標示「コンビニ徒歩5分以内」</li>
+    </ul>
+  </div>
+
+  <h2 class="section-title">📝 待查證清單</h2>
+  <div class="card">
+    <ul class="fact-list">
+      <li>Richmond Hotel 8/23 早餐確切供餐時段</li>
+      <li>寿司龍神除牛バラ焼き丼外的非海鮮菜色</li>
+      <li>燒山→石ヶ戸→子ノ口→休屋路段是否有交通管制或施工</li>
+      <li>八甲田纜車天候停駛資訊</li>
+    </ul>
+  </div>
+
+</main>
+
+<nav class="bottom-nav">
+  <a class="active" href="202608-aomori_index.html"><span class="ico">🗓️</span>行程</a>
+  <a href="202608-aomori_transport.html"><span class="ico">🚌</span>交通</a>
+  <a href="202608-aomori_hotel.html"><span class="ico">🏨</span>住宿</a>
+  <a href="202608-aomori_tips.html"><span class="ico">🎒</span>錦囊</a>
+  <a href="202608-aomori_budget.html"><span class="ico">💰</span>預算</a>
+</nav>
+
+</body>
+</html>
