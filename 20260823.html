@@ -101,6 +101,9 @@
   }
   .map-btn:active{ background:var(--ringo-deep); }
   .map-btn.outline{ background:#fff; color:var(--ringo); border:1.5px solid var(--ringo); }
+  .map-btn svg{ width:13px; height:13px; }
+  .pin-badge{ display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:#fff; flex-shrink:0; }
+  .pin-badge svg{ width:13px; height:13px; }
 
   details.rain{
     background:#fff; border-radius:var(--radius-card); box-shadow:var(--shadow); padding:14px 16px; margin-bottom:16px;
@@ -195,7 +198,7 @@
         <div class="t-time">08:30</div>
         <div class="t-title">🚶 退房前順路購買晚餐備案（可選）</div>
         <div class="t-note">飯店1樓／步行5分內即有便利商店，若選晚餐方案B可在此採買（詳見下方晚餐區塊）</div>
-        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%92%E6%A3%AE%E7%B8%A3%E9%9D%92%E6%A3%AE%E5%B8%82%E9%95%B7%E5%B3%B61-6-6" target="_blank">📍 Richmond Hotel周邊</a>
+        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%92%E6%A3%AE%E7%B8%A3%E9%9D%92%E6%A3%AE%E5%B8%82%E9%95%B7%E5%B3%B61-6-6" target="_blank"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg> Richmond Hotel周邊</a>
       </div>
     </div>
 
@@ -211,7 +214,7 @@
         <div class="t-time">09:00–09:50</div>
         <div class="t-title">🚗 開車往八甲田纜車山麓駅</div>
         <div class="t-note">約27km，開車約50分【推】</div>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%85%AB%E7%94%B2%E7%94%B0%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%82%A4%E5%B1%B1%E9%BA%93%E9%A7%85" target="_blank">📍 導航：八甲田纜車山麓駅</a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%85%AB%E7%94%B2%E7%94%B0%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%82%A4%E5%B1%B1%E9%BA%93%E9%A7%85" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> 導航：八甲田纜車山麓駅</a>
       </div>
     </div>
 
@@ -229,7 +232,7 @@
         <div class="t-time">11:20–12:20</div>
         <div class="t-title">🍽️ 午餐：レストハウス八甲田</div>
         <div class="t-note">山麓駅內，10:00–15:00營業，蕎麥／咖哩／丼類，不用額外開車。（候補：鬼面庵，見下方餐廳候補區塊）</div>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E3%83%AC%E3%82%B9%E3%83%88%E3%83%8F%E3%82%A6%E3%82%B9%E5%85%AB%E7%94%B2%E7%94%B0" target="_blank">📍 導航：レストハウス八甲田</a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E3%83%AC%E3%82%B9%E3%83%88%E3%83%8F%E3%82%A6%E3%82%B9%E5%85%AB%E7%94%B2%E7%94%B0" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> 導航：レストハウス八甲田</a>
       </div>
     </div>
 
@@ -238,7 +241,7 @@
         <div class="t-time">12:20–12:40</div>
         <div class="t-title">🚗 開車經酸ヶ湯（路過不入浴）往睡蓮沼</div>
         <div class="t-note">約12km，約20分【推】</div>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E7%9D%A1%E8%93%AE%E6%B2%BC" target="_blank">📍 導航：睡蓮沼</a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E7%9D%A1%E8%93%AE%E6%B2%BC" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> 導航：睡蓮沼</a>
       </div>
     </div>
 
@@ -255,7 +258,7 @@
         <div class="t-time">13:05–13:35</div>
         <div class="t-title">🚗 開車往燒山（奧入瀨入口）</div>
         <div class="t-note">約20km，約30分【推】</div>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E7%84%BC%E5%B1%B1%20%E5%A5%A5%E5%85%A5%E7%80%AC" target="_blank">📍 導航：燒山</a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E7%84%BC%E5%B1%B1%20%E5%A5%A5%E5%85%A5%E7%80%AC" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> 導航：燒山</a>
       </div>
     </div>
 
@@ -264,7 +267,7 @@
         <div class="t-time">13:35–14:25</div>
         <div class="t-title">🚗 經石ヶ戸、子ノ口往休屋</div>
         <div class="t-note">約19km，約35分【推】，沿途城ヶ倉大橋等視情況彈性稍停</div>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E4%BC%91%E5%B1%8B%20%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96" target="_blank">📍 導航：休屋</a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E4%BC%91%E5%B1%8B%20%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> 導航：休屋</a>
       </div>
     </div>
 
@@ -274,7 +277,7 @@
         <div class="t-title">🏨 抵達 Towadakohan Sakura</div>
         <div class="t-note">Check-in受理時間15:00–21:00（已依訂房確認）</div>
         <div class="t-tags"><span class="chip done">【查】已查證</span></div>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E7%95%94%E4%BC%91%E5%B1%8B486" target="_blank">📍 導航：Towadakohan Sakura</a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E7%95%94%E4%BC%91%E5%B1%8B486" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> 導航：Towadakohan Sakura</a>
       </div>
     </div>
 
@@ -291,7 +294,7 @@
         <div class="t-time">17:00–17:30</div>
         <div class="t-title">🚶 湖畔散步</div>
         <div class="t-note">乙女之像／十和田神社，視小孩體力調整，可縮短或跳過</div>
-        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E4%B9%99%E5%A5%B3%E3%81%AE%E5%83%8F" target="_blank">📍 導航：乙女之像</a>
+        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E4%B9%99%E5%A5%B3%E3%81%AE%E5%83%8F" target="_blank"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg> 導航：乙女之像</a>
       </div>
     </div>
 
@@ -337,14 +340,14 @@
     <h3>① レストハウス八甲田 <span class="chip done food-tag">建議首選</span></h3>
     <p>纜車山麓駅內，10:00–15:00營業，蕎麥／咖哩／丼類。玩完纜車直接用餐，不用額外開車。</p>
     <p class="food-tag" style="color:var(--ha)">✅ 非海鮮：蕎麥／咖哩／丼類皆可避開甲殼類貝類</p>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E3%83%AC%E3%82%B9%E3%83%88%E3%83%8F%E3%82%A6%E3%82%B9%E5%85%AB%E7%94%B2%E7%94%B0" target="_blank">📍 導航</a>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E3%83%AC%E3%82%B9%E3%83%88%E3%83%8F%E3%82%A6%E3%82%B9%E5%85%AB%E7%94%B2%E7%94%B0" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> 導航</a>
   </div>
 
   <div class="food-card">
     <h3>② 鬼面庵（酸ヶ湯温泉旅館內）</h3>
     <p>10:00–16:30（最後點餐16:15），酸ヶ湯蕎麦（十割蕎麥）、山菜蕎麥。離纜車約10分車程。</p>
     <p class="food-tag" style="color:var(--ha)">✅ 非海鮮：蕎麥類品項，高湯可食（不必避）</p>
-    <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E9%85%B8%E3%83%B6%E6%B9%AF%E6%B8%A9%E6%B3%89" target="_blank">📍 導航</a>
+    <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E9%85%B8%E3%83%B6%E6%B9%AF%E6%B8%A9%E6%B3%89" target="_blank"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg> 導航</a>
   </div>
 
   <h2 class="section-title">🍽️ 晚餐（兩方案）</h2>
@@ -354,7 +357,7 @@
     <p>2025/7新開幕，就在飯店裡，非住客也能用餐。營業 11:30–14:00（LO13:30）／<b>17:00–22:00（LO21:30）</b>，一般不需預約。</p>
     <p class="food-tag" style="color:var(--ha)">✅ 非海鮮：官方特別提供「牛バラ焼き丼」牛肉蓋飯套餐，適合不吃生食/海鮮者</p>
     <p>⚠️ 待現場確認：牛バラ焼き丼以外是否還有其他非海鮮品項可供小孩選擇</p>
-    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E7%95%94%E4%BC%91%E5%B1%8B486" target="_blank">📍 導航</a>
+    <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E7%95%94%E4%BC%91%E5%B1%8B486" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> 導航</a>
   </div>
 
   <div class="food-card">
@@ -362,7 +365,7 @@
     <p>Richmond Hotel青森官方列為「コンビニ徒歩5分以内」，退房前下樓／步行採買即可，不繞路。</p>
     <p style="color:var(--ringo-deep)">⚠️ 食安提醒：早上08:30買、傍晚18:00左右吃，中間約9–10小時多在車上，<b>不建議買生鮮飯糰/便當</b>，建議挑麵包、餅乾、常溫可放的零食飲料</p>
     <p style="color:var(--ringo-deep)">⚠️ 山區與十和田湖畔沿路（八甲田、酸ヶ湯、睡蓮沼一帶）沒有查到任何便利商店，途中無法補買，需一次買齊</p>
-    <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%92%E6%A3%AE%E7%B8%A3%E9%9D%92%E6%A3%AE%E5%B8%82%E9%95%B7%E5%B3%B61-6-6" target="_blank">📍 導航：Richmond Hotel周邊</a>
+    <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%92%E6%A3%AE%E7%B8%A3%E9%9D%92%E6%A3%AE%E5%B8%82%E9%95%B7%E5%B3%B61-6-6" target="_blank"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg> 導航：Richmond Hotel周邊</a>
   </div>
 
   <h2 class="section-title">✅ 已查證事實</h2>

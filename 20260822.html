@@ -85,7 +85,9 @@
     padding:7px 14px; border-radius:999px; text-decoration:none; margin-top:6px; margin-right:6px;
   }
   .map-btn.outline{background:#fff; color:var(--ringo); border:1.5px solid var(--ringo);}
-  .map-btn::before{content:"📍";}
+  .map-btn svg{ width:13px; height:13px; }
+  .pin-badge{ display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:#fff; flex-shrink:0; }
+  .pin-badge svg{ width:13px; height:13px; }
 
   .branch{border-left:3px solid var(--sora-deep); margin:10px 0 10px 4px; padding-left:14px;}
   .branch-label{font-weight:900; font-size:13px; color:var(--mizu); margin-bottom:4px;}
@@ -166,7 +168,7 @@
         <div class="t-time">08:15</div>
         <div class="t-content"><span class="t-icon">🚶</span>步行至JR青森駅</div>
         <div class="t-note">✅已查證：Google Map實測約17分鐘</div>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=JR%E9%9D%92%E6%A3%AE%E9%A7%85" target="_blank">JR青森駅</a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=JR%E9%9D%92%E6%A3%AE%E9%A7%85" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> JR青森駅</a>
       </div>
 
       <div class="t-item">
@@ -174,7 +176,7 @@
         <div class="t-time">09:04 → 09:38</div>
         <div class="t-content"><span class="t-icon">🚃</span>搭特急「つがる」（自由席）往弘前</div>
         <div class="t-note">✅已查證（Yahoo!路線情報即時資料）：車程約34分。票價推論約大人¥1,960／小孩約半價，建議上車前用えきねっと或窗口確認</div>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=JR%E5%BC%98%E5%89%8D%E9%A7%85" target="_blank">JR弘前駅</a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=JR%E5%BC%98%E5%89%8D%E9%A7%85" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> JR弘前駅</a>
       </div>
 
       <div class="t-item">
@@ -196,7 +198,7 @@
         <div class="t-time">約10:20</div>
         <div class="t-content"><span class="t-icon">🎡</span>抵達藤田記念庭園，<b>先登記大正浪漫喫茶室候位</b></div>
         <div class="t-note">✅已查證：有候位系統，登記後可先離開，不用現場乾等</div>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E8%97%A4%E7%94%B0%E8%A8%98%E5%BF%B5%E5%BA%AD%E5%9C%92%20%E5%BC%98%E5%89%8D%E5%B8%82%E4%B8%8A%E7%99%BD%E9%8A%80%E7%94%BA8-1" target="_blank">藤田記念庭園</a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E8%97%A4%E7%94%B0%E8%A8%98%E5%BF%B5%E5%BA%AD%E5%9C%92%20%E5%BC%98%E5%89%8D%E5%B8%82%E4%B8%8A%E7%99%BD%E9%8A%80%E7%94%BA8-1" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> 藤田記念庭園</a>
       </div>
 
       <div class="t-item">
@@ -204,7 +206,7 @@
         <div class="t-time">10:20–11:30</div>
         <div class="t-content"><span class="t-icon">🎡</span>弘前公園散步（護城河、下乗橋、追手門）</div>
         <div class="t-note">⚠️已查證：弘前城天守因保存修復工程，內部暫停開放數年，只能看外觀。若要進本丸近拍需買票（大人¥320、小孩¥100），可省略只在免費區散步</div>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%BC%98%E5%89%8D%E5%85%AC%E5%9C%92" target="_blank">弘前公園</a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%BC%98%E5%89%8D%E5%85%AC%E5%9C%92" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> 弘前公園</a>
       </div>
 
       <div class="t-item">
@@ -216,14 +218,14 @@
           <div class="branch-label">▶ 情況A：已叫號</div>
           <div class="t-content">11:30–13:00 <b>大正浪漫喫茶室</b>午餐＋蘋果派</div>
           <div class="t-note">座位90分鐘制。吃什麼：蘋果咖哩飯、義大利麵（非海鮮）＋招牌蘋果派（7種口味可比較）</div>
-          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%A4%A7%E6%AD%A3%E6%B5%AA%E6%BC%AB%E5%96%AB%E8%8C%B6%E5%AE%A4" target="_blank">大正浪漫喫茶室</a>
+          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%A4%A7%E6%AD%A3%E6%B5%AA%E6%BC%AB%E5%96%AB%E8%8C%B6%E5%AE%A4" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> 大正浪漫喫茶室</a>
         </div>
 
         <div class="branch">
           <div class="branch-label">▶ 情況B：還要久候（備案）</div>
           <div class="t-content">11:30–12:20 改在同園區「匠館」用餐＋喫茶室外帶蘋果派</div>
           <div class="t-note">吃什麼：和風パフェ（日式聖代）、おばんざいランチ（家常菜定食，現場確認避開海鮮配菜）</div>
-          <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8C%A0%E9%A4%A8%20%E5%BC%98%E5%89%8D" target="_blank">匠館（備案）</a>
+          <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8C%A0%E9%A4%A8%20%E5%BC%98%E5%89%8D" target="_blank"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg> 匠館（備案）</a>
         </div>
       </div>
 
@@ -232,7 +234,7 @@
         <div class="t-time">13:00–15:00</div>
         <div class="t-content"><span class="t-icon">🥁</span>津軽藩ねぷた村：太鼓體驗、三味線現場演奏、工藝見學</div>
         <div class="t-note">✅已查證：9:00–17:00（最終入場17:00），大人¥600、小學生¥300、幼兒(3歲以上)¥100；緊鄰弘前公園，徒步2–5分；完整2小時不趕</div>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E6%B4%A5%E8%BB%BD%E8%97%A9%E3%81%AD%E3%81%B7%E3%81%9F%E6%9D%91" target="_blank">津軽藩ねぷた村</a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E6%B4%A5%E8%BB%BD%E8%97%A9%E3%81%AD%E3%81%B7%E3%81%9F%E6%9D%91" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> 津軽藩ねぷた村</a>
       </div>
 
       <div class="t-item">
@@ -240,8 +242,8 @@
         <div class="t-time">15:00–16:35</div>
         <div class="t-content"><span class="t-icon">🛍️</span>慢慢走回JR弘前駅，沿路逛土手町通、買伴手禮</div>
         <div class="t-note">不特別切一段購物時間，邊走邊逛，配合下方兩班車彈性抓時間</div>
-        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E3%83%A9%E3%82%B0%E3%83%8E%E3%82%AA%E5%9C%9F%E6%89%8B%E7%94%BA%E6%9C%AC%E5%BA%97" target="_blank">ラグノオ土手町本店</a>
-        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E6%B4%8B%E8%8F%93%E5%AD%90%E5%B7%A5%E6%88%BF%E3%83%8E%E3%82%A8%E3%83%AB%20%E5%BC%98%E5%89%8D" target="_blank">洋菓子工房ノエル</a>
+        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E3%83%A9%E3%82%B0%E3%83%8E%E3%82%AA%E5%9C%9F%E6%89%8B%E7%94%BA%E6%9C%AC%E5%BA%97" target="_blank"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg> ラグノオ土手町本店</a>
+        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E6%B4%8B%E8%8F%93%E5%AD%90%E5%B7%A5%E6%88%BF%E3%83%8E%E3%82%A8%E3%83%AB%20%E5%BC%98%E5%89%8D" target="_blank"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg> 洋菓子工房ノエル</a>
       </div>
 
       <div class="t-item">
@@ -256,7 +258,7 @@
         <div class="t-time">約17:00或17:35</div>
         <div class="t-content"><span class="t-icon">🚃</span>抵達JR青森駅</div>
         <div class="t-note">車程約45分（推論）；之後可到ASPAM走走或回飯店放東西</div>
-        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%92%E6%A3%AE%E7%9C%8C%E8%A6%B3%E5%85%89%E7%89%A9%E7%94%A2%E9%A4%A8%E3%82%A2%E3%82%B9%E3%83%91%E3%83%A0" target="_blank">ASPAM</a>
+        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%92%E6%A3%AE%E7%9C%8C%E8%A6%B3%E5%85%89%E7%89%A9%E7%94%A2%E9%A4%A8%E3%82%A2%E3%82%B9%E3%83%91%E3%83%A0" target="_blank"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg> ASPAM</a>
       </div>
 
       <div class="t-item">
@@ -264,7 +266,7 @@
         <div class="t-time">19:00</div>
         <div class="t-content"><span class="t-icon">🚗</span>ニッポンレンタカー青森駅東口営業所取車</div>
         <div class="t-note">✅正確地址：青森県青森市安方1-6-5，TEL 050-1712-2897，JR青森駅東口徒步約8分，就在觀光物產館ASPAM前，營業08:00–19:00。✅取車時間已定案19:00（以訂單為準），剛好卡在打烊時間，建議提早幾分鐘抵店辦手續</div>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%92%E6%A3%AE%E7%B8%A3%E9%9D%92%E6%A3%AE%E5%B8%82%E5%AE%89%E6%96%B91-6-5" target="_blank">ニッポンレンタカー</a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%92%E6%A3%AE%E7%B8%A3%E9%9D%92%E6%A3%AE%E5%B8%82%E5%AE%89%E6%96%B91-6-5" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> ニッポンレンタカー</a>
       </div>
 
       <div class="t-item">
@@ -272,7 +274,7 @@
         <div class="t-time">取車後</div>
         <div class="t-content"><span class="t-icon">🚗</span>開車回Richmond Hotel停車</div>
         <div class="t-note">車程約5分（推論）</div>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E3%83%AA%E3%83%83%E3%83%81%E3%83%A2%E3%83%B3%E3%83%89%E3%83%9B%E3%83%86%E3%83%AB%E9%9D%92%E6%A3%AE" target="_blank">Richmond Hotel</a>
+        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E3%83%AA%E3%83%83%E3%83%81%E3%83%A2%E3%83%B3%E3%83%89%E3%83%9B%E3%83%86%E3%83%AB%E9%9D%92%E6%A3%AE" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> Richmond Hotel</a>
       </div>
 
       <div class="t-item">
@@ -302,7 +304,7 @@
       <div class="food-name">磚窯工廠 BRICK A-FACTORY</div>
       <div class="food-jp">弘前駅站內「APPLIESE」2樓選品店</div>
       <div class="food-eat">吃什麼：人氣洋菓子店「ボンジュール」監製蘋果派，候車時直接買，完全不用候位</div>
-      <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=APPLIESE%20%E5%BC%98%E5%89%8D%E9%A7%85" target="_blank">磚窯工廠</a>
+      <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=APPLIESE%20%E5%BC%98%E5%89%8D%E9%A7%85" target="_blank"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg> 磚窯工廠</a>
     </div>
 
     <div class="section-title">🍽️ 晚餐二選一</div>
@@ -311,14 +313,14 @@
       <div class="food-jp">ガスト青森新町店</div>
       <div class="food-eat">吃什麼：漢堡排、義大利麵、兒童餐（附玩具），菜單附照片</div>
       <div class="t-note">飯店附近新町通一帶，徒步約5–10分。營業07:00–翌1:00（全年無休）</div>
-      <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E3%82%AC%E3%82%B9%E3%83%88%E9%9D%92%E6%A3%AE%E6%96%B0%E7%94%BA%E5%BA%97" target="_blank">Gusto新町店</a>
+      <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E3%82%AC%E3%82%B9%E3%83%88%E9%9D%92%E6%A3%AE%E6%96%B0%E7%94%BA%E5%BA%97" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> Gusto新町店</a>
     </div>
     <div class="card food-card">
       <div class="food-name">卡布里喬莎 青森THREE店 <span class="chip">免預約</span></div>
       <div class="food-jp">カプリチョーザ青森THREE店</div>
       <div class="food-eat">吃什麼：大份量披薩、義大利麵，適合全家分食</div>
       <div class="t-note">飯店附近新町通一帶，徒步約6–10分。營業11:00–20:30（L.O.20:00）</div>
-      <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E3%82%AB%E3%83%97%E3%83%AA%E3%83%81%E3%83%A7%E3%83%BC%E3%82%B6%E9%9D%92%E6%A3%AETHREE%E5%BA%97" target="_blank">卡布里喬莎</a>
+      <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E3%82%AB%E3%83%97%E3%83%AA%E3%83%81%E3%83%A7%E3%83%BC%E3%82%B6%E9%9D%92%E6%A3%AETHREE%E5%BA%97" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> 卡布里喬莎</a>
     </div>
 
     <div class="section-title">⚠️ 待查證清單</div>
