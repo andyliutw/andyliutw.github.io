@@ -3,455 +3,510 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>8/24 奧入瀨溪流日｜青森親子夏旅</title>
+<title>Day4｜8/24 奧入瀨溪流日</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --sora:#EAF6FB;
-    --sora-deep:#CFEAF5;
-    --ink:#33424F;
-    --ink-soft:#7A8B99;
-    --ringo:#E8574C;
-    --ringo-deep:#C93E35;
-    --mizu:#2E9BA6;
-    --ha:#6FBF73;
-    --kin:#F2B84B;
-    --momo:#FBD9D3;
-    --day4:#3E9E8C;
-    --day4-soft:#DCF1EC;
-    --shadow:0 4px 14px rgba(51,66,79,.10);
-  }
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
-  body{
-    background:var(--sora);
-    color:var(--ink);
-    font-family:'Noto Sans TC','Zen Maru Gothic',sans-serif;
-    -webkit-font-smoothing:antialiased;
-    padding-bottom:88px;
-  }
-  .wrap{max-width:520px;margin:0 auto;position:relative;}
-  h1,h2,h3,.font-display{font-family:'Zen Maru Gothic','Noto Sans TC',sans-serif;}
+    :root{
+      --sora:#EAF6FB;
+      --sora-deep:#CFEAF5;
+      --ink:#33424F;
+      --ink-soft:#7A8B99;
+      --ringo:#E8574C;
+      --ringo-deep:#C93E35;
+      --mizu:#2E9BA6;
+      --ha:#6FBF73;
+      --kin:#F2B84B;
+      --momo:#FBD9D3;
+      --shadow: 0 4px 14px rgba(51,66,79,.10);
+      --safe-b: env(safe-area-inset-bottom, 0px);
+    }
+    *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+    html,body{ margin:0; padding:0; }
+    body{
+      background: var(--sora);
+      color: var(--ink);
+      font-family: 'Noto Sans TC', sans-serif;
+      display:flex; justify-content:center;
+    }
+    h1,h2,h3,.display{ font-family:'Zen Maru Gothic','Noto Sans TC',sans-serif; }
+    .app{ width:100%; max-width:480px; min-height:100vh; position:relative; padding-bottom: calc(84px + var(--safe-b)); }
 
-  /* header */
-  .day-header{
-    background:linear-gradient(160deg,var(--day4) 0%,#2E8272 100%);
-    color:#fff;
-    padding:18px 20px 28px;
-    border-radius:0 0 28px 28px;
-    position:relative;
-    overflow:hidden;
-  }
-  .back-link{
-    display:inline-flex;align-items:center;gap:4px;
-    color:#fff;text-decoration:none;font-size:14px;opacity:.92;
-    font-weight:500;
-  }
-  .day-badge{
-    display:inline-block;margin-top:14px;
-    background:rgba(255,255,255,.22);
-    padding:4px 14px;border-radius:999px;
-    font-size:13px;font-weight:700;letter-spacing:.02em;
-  }
-  .day-title{font-size:26px;font-weight:900;margin:10px 0 2px;line-height:1.3;}
-  .day-sub{font-size:14px;opacity:.92;margin:0;}
-  .day-icon{
-    position:absolute;right:-10px;top:8px;width:104px;height:104px;opacity:.85;
-  }
+    .head{
+      background: linear-gradient(160deg, var(--headcolor,var(--ringo)), var(--headcolor2,var(--ringo-deep)));
+      color:#fff; padding: 18px 20px 46px; border-radius: 0 0 28px 28px; position:relative; overflow:hidden;
+    }
+    .head::after{ content:""; position:absolute; right:-20px; bottom:-30px; width:150px; height:150px; border-radius:50%; background: rgba(255,255,255,0.10); }
+    .backlink{ display:inline-flex; align-items:center; gap:4px; color: rgba(255,255,255,0.9); text-decoration:none; font-size: 13px; font-weight:500; }
+    .head .icon{ font-size: 34px; margin: 10px 0 2px; }
+    .head-badge{
+      width:88px; height:88px; border-radius:50%;
+      background: rgba(255,255,255,0.20);
+      border: 2px solid rgba(255,255,255,0.35);
+      display:flex; align-items:center; justify-content:center;
+      font-size:46px; margin: 12px 0 6px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    }
+    .deco-kingyo{ position:absolute; opacity:.85; pointer-events:none; }
+    .deco-kingyo.head-deco{ right:-6px; top:6px; width:92px; height:auto; }
+    .deco-kingyo.section-deco{ right:8px; top:-6px; width:46px; height:auto; opacity:.5; }
+    .head h1{ font-size: 24px; font-weight:900; margin:2px 0 4px; }
+    .head .sub{ font-size: 13px; opacity:.92; font-weight:500; }
+    .daydots{ display:flex; gap:5px; margin-top:12px; }
+    .daydots span{ width:18px; height:5px; border-radius:999px; background: rgba(255,255,255,0.35); }
+    .daydots span.on{ background:#fff; }
 
-  /* summary card */
-  .summary-card{
-    margin:-16px 16px 18px;background:#fff;border-radius:22px;
-    box-shadow:var(--shadow);padding:16px 18px;position:relative;z-index:2;
-  }
-  .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;}
-  .chip{
-    display:inline-flex;align-items:center;gap:4px;
-    background:var(--sora-deep);color:var(--ink);
-    font-size:12.5px;font-weight:700;padding:5px 12px;border-radius:999px;
-  }
-  .chip.done{background:#E3F5E5;color:#3E8C4C;}
-  .chip.wip{background:var(--momo);color:var(--ringo-deep);}
-  .note-line{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:0;}
+    .summary{ background:#fff; border-radius:22px; box-shadow: var(--shadow); margin: -30px 16px 18px; padding: 16px 18px; position:relative; z-index:2; }
+    .summary-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+    .summary .weather{ display:flex; align-items:center; gap:8px; background: var(--sora-deep); border-radius:16px; padding:10px 12px; font-size: 12.5px; color: var(--ink-soft); }
 
-  /* section titles */
-  .section{padding:0 16px;margin-bottom:22px;}
-  .section-title{
-    font-size:16px;font-weight:900;display:flex;align-items:center;gap:6px;
-    margin:0 0 12px 2px;color:var(--ink);
-  }
-  .section-title .sw{width:8px;height:8px;border-radius:50%;background:var(--day4);display:inline-block;}
+    .chip{ display:inline-flex; align-items:center; gap:4px; font-size:11.5px; font-weight:700; padding: 5px 11px; border-radius:999px; background: var(--sora-deep); color: var(--mizu); }
+    .chip.done{ background: rgba(111,191,115,0.18); color:#4C9451; }
+    .chip.wip{ background: var(--momo); color: var(--ringo-deep); }
+    .chip.verified{ background: rgba(111,191,115,0.18); color:#4C9451; }
+    .chip.infer{ background: var(--momo); color: var(--ringo-deep); }
 
-  /* timeline */
-  .timeline{position:relative;padding-left:26px;}
-  .timeline::before{
-    content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;
-    background:var(--day4-soft);
-  }
-  .t-item{position:relative;background:#fff;border-radius:18px;box-shadow:var(--shadow);
-    padding:12px 14px 12px 16px;margin-bottom:12px;}
-  .t-item::before{
-    content:"";position:absolute;left:-21px;top:18px;width:11px;height:11px;border-radius:50%;
-    background:var(--day4);border:3px solid var(--sora);
-  }
-  .t-time{font-weight:900;color:var(--day4);font-size:14.5px;margin-right:6px;}
-  .t-icon{font-size:15px;}
-  .t-title{font-weight:700;font-size:14.5px;color:var(--ink);margin:4px 0 2px;}
-  .t-note{font-size:12.5px;color:var(--ink-soft);line-height:1.6;margin:2px 0 0;}
-  .t-item.highlight{border:1.5px solid var(--day4);}
-  .t-item.buffer{background:var(--sora-deep);}
-  .t-item.ok{border:1.5px solid var(--ha);}
+    main{ padding: 0 16px; }
+    .section-title{ font-weight:900; font-size:15px; margin: 18px 2px 10px; display:flex; align-items:center; gap:6px; }
+    .section-title:first-child{ margin-top:2px; }
 
-  /* map buttons — 風格指南v5規格：禁止📍emoji，一律用固定紅色pin SVG */
-  .map-btn{
-    display:inline-flex;align-items:center;gap:6px;
-    background:var(--ringo);color:#fff;text-decoration:none;
-    font-size:12px;font-weight:700;padding:6px 12px;border-radius:999px;
-    margin-top:8px;margin-right:6px;
-  }
-  .map-btn.outline{background:#fff;color:var(--ringo);border:1.4px solid var(--ringo);}
-  .map-btn:active{transform:scale(.97);}
-  .map-btn svg{width:13px;height:13px;}
-  .pin-badge{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:#fff;flex-shrink:0;}
-  .pin-badge svg{width:13px;height:13px;}
+    .card{ background:#fff; border-radius:22px; box-shadow: var(--shadow); padding:16px 18px; margin-bottom:14px; transition: transform .12s; }
+    .card:active{ transform: scale(.98); }
+    .card.small{ border-radius:16px; padding:12px 14px; }
 
-  /* cards for meal options */
-  .option-card{
-    background:#fff;border-radius:18px;box-shadow:var(--shadow);
-    padding:14px 16px;margin-bottom:10px;
-  }
-  .option-label{
-    display:inline-block;background:var(--day4-soft);color:var(--day4);
-    font-weight:900;font-size:12px;padding:2px 10px;border-radius:999px;margin-bottom:6px;
-  }
-  .option-name{font-weight:700;font-size:15px;margin:2px 0 4px;}
-  .option-desc{font-size:13px;color:var(--ink-soft);line-height:1.65;margin:0 0 4px;}
-  .option-meta{font-size:12px;color:var(--ink-soft);}
+    .timeline{ position:relative; padding-left:22px; }
+    .timeline::before{ content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px; background: var(--sora-deep); }
+    .tl-item{ position:relative; margin-bottom:14px; }
+    .tl-dot{ position:absolute; left:-22px; top:4px; width:14px; height:14px; border-radius:50%; background: var(--headcolor,var(--mizu)); border:3px solid #fff; box-shadow:0 0 0 2px var(--headcolor,var(--mizu)); }
+    .tl-time{ font-weight:900; font-size:14px; color: var(--headcolor,var(--mizu)); margin-bottom:2px; }
+    .tl-time small{ color: var(--ink-soft); font-weight:500; font-size:11.5px; margin-left:4px; }
+    .tl-title{ font-weight:700; font-size:15px; margin-bottom:3px; }
+    .tl-title .tag{ display:inline-block; font-size:10px; font-weight:700; padding:2px 7px; border-radius:999px; margin-left:6px; vertical-align:middle; }
+    .tl-title .tag.verified{ background: rgba(111,191,115,0.18); color:#4C9451; }
+    .tl-title .tag.infer{ background: var(--momo); color: var(--ringo-deep); }
+    .tl-note{ font-size:12.5px; color: var(--ink-soft); line-height:1.6; }
 
-  details.rain{
-    background:#fff;border-radius:18px;box-shadow:var(--shadow);padding:4px 16px;margin-bottom:10px;
-  }
-  details.rain summary{
-    cursor:pointer;font-weight:700;padding:12px 0;list-style:none;display:flex;align-items:center;gap:8px;
-  }
-  details.rain summary::-webkit-details-marker{display:none;}
-  details.rain[open] summary{color:var(--day4);}
-  .rain-body{font-size:13px;color:var(--ink-soft);line-height:1.7;padding-bottom:14px;}
+    .map-btn{ display:inline-flex; align-items:center; gap:6px; background: var(--ringo); color:#fff; font-weight:700; font-size:12.5px; padding:9px 16px; border-radius:999px; border:none; text-decoration:none; margin-top:10px; }
+    .map-btn:active{ background: var(--ringo-deep); }
+    .map-btn.outline{ background:#fff; color: var(--ringo); border:1.5px solid var(--ringo); }
+    .map-btn svg{ width:13px; height:13px; }
+    .pin-badge{ display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:#fff; flex-shrink:0; }
+    .pin-badge svg{ width:13px; height:13px; }
 
-  .alt-box{
-    background:var(--momo);border-radius:18px;padding:14px 16px;font-size:13px;
-    color:var(--ink);line-height:1.7;box-shadow:var(--shadow);
-  }
-  .alt-box b{color:var(--ringo-deep);}
+    .opt{ border: 2px solid var(--sora-deep); border-radius:16px; padding:12px 14px; margin-bottom:10px; cursor:pointer; }
+    .opt.chosen{ border-color: var(--ringo); background: rgba(232,87,76,0.05); }
+    .opt-head{ display:flex; justify-content:space-between; align-items:center; }
+    .opt-letter{ font-weight:900; font-size:13px; color: var(--ringo); }
+    .opt-name{ font-weight:700; font-size:14px; margin-top:3px; }
+    .opt-meta{ font-size:12px; color: var(--ink-soft); margin-top:4px; line-height:1.6; }
+    .pick-pill{ font-size:10.5px; font-weight:700; padding:3px 10px; border-radius:999px; background: var(--sora-deep); color: var(--ink-soft); }
+    .opt.chosen .pick-pill{ background: var(--ringo); color:#fff; }
 
-  .resolved-box{
-    background:#E3F5E5;border-radius:18px;padding:14px 16px;font-size:13px;
-    color:var(--ink);line-height:1.7;box-shadow:var(--shadow);margin-bottom:10px;
-  }
-  .resolved-box b{color:#2F7A3D;}
+    .branch{ border-left:3px solid var(--sora-deep); margin:10px 0 6px 2px; padding-left:14px; }
+    .branch-label{ font-weight:900; font-size:12.5px; color: var(--mizu); margin-bottom:4px; }
 
-  .verify-list{background:#fff;border-radius:18px;box-shadow:var(--shadow);padding:14px 18px;font-size:13px;color:var(--ink-soft);line-height:1.9;}
-  .verify-list li{margin-bottom:2px;}
+    details.rain{ background: var(--sora-deep); border-radius:16px; padding: 12px 16px; margin-bottom:14px; }
+    details.rain summary{ font-weight:700; cursor:pointer; list-style:none; display:flex; align-items:center; gap:6px; }
+    details.rain summary::-webkit-details-marker{ display:none; }
+    details.rain[open] summary{ margin-bottom:8px; }
+    .rain-body{ font-size:12.5px; color: var(--ink-soft); line-height:1.7; }
 
-  /* bottom nav */
-  .bottom-nav{
-    position:fixed;left:0;right:0;bottom:0;
-    background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
-    display:flex;justify-content:space-around;align-items:center;
-    height:64px;padding-bottom:env(safe-area-inset-bottom);
-    box-shadow:0 -2px 14px rgba(51,66,79,.10);
-    max-width:520px;margin:0 auto;z-index:10;
-  }
-  .nav-item{
-    display:flex;flex-direction:column;align-items:center;gap:2px;
-    text-decoration:none;color:var(--ink-soft);font-size:11px;font-weight:700;flex:1;
-  }
-  .nav-item .ic{font-size:19px;}
-  .nav-item.active{color:var(--ringo);}
+    .info-line{ font-size:12px; color: var(--ink-soft); line-height:1.7; margin-top:4px; }
+    .info-line b{ color: var(--ink); }
+    .verify-ul{ margin:0; padding-left:18px; font-size:12.5px; color: var(--ink-soft); line-height:1.9; }
+    .verify-ul li{ margin-bottom:2px; }
 
-  @media (prefers-reduced-motion:no-preference){
-    .t-item,.option-card,.summary-card{animation:fade .4s ease both;}
-    @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
-  }
+    nav.bottom{ position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:480px; height: calc(64px + var(--safe-b)); padding-bottom: var(--safe-b); background: rgba(255,255,255,0.85); backdrop-filter: blur(14px); box-shadow: 0 -2px 14px rgba(51,66,79,.08); display:flex; z-index:50; }
+    .navbtn{ flex:1; background:none; border:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; color: var(--ink-soft); font-family:'Noto Sans TC',sans-serif; font-size:10.5px; font-weight:500; text-decoration:none; }
+    .navbtn .ic{ font-size:19px; line-height:1; }
+    .navbtn.active{ color: var(--ringo); font-weight:700; }
+
+    @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
+    .head{ --headcolor:#3E9E8C; --headcolor2:#2E8272; }
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="app">
 
-  <header class="day-header">
-    <a class="back-link" href="202608-aomori_index.html">← 回首頁</a>
-    <div class="day-badge">DAY 4・8月24日（一）</div>
-    <h1 class="day-title">奧入瀨溪流日</h1>
-    <p class="day-sub">石ヶ戸精華段散策 ・ 十和田湖遊覽船 ・ 湖畔散步</p>
-    <svg class="day-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M10 70 Q 30 55, 50 68 T 90 62" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85"/>
-      <path d="M6 82 Q 28 68, 50 80 T 94 76" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.6"/>
-      <circle cx="70" cy="28" r="14" fill="#fff" opacity="0.9"/>
-      <path d="M55 40 L70 20 L85 40 Z" fill="#fff" opacity="0.5"/>
+  <header class="head">
+    <svg class="deco-kingyo head-deco" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 50 C4 34, 2 30, 0 20 C11 26, 21 30, 28 40 Z" fill="#fff" opacity=".5"/>
+      <path d="M18 50 C4 66, 2 70, 0 80 C11 74, 21 70, 28 60 Z" fill="#fff" opacity=".5"/>
+      <ellipse cx="64" cy="50" rx="42" ry="27" fill="var(--kin)" opacity=".55"/>
+      <path d="M40 26 Q64 21 88 26" stroke="#fff" stroke-width="2" fill="none" opacity=".4"/>
+      <path d="M40 74 Q64 79 88 74" stroke="#fff" stroke-width="2" fill="none" opacity=".4"/>
+      <path d="M58 24 Q67 6 78 20 Q68 23 58 24Z" fill="#fff" opacity=".45"/>
+      <circle cx="92" cy="43" r="4.2" fill="#fff" opacity=".95"/>
+      <circle cx="93.6" cy="43" r="1.9" fill="var(--ink)" opacity=".8"/>
     </svg>
+    <a class="backlink" href="202608-aomori_index.html">← 回首頁</a>
+    <div class="head-badge">🌊</div>
+    <h1>8/24（一）奧入瀨溪流日</h1>
+    <div class="sub">石ヶ戸精華段散策・十和田湖遊覽船・湖畔散步</div>
+    <div class="daydots">
+      <span></span><span></span><span></span><span class="on"></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
   </header>
 
-  <div class="summary-card">
-    <div class="chip-row">
+  <div class="summary">
+    <div class="summary-row">
       <span class="chip">🚗 自駕</span>
       <span class="chip">🚌 JR巴士</span>
       <span class="chip">⛴️ 遊覽船</span>
-      <span class="chip done">✅ 版本B已定案</span>
-      <span class="chip done">✅ 11:50巴士無需預約</span>
-      <span class="chip wip">🍽️ 晚餐待現場決定</span>
     </div>
-    <p class="note-line">☔ 天氣提醒：出發前查詢十和田湖畔天氣。步道全程林蔭、雨天氣氛佳，可備輕便雨衣；若下大雨改開車沿路停靠拍照即可，詳見下方雨備。</p>
-  </div>
-
-  <div class="section">
-    <div class="section-title"><span class="sw"></span>✅ 巴士預約疑慮已解決</div>
-    <div class="resolved-box">
-      <b>雲井之瀧11:50這班（おいらせ21号）不需要、也不能預約。</b><br>
-      經三輪查證（官方公告→官方時刻表工具→willer travel官方訂位規則頁）確認：只有在「八戸駅西口」起點站上車才需要預約，中途站（含雲井の滝）一律「空位候車即可」。之前查證時官方時刻表工具在雲井の滝標示「予約制」造成誤會，其實只是標示這班車本質上屬於預約制服務的分類，不代表中途站也要預約。<br>
-      ⚠️唯一殘餘風險：暑假期間八戸駅乘客較多，中途站空位可能有限。建議提早5分鐘到站候車；若客滿，備案改搭確定無爭議的13:15班次（みずうみ号），但午餐會順延至約14:00。
+    <div class="weather">
+      ☀️ 出發前一晚查詢十和田湖畔天氣，步道全程林蔭、小雨氣氛佳可備輕便雨衣（<a href="https://www.jma.go.jp/bosai/forecast/#area_type=offices&area_code=020000" target="_blank" style="color:var(--mizu)">氣象廳連結</a>）
     </div>
   </div>
 
-  <div class="section">
-    <div class="section-title"><span class="sw"></span>今日時間軸</div>
+  <main>
+
+    <div class="section-title">🗓️ 今日時間軸</div>
+
     <div class="timeline">
 
-      <div class="t-item">
-        <span class="t-time">07:30</span><span class="t-icon">⏰</span>
-        <div class="t-title">起床</div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">07:15</div>
+          <div class="tl-title">🌅 起床</div>
+        </div>
       </div>
 
-      <div class="t-item">
-        <span class="t-time">07:35–08:15</span><span class="t-icon">🍽️</span>
-        <div class="t-title">飯店自助早餐</div>
-        <p class="t-note">Towadakohan Sakura 已含早餐</p>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">07:15 <small>–08:00</small></div>
+          <div class="tl-title">🧴 梳洗、換裝準備</div>
+          <div class="tl-note">45分鐘（框架文件起床後緩衝規則）</div>
+        </div>
       </div>
 
-      <div class="t-item">
-        <span class="t-time">08:15</span><span class="t-icon">🚗</span>
-        <div class="t-title">開車前往子ノ口</div>
-        <p class="t-note">車程約15–20分【推】</p>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E5%AD%90%E3%83%8E%E5%8F%A3" target="_blank">
-          <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
-          導航子ノ口
-        </a>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">08:00 <small>–08:50</small></div>
+          <div class="tl-title">🍽️ 飯店自助早餐</div>
+          <div class="tl-note">Towadakohan Sakura已含早餐，50分鐘從容用餐</div>
+        </div>
       </div>
 
-      <div class="t-item buffer">
-        <span class="t-time">08:35–09:15</span><span class="t-icon">📷</span>
-        <div class="t-title">子ノ口湖畔散步、拍照、上廁所</div>
-        <p class="t-note">子ノ口本身即景點，不是純等待；有停車場、廁所、遊覽船碼頭</p>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">08:50</div>
+          <div class="tl-title">🚗 出發，開車往子ノ口<span class="tag infer">【推】</span></div>
+          <div class="tl-note">約15分（框架文件第五節參考表）；agy Google Maps實測約12分，緩衝更充足</div>
+          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E5%AD%90%E3%83%8E%E5%8F%A3" target="_blank">
+            <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
+            導航到子ノ口
+          </a>
+        </div>
       </div>
 
-      <div class="t-item highlight">
-        <span class="t-time">09:15</span><span class="t-icon">🚌</span>
-        <div class="t-title">搭JR巴士（みずうみ号）子ノ口 → 石ヶ戸</div>
-        <p class="t-note">【查】2026/4起新時刻表，車程約19分，09:34抵達</p>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">約09:02 <small>–09:05</small></div>
+          <div class="tl-title">🅿️ 抵達子ノ口，停車</div>
+          <div class="tl-note">免費停車場、廁所、遊覽船碼頭</div>
+        </div>
       </div>
 
-      <div class="t-item">
-        <span class="t-time">09:34</span><span class="t-icon">🚻</span>
-        <div class="t-title">石ヶ戸休憩所稍作停留</div>
-        <p class="t-note">奧入瀨渓流唯一賣店，有廁所、輕食（そば・うどん・ラーメン）</p>
-        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E7%9F%B3%E3%83%B6%E6%88%B8%E4%BC%91%E6%86%A9%E6%89%80" target="_blank">
-          <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
-          導航
-        </a>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">09:05 <small>–09:15</small></div>
+          <div class="tl-title">📷 子ノ口湖畔散步、拍照、上廁所</div>
+          <div class="tl-note">候車緩衝約10分鐘；子ノ口本身即十和田湖出口景點，非純粹等待</div>
+        </div>
       </div>
 
-      <div class="t-item highlight">
-        <span class="t-time">09:40</span><span class="t-icon">🚶</span>
-        <div class="t-title">開始步行：石ヶ戸 → 阿修羅之流</div>
-        <p class="t-note">1.7km／官方約35分【查，環境省官方步行時間】，親子抓約50分；沿溪逆流而上，坡度平緩</p>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">09:15 <small>→ 09:34</small></div>
+          <div class="tl-title">🚌 搭JR巴士（みずうみ号）子ノ口 → 石ヶ戸<span class="tag verified">【查】</span></div>
+          <div class="tl-note">2026/4/1起新時刻表（JRバス東北官方），車程約19分</div>
+        </div>
       </div>
 
-      <div class="t-item">
-        <span class="t-time">約10:30–10:40</span><span class="t-icon">🚶</span>
-        <div class="t-title">阿修羅之流 → 雲井之瀧</div>
-        <p class="t-note">1.1km／官方約25分【查】，親子抓約35–40分；本段最著名的溪流景致之一</p>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">09:34 <small>–09:40</small></div>
+          <div class="tl-title">🚻 石ヶ戸休憩所稍作停留</div>
+          <div class="tl-note">奧入瀨渓流唯一賣店，有廁所、輕食（そば・うどん・ラーメン）</div>
+          <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E7%9F%B3%E3%83%B6%E6%88%B8%E4%BC%91%E6%86%A9%E6%89%80" target="_blank">
+            <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+            導航
+          </a>
+        </div>
       </div>
 
-      <div class="t-item buffer">
-        <span class="t-time">約11:05–11:50</span><span class="t-icon">📷</span>
-        <div class="t-title">雲井之瀧休息、拍照、玩水</div>
-        <p class="t-note">建議提早5分鐘到站排隊候車，以防當日客滿；此段本身即景點，非純等待</p>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">09:40 <small>約50分</small></div>
+          <div class="tl-title">🚶 步行：石ヶ戸 → 阿修羅之流<span class="tag verified">【查】</span></div>
+          <div class="tl-note">1.7km／官方約35分（環境省官方步行時間），親子抓約50分；沿溪逆流而上，坡度平緩</div>
+          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%A5%A5%E5%85%A5%E7%80%AC%E6%B8%93%E6%B5%81%20%E9%98%BF%E4%BF%AE%E7%BE%85%E3%81%AE%E6%B5%81%E3%82%8C" target="_blank">
+            <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
+            導航到阿修羅之流
+          </a>
+        </div>
       </div>
 
-      <div class="t-item ok">
-        <span class="t-time">11:50</span><span class="t-icon">🚌</span>
-        <div class="t-title">搭巴士（おいらせ21号）雲井之瀧 → 子ノ口</div>
-        <p class="t-note">✅已確認中途站不需預約，空位候車即可；車程約15分，12:05抵達。⚠️若客滿，備案改搭13:15班次（みずうみ号，確定無爭議），午餐會順延至約14:00</p>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">約10:30 <small>–10:40</small></div>
+          <div class="tl-title">🚶 步行：阿修羅之流 → 雲井之瀧<span class="tag verified">【查】</span></div>
+          <div class="tl-note">1.1km／官方約25分，親子抓約35–40分；本段最著名的溪流景致之一（石ヶ戸⇄雲井之瀧全段共2.8km，親子總抓約85–90分）</div>
+          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%A5%A5%E5%85%A5%E7%80%AC%E6%B8%93%E6%B5%81%20%E9%9B%B2%E4%BA%95%E3%81%AE%E6%BB%9D" target="_blank">
+            <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
+            導航到雲井之瀧
+          </a>
+        </div>
       </div>
 
-      <div class="t-item">
-        <span class="t-time">12:05</span><span class="t-icon">🚗</span>
-        <div class="t-title">抵達子ノ口，取車</div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--kin); box-shadow:0 0 0 2px var(--kin);"></div>
+        <div class="card">
+          <div class="tl-time">約11:05<small>（判準時間點）</small></div>
+          <div class="tl-title">⏳ 判斷點：是否延伸走版本A全程</div>
+          <div class="tl-note">依當天小孩體力與天氣狀況，在雲井之瀧做最終判斷</div>
+          <div class="branch">
+            <div class="branch-label">▶ 版本B（本日採用）</div>
+            <div class="tl-title" style="font-size:14px;">雲井之瀧休息、拍照、玩水後搭11:50巴士</div>
+            <div class="tl-note">建議提早5分鐘到站候車，以防暑假期間客滿；此段本身即景點，非純等待</div>
+          </div>
+          <div class="branch">
+            <div class="branch-label">▶ 版本A（全程走完，備案）</div>
+            <div class="tl-title" style="font-size:14px;">續走 雲井之瀧→銚子大瀧(約12:15–12:45)→子ノ口(約13:10–13:30)</div>
+            <div class="tl-note">全程約8.9km，含拍照休息共3.5–4小時；午餐延後到約14:00，下午湖畔活動只能保留1樣</div>
+          </div>
+        </div>
       </div>
 
-      <div class="t-item">
-        <span class="t-time">12:05–12:25</span><span class="t-icon">🚗</span>
-        <div class="t-title">開車回休屋</div>
-        <p class="t-note">約15–20分【推】</p>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">11:50 <small>→ 12:05</small></div>
+          <div class="tl-title">🚌 搭巴士（おいらせ21号）雲井之瀧 → 子ノ口<span class="tag verified">【查】</span></div>
+          <div class="tl-note">JRバス東北官方時刻表確認：中途站（雲井の滝）上車不需預約，空位候車即可，僅八戸駅西口起點才需要預約；車程約15分。若當天客滿，備案改搭13:15班次（みずうみ号，確定無爭議），午餐會順延至約14:00（JRバス東北官方時刻表：jrbustohoku.co.jp/print/route/11/274）</div>
+        </div>
       </div>
 
-      <div class="t-item highlight">
-        <span class="t-time">12:30–13:30</span><span class="t-icon">🍽️</span>
-        <div class="t-title">午餐（休屋，3選項見下方）</div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">12:05</div>
+          <div class="tl-title">🚗 抵達子ノ口，取車</div>
+        </div>
       </div>
 
-      <div class="t-item">
-        <span class="t-time">13:30–14:30</span><span class="t-icon">🚗</span>
-        <div class="t-title">開車沿溪流公路，順路停銚子大瀧等點補拍</div>
-        <p class="t-note">車道與步道並行，隨時可停靠拍照，約1小時</p>
-        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E9%8A%9A%E5%AD%90%E5%A4%A7%E6%BB%9D" target="_blank">
-          <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
-          導航銚子大瀧
-        </a>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">12:05 <small>–12:25</small></div>
+          <div class="tl-title">🚗 開車回休屋<span class="tag infer">【推】</span></div>
+          <div class="tl-note">約15–20分</div>
+        </div>
       </div>
 
-      <div class="t-item highlight">
-        <span class="t-time">14:40–15:30</span><span class="t-icon">⛴️</span>
-        <div class="t-title">十和田湖遊覽船周遊コース</div>
-        <p class="t-note">【查】2026官方時刻表，休屋⇔休屋約50分，繞行御倉・中山半島，大人¥1,430／小孩¥660</p>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E9%81%8A%E8%A6%A7%E8%88%B9%E4%BC%91%E5%B1%8B%E3%81%AE%E3%82%8A%E3%81%B0" target="_blank">
-          <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
-          導航遊覽船碼頭
-        </a>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">12:30 <small>–13:30</small></div>
+          <div class="tl-title">🍽️ 午餐（休屋，3選項）</div>
+          <div class="tl-note">見下方午餐候補清單</div>
+        </div>
       </div>
 
-      <div class="t-item">
-        <span class="t-time">15:30–16:00</span><span class="t-icon">🎡</span>
-        <div class="t-title">乙女之像＋十和田神社湖畔散步</div>
-        <p class="t-note">免費，就在遊覽船碼頭旁</p>
-        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E4%B9%99%E5%A5%B3%E3%81%AE%E5%83%8F" target="_blank">
-          <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
-          導航
-        </a>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">13:30 <small>–14:30</small></div>
+          <div class="tl-title">🚗 開車沿溪流公路，順路停銚子大瀧等點補拍</div>
+          <div class="tl-note">車道與步道並行，隨時可停靠拍照，約1小時</div>
+          <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E9%8A%9A%E5%AD%90%E5%A4%A7%E6%BB%9D" target="_blank">
+            <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+            導航到銚子大瀧
+          </a>
+        </div>
       </div>
 
-      <div class="t-item buffer">
-        <span class="t-time">16:00–17:00</span><span class="t-icon">🏨</span>
-        <div class="t-title">回飯店休息</div>
-        <p class="t-note">可利用大浴場放鬆（開放時段待查證），非純空閒</p>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">14:40 <small>–15:30</small></div>
+          <div class="tl-title">⛴️ 十和田湖遊覽船周遊コース<span class="tag verified">【查】</span></div>
+          <div class="tl-note">2026官方時刻表，休屋⇔休屋約50分，繞行御倉・中山半島，大人¥1,430／小孩¥660</div>
+          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E9%81%8A%E8%A6%A7%E8%88%B9%E4%BC%91%E5%B1%8B%E3%81%AE%E3%82%8A%E3%81%B0" target="_blank">
+            <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
+            導航到遊覽船碼頭
+          </a>
+        </div>
       </div>
 
-      <div class="t-item highlight">
-        <span class="t-time">18:00</span><span class="t-icon">🍽️</span>
-        <div class="t-title">晚餐（3方案，現場決定）</div>
-        <p class="t-note">見下方晚餐選項卡片</p>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">15:30 <small>–16:00</small></div>
+          <div class="tl-title">🎡 乙女之像＋十和田神社湖畔散步</div>
+          <div class="tl-note">免費，就在遊覽船碼頭旁</div>
+          <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E4%B9%99%E5%A5%B3%E3%81%AE%E5%83%8F" target="_blank">
+            <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+            導航
+          </a>
+        </div>
       </div>
 
-      <div class="t-item">
-        <span class="t-time">19:00–21:30</span><span class="t-icon">♨️</span>
-        <div class="t-title">飯店周邊散步／大浴場／房內休息</div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">16:00 <small>–17:00</small></div>
+          <div class="tl-title">🏨 回飯店休息</div>
+          <div class="tl-note">可利用大浴場放鬆（開放時段待查證），非純空閒</div>
+        </div>
       </div>
 
-      <div class="t-item">
-        <span class="t-time">22:00前</span><span class="t-icon">🛌</span>
-        <div class="t-title">回房</div>
-        <p class="t-note">符合22:30門禁原則</p>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">18:00</div>
+          <div class="tl-title">🍽️ 晚餐（3方案，現場決定）</div>
+          <div class="tl-note">見下方晚餐候補清單</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">19:00 <small>–21:30</small></div>
+          <div class="tl-title">♨️ 飯店周邊散步／大浴場／房內休息</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">22:00前</div>
+          <div class="tl-title">🌙 回房</div>
+          <div class="tl-note">符合22:30門禁原則</div>
+        </div>
       </div>
 
     </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title"><span class="sw"></span>🍽️ 午餐三選項</div>
-
-    <div class="option-card">
-      <span class="option-label">選項A</span>
-      <div class="option-name">展望レストラン信州屋</div>
-      <p class="option-desc">湖景二樓餐廳。青森県産牛サーロイン、比内地鶏親子丼、稲庭うどん、十和田バラ焼き定食（¥1,540）、カツカレー、鶏唐揚げ定食</p>
-      <p class="option-meta">休屋16-11｜約9:00–16:00（依季節）</p>
-      <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E6%B9%96%E3%81%8C%E8%A6%8B%E3%81%88%E3%82%8B%E5%B1%95%E6%9C%9B%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%E4%BF%A1%E5%B7%9E%E5%B1%8B" target="_blank">
-        <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
-        導航
-      </a>
-    </div>
-
-    <div class="option-card">
-      <span class="option-label">選項B</span>
-      <div class="option-name">御食事処神田川</div>
-      <p class="option-desc">十和田バラ焼き（牛肉）、比内地鶏料理、十和田湖高原ポーク桃豚、釜飯、定食類</p>
-      <p class="option-meta">休屋486・☎0176-75-2515｜10:00–16:00</p>
-      <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%BE%A1%E9%A3%9F%E4%BA%8B%E5%87%A6%E7%A5%9E%E7%94%B0%E5%B7%9D" target="_blank">
-        <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
-        導航
-      </a>
-    </div>
-
-    <div class="option-card">
-      <span class="option-label">選項C</span>
-      <div class="option-name">レストランやすみや</div>
-      <p class="option-desc">きりたんぽ鍋（¥1,430起）、青森県産牛ステーキセット（¥3,200）；姫鱒塩焼定食含魚類，可少量食用或跳過</p>
-      <p class="option-meta">休屋486・☎0176-75-2141｜8:00–16:00（閉店17:00）</p>
-      <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%E3%82%84%E3%81%99%E3%81%BF%E3%82%84" target="_blank">
-        <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
-        導航
-      </a>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title"><span class="sw"></span>🍽️ 晚餐三選項（尚未鎖定）</div>
-
-    <div class="option-card">
-      <span class="option-label">方案A</span>
-      <div class="option-name">飯店房內加購晚餐</div>
-      <p class="option-desc">すき焼き鍋等地元食材鍋物，不受休屋店家提早打烊限制。⚠️需事先致電飯店確認能否加購、費用、能否避開蝦蟹貝</p>
-      <p class="option-meta">☎81-176-275480</p>
-    </div>
-
-    <div class="option-card">
-      <span class="option-label">方案B</span>
-      <div class="option-name">提早在休屋食堂用餐</div>
-      <p class="option-desc">信州屋或神田川，約17:00前抵達。需壓縮下午活動時間，且要再次確認當天實際打烊時間</p>
-    </div>
-
-    <div class="option-card">
-      <span class="option-label">方案C</span>
-      <div class="option-name">開車去十和田市區用餐</div>
-      <p class="option-desc">選擇多、營業較晚；⚠️車程來回約1小時，晚上山路較暗，需考量小孩體力</p>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title"><span class="sw"></span>雨天備案 ／ 版本A備案</div>
 
     <details class="rain">
-      <summary>☔ 雨天怎麼辦</summary>
+      <summary>☔ 雨天備案</summary>
       <div class="rain-body">奧入瀨小雨反而有氛圍，備輕便雨衣照走精華段即可。若為大雨，改為全程開車沿溪流公路停靠石ヶ戸、銚子大瀧、雲井之瀧等點下車拍照，下午提早回飯店泡湯休息。</div>
     </details>
 
-    <div class="alt-box">
-      <b>🚶 版本A備案（全程走完，本日未採用）</b><br>
-      若當天小孩體力特別好、天氣佳，可臨場改走全程：石ヶ戸(09:40)→阿修羅之流(10:15)→雲井之瀧(10:40)→銚子大瀧(約12:15–12:45)→子ノ口(約13:10–13:30)。全程約8.9km，含休息共3.5–4小時，午餐會延後到14:00左右，下午湖畔活動只能保留1樣。建議在雲井之瀧（約11:05）做最終判斷點。
+    <div class="section-title">🍽️ 午餐候補清單</div>
+    <div class="card">
+      <div class="opt" data-opt="lunch-a" onclick="chooseOpt('lunch-a')">
+        <div class="opt-head"><span class="opt-letter">A・展望レストラン信州屋</span><span class="pick-pill">選這個</span></div>
+        <div class="opt-name">湖景二樓餐廳</div>
+        <div class="opt-meta">青森県産牛サーロイン、比内地鶏親子丼、稲庭うどん、十和田バラ焼き定食（¥1,540）、カツカレー、鶏唐揚げ定食・休屋16-11・約9:00–16:00（依季節）</div>
+        <span class="chip verified">已查證有非蝦蟹貝主菜</span><br>
+        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E6%B9%96%E3%81%8C%E8%A6%8B%E3%81%88%E3%82%8B%E5%B1%95%E6%9C%9B%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%E4%BF%A1%E5%B7%9E%E5%B1%8B" target="_blank">
+          <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+          導航
+        </a>
+      </div>
+      <div class="opt" data-opt="lunch-b" onclick="chooseOpt('lunch-b')">
+        <div class="opt-head"><span class="opt-letter">B・御食事処神田川</span><span class="pick-pill">選這個</span></div>
+        <div class="opt-name">十和田名物バラ焼き</div>
+        <div class="opt-meta">十和田バラ焼き（牛肉）、比内地鶏料理、十和田湖高原ポーク桃豚、釜飯、定食類・休屋486・☎0176-75-2515・10:00–16:00</div>
+        <span class="chip verified">已查證有非蝦蟹貝主菜</span><br>
+        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E5%BE%A1%E9%A3%9F%E4%BA%8B%E5%87%A6%E7%A5%9E%E7%94%B0%E5%B7%9D" target="_blank">
+          <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+          導航
+        </a>
+      </div>
+      <div class="opt" data-opt="lunch-c" onclick="chooseOpt('lunch-c')">
+        <div class="opt-head"><span class="opt-letter">C・レストランやすみや</span><span class="pick-pill">選這個</span></div>
+        <div class="opt-name">きりたんぽ鍋、青森県産牛ステーキ</div>
+        <div class="opt-meta">きりたんぽ鍋（¥1,430起）、青森県産牛ステーキセット（¥3,200）；姫鱒塩焼定食含魚類可少量或跳過・休屋486・☎0176-75-2141</div>
+        <span class="chip wip">⚠️ 營業時間查證落差較大，當天現場或電話再確認</span><br>
+        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%E3%82%84%E3%81%99%E3%81%BF%E3%82%84" target="_blank">
+          <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+          導航
+        </a>
+      </div>
     </div>
-  </div>
 
-  <div class="section">
-    <div class="section-title"><span class="sw"></span>待查證清單</div>
-    <ul class="verify-list">
-      <li>飯店房內加購晚餐的實際內容、費用、能否避開蝦蟹貝</li>
-      <li>信州屋／神田川8/24當天實際營業時間</li>
-      <li>飯店大浴場開放時段</li>
-      <li>遊覽船周遊コース14:40班次是否需事先預約</li>
-      <li>銚子大瀧沿路停車點的實際路邊停車空間</li>
-      <li>11:50おいらせ21号當天客滿風險（暑假期間），出發前無法事先查證</li>
-    </ul>
-  </div>
+    <div class="section-title">🍽️ 晚餐候補清單</div>
+    <div class="card">
+      <div class="opt" data-opt="dinner-a" onclick="chooseOpt('dinner-a')">
+        <div class="opt-head"><span class="opt-letter">A・飯店房內加購晚餐</span><span class="pick-pill">選這個</span></div>
+        <div class="opt-name">すき焼き鍋等地元食材鍋物</div>
+        <div class="opt-meta">不受休屋店家提早打烊限制、不用移動・☎81-176-275480</div>
+        <span class="chip wip">⚠️ 需事先致電飯店確認能否加購、費用、能否避開蝦蟹貝</span><br>
+        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=Towadakohan%20Sakura" target="_blank">
+          <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+          導航
+        </a>
+      </div>
+      <div class="opt" data-opt="dinner-b" onclick="chooseOpt('dinner-b')">
+        <div class="opt-head"><span class="opt-letter">B・提早在休屋食堂用餐</span><span class="pick-pill">選這個</span></div>
+        <div class="opt-name">信州屋或神田川，約17:00前抵達</div>
+        <div class="opt-meta">需壓縮下午活動時間，且要再次確認當天實際打烊時間</div>
+        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E6%B9%96%E3%81%8C%E8%A6%8B%E3%81%88%E3%82%8B%E5%B1%95%E6%9C%9B%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%E4%BF%A1%E5%B7%9E%E5%B1%8B" target="_blank">
+          <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+          導航信州屋
+        </a>
+        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E5%BE%A1%E9%A3%9F%E4%BA%8B%E5%87%A6%E7%A5%9E%E7%94%B0%E5%B7%9D" target="_blank">
+          <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+          導航神田川
+        </a>
+      </div>
+      <div class="opt" data-opt="dinner-c" onclick="chooseOpt('dinner-c')">
+        <div class="opt-head"><span class="opt-letter">C・開車去十和田市區用餐</span><span class="pick-pill">選這個</span></div>
+        <div class="opt-name">選擇多、營業較晚</div>
+        <div class="opt-meta">⚠️ 車程來回約1小時，晚上山路較暗，需考量小孩體力</div>
+      </div>
+    </div>
+
+    <div class="section-title">🔍 待查證清單</div>
+    <div class="card">
+      <ul class="verify-ul">
+        <li>飯店（Towadakohan Sakura）房內加購晚餐的實際內容、費用、能否避開蝦蟹貝</li>
+        <li>やすみや8/24當天實際營業時間（查證落差較大，文件抓8:00–16:00，多筆資料顯示11:00–14:00或11:30–14:00，可能已季節性歇業）</li>
+        <li>信州屋／神田川8/24當天實際營業時間（有無淡旺季調整）</li>
+        <li>飯店大浴場開放時段</li>
+        <li>十和田湖遊覽船周遊コース14:40班次是否需事先預約</li>
+        <li>銚子大瀧沿路停車點的實際路邊停車空間</li>
+        <li>11:50おいらせ21号當天客滿風險（暑假期間），出發前無法事先查證</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <nav class="bottom">
+    <a class="navbtn active" href="202608-aomori_index.html"><span class="ic">🗓️</span>行程</a>
+    <a class="navbtn" href="202608-aomori_transport.html"><span class="ic">🚌</span>交通</a>
+    <a class="navbtn" href="202608-aomori_hotel.html"><span class="ic">🏨</span>住宿</a>
+    <a class="navbtn" href="202608-aomori_tips.html"><span class="ic">🎒</span>錦囊</a>
+    <a class="navbtn" href="202608-aomori_budget.html"><span class="ic">💰</span>預算</a>
+  </nav>
 
 </div>
 
-<nav class="bottom-nav">
-  <a class="nav-item active" href="202608-aomori_index.html"><span class="ic">🗓️</span>行程</a>
-  <a class="nav-item" href="202608-aomori_transport.html"><span class="ic">🚌</span>交通</a>
-  <a class="nav-item" href="202608-aomori_hotel.html"><span class="ic">🏨</span>住宿</a>
-  <a class="nav-item" href="202608-aomori_tips.html"><span class="ic">🎒</span>錦囊</a>
-  <a class="nav-item" href="202608-aomori_budget.html"><span class="ic">💰</span>預算</a>
-</nav>
-
+<script>
+  function chooseOpt(letter){
+    var opt = document.querySelector('.opt[data-opt="' + letter + '"]');
+    var group = letter.indexOf('lunch') === 0 ? 'lunch' : (letter.indexOf('dinner') === 0 ? 'dinner' : null);
+    if(group){
+      document.querySelectorAll('.opt[data-opt^="' + group + '"]').forEach(function(o){ o.classList.remove('chosen'); });
+    }
+    if(opt){ opt.classList.add('chosen'); }
+  }
+</script>
 </body>
 </html>

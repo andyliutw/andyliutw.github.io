@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Day5｜8/25 十和田市→青森屋</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+    :root{
+      --sora:#EAF6FB;
+      --sora-deep:#CFEAF5;
+      --ink:#33424F;
+      --ink-soft:#7A8B99;
+      --ringo:#E8574C;
+      --ringo-deep:#C93E35;
+      --mizu:#2E9BA6;
+      --ha:#6FBF73;
+      --kin:#F2B84B;
+      --momo:#FBD9D3;
+      --shadow: 0 4px 14px rgba(51,66,79,.10);
+      --safe-b: env(safe-area-inset-bottom, 0px);
+    }
+    *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+    html,body{ margin:0; padding:0; }
+    body{
+      background: var(--sora);
+      color: var(--ink);
+      font-family: 'Noto Sans TC', sans-serif;
+      display:flex; justify-content:center;
+    }
+    h1,h2,h3,.display{ font-family:'Zen Maru Gothic','Noto Sans TC',sans-serif; }
+    .app{ width:100%; max-width:480px; min-height:100vh; position:relative; padding-bottom: calc(84px + var(--safe-b)); }
+
+    .head{
+      background: linear-gradient(160deg, var(--headcolor,var(--ringo)), var(--headcolor2,var(--ringo-deep)));
+      color:#fff; padding: 18px 20px 46px; border-radius: 0 0 28px 28px; position:relative; overflow:hidden;
+    }
+    .head::after{ content:""; position:absolute; right:-20px; bottom:-30px; width:150px; height:150px; border-radius:50%; background: rgba(255,255,255,0.10); }
+    .backlink{ display:inline-flex; align-items:center; gap:4px; color: rgba(255,255,255,0.9); text-decoration:none; font-size: 13px; font-weight:500; }
+    .head .icon{ font-size: 34px; margin: 10px 0 2px; }
+    .head-badge{
+      width:88px; height:88px; border-radius:50%;
+      background: rgba(255,255,255,0.20);
+      border: 2px solid rgba(255,255,255,0.35);
+      display:flex; align-items:center; justify-content:center;
+      font-size:46px; margin: 12px 0 6px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    }
+    .deco-kingyo{ position:absolute; opacity:.85; pointer-events:none; }
+    .deco-kingyo.head-deco{ right:-6px; top:6px; width:92px; height:auto; }
+    .deco-kingyo.section-deco{ right:8px; top:-6px; width:46px; height:auto; opacity:.5; }
+    .head h1{ font-size: 24px; font-weight:900; margin:2px 0 4px; }
+    .head .sub{ font-size: 13px; opacity:.92; font-weight:500; }
+    .daydots{ display:flex; gap:5px; margin-top:12px; }
+    .daydots span{ width:18px; height:5px; border-radius:999px; background: rgba(255,255,255,0.35); }
+    .daydots span.on{ background:#fff; }
+
+    .summary{ background:#fff; border-radius:22px; box-shadow: var(--shadow); margin: -30px 16px 18px; padding: 16px 18px; position:relative; z-index:2; }
+    .summary-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+    .summary .weather{ display:flex; align-items:center; gap:8px; background: var(--sora-deep); border-radius:16px; padding:10px 12px; font-size: 12.5px; color: var(--ink-soft); }
+
+    .chip{ display:inline-flex; align-items:center; gap:4px; font-size:11.5px; font-weight:700; padding: 5px 11px; border-radius:999px; background: var(--sora-deep); color: var(--mizu); }
+    .chip.done{ background: rgba(111,191,115,0.18); color:#4C9451; }
+    .chip.wip{ background: var(--momo); color: var(--ringo-deep); }
+    .chip.verified{ background: rgba(111,191,115,0.18); color:#4C9451; }
+    .chip.infer{ background: var(--momo); color: var(--ringo-deep); }
+
+    main{ padding: 0 16px; }
+    .section-title{ font-weight:900; font-size:15px; margin: 18px 2px 10px; display:flex; align-items:center; gap:6px; }
+    .section-title:first-child{ margin-top:2px; }
+
+    .card{ background:#fff; border-radius:22px; box-shadow: var(--shadow); padding:16px 18px; margin-bottom:14px; transition: transform .12s; }
+    .card:active{ transform: scale(.98); }
+    .card.small{ border-radius:16px; padding:12px 14px; }
+
+    .timeline{ position:relative; padding-left:22px; }
+    .timeline::before{ content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px; background: var(--sora-deep); }
+    .tl-item{ position:relative; margin-bottom:14px; }
+    .tl-dot{ position:absolute; left:-22px; top:4px; width:14px; height:14px; border-radius:50%; background: var(--headcolor,var(--ringo)); border:3px solid #fff; box-shadow:0 0 0 2px var(--headcolor,var(--ringo)); }
+    .tl-time{ font-weight:900; font-size:14px; color: var(--headcolor,var(--ringo)); margin-bottom:2px; }
+    .tl-time small{ color: var(--ink-soft); font-weight:500; font-size:11.5px; margin-left:4px; }
+    .tl-title{ font-weight:700; font-size:15px; margin-bottom:3px; }
+    .tl-title .tag{ display:inline-block; font-size:10px; font-weight:700; padding:2px 7px; border-radius:999px; margin-left:6px; vertical-align:middle; }
+    .tl-title .tag.verified{ background: rgba(111,191,115,0.18); color:#4C9451; }
+    .tl-title .tag.infer{ background: var(--momo); color: var(--ringo-deep); }
+    .tl-note{ font-size:12.5px; color: var(--ink-soft); line-height:1.6; }
+
+    .map-btn{ display:inline-flex; align-items:center; gap:6px; background: var(--ringo); color:#fff; font-weight:700; font-size:12.5px; padding:9px 16px; border-radius:999px; border:none; text-decoration:none; margin-top:10px; }
+    .map-btn:active{ background: var(--ringo-deep); }
+    .map-btn.outline{ background:#fff; color: var(--ringo); border:1.5px solid var(--ringo); }
+    .map-btn svg{ width:13px; height:13px; }
+    .pin-badge{ display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:#fff; flex-shrink:0; }
+    .pin-badge svg{ width:13px; height:13px; }
+
+    .opt{ border: 2px solid var(--sora-deep); border-radius:16px; padding:12px 14px; margin-bottom:10px; cursor:pointer; }
+    .opt.chosen{ border-color: var(--ringo); background: rgba(232,87,76,0.05); }
+    .opt-head{ display:flex; justify-content:space-between; align-items:center; }
+    .opt-letter{ font-weight:900; font-size:13px; color: var(--ringo); }
+    .opt-name{ font-weight:700; font-size:14px; margin-top:3px; }
+    .opt-meta{ font-size:12px; color: var(--ink-soft); margin-top:4px; line-height:1.6; }
+    .pick-pill{ font-size:10.5px; font-weight:700; padding:3px 10px; border-radius:999px; background: var(--sora-deep); color: var(--ink-soft); }
+    .opt.chosen .pick-pill{ background: var(--ringo); color:#fff; }
+
+    .branch{ border-left:3px solid var(--sora-deep); margin:10px 0 6px 2px; padding-left:14px; }
+    .branch-label{ font-weight:900; font-size:12.5px; color: var(--mizu); margin-bottom:4px; }
+
+    details.rain{ background: var(--sora-deep); border-radius:16px; padding: 12px 16px; margin-bottom:14px; }
+    details.rain summary{ font-weight:700; cursor:pointer; list-style:none; display:flex; align-items:center; gap:6px; }
+    details.rain summary::-webkit-details-marker{ display:none; }
+    details.rain[open] summary{ margin-bottom:8px; }
+    .rain-body{ font-size:12.5px; color: var(--ink-soft); line-height:1.7; }
+
+    nav.bottom{ position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:480px; height: calc(64px + var(--safe-b)); padding-bottom: var(--safe-b); background: rgba(255,255,255,0.85); backdrop-filter: blur(14px); box-shadow: 0 -2px 14px rgba(51,66,79,.08); display:flex; z-index:50; }
+    .navbtn{ flex:1; background:none; border:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; color: var(--ink-soft); font-family:'Noto Sans TC',sans-serif; font-size:10.5px; font-weight:500; text-decoration:none; }
+    .navbtn .ic{ font-size:19px; line-height:1; }
+    .navbtn.active{ color: var(--ringo); font-weight:700; }
+
+    @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
+    .head{ --headcolor:#F2B84B; --headcolor2:#C98A1F; }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header class="head">
+    <svg class="deco-kingyo head-deco" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 50 C4 34, 2 30, 0 20 C11 26, 21 30, 28 40 Z" fill="#fff" opacity=".5"/>
+      <path d="M18 50 C4 66, 2 70, 0 80 C11 74, 21 70, 28 60 Z" fill="#fff" opacity=".5"/>
+      <ellipse cx="64" cy="50" rx="42" ry="27" fill="#fff" opacity=".3"/>
+      <path d="M40 26 Q64 21 88 26" stroke="#fff" stroke-width="2" fill="none" opacity=".4"/>
+      <path d="M40 74 Q64 79 88 74" stroke="#fff" stroke-width="2" fill="none" opacity=".4"/>
+      <path d="M58 24 Q67 6 78 20 Q68 23 58 24Z" fill="#fff" opacity=".45"/>
+      <circle cx="92" cy="43" r="4.2" fill="#fff" opacity=".95"/>
+      <circle cx="93.6" cy="43" r="1.9" fill="var(--ink)" opacity=".8"/>
+    </svg>
+    <a class="backlink" href="202608-aomori_index.html">← 回首頁</a>
+    <div class="head-badge">🏮</div>
+    <h1>8/25（二）十和田市→青森屋</h1>
+    <div class="sub">上午湖畔活動／美術館彈性二選一・下午換宿星野青森屋</div>
+    <div class="daydots">
+      <span></span><span></span><span></span><span></span>
+      <span class="on"></span><span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <div class="summary">
+    <div class="summary-row">
+      <span class="chip">🚗 自駕為主</span>
+      <span class="chip done">✅ 晚餐已預約</span>
+      <span class="chip done">✅ みちのく祭りや已預約</span>
+    </div>
+    <div class="weather">
+      🌤 上午方案A（湖畔活動，戶外為主）／方案B（美術館，室內為主，可當雨備），可依當天天氣決定
+    </div>
+  </div>
+
+  <main>
+
+    <div class="section-title">🗓️ 今日時間軸</div>
+
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">07:30</div>
+          <div class="tl-title">🛏️ 起床</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">08:00 <small>–08:40</small></div>
+          <div class="tl-title">🍽️ Towadakohan Sakura 早餐</div>
+          <div class="tl-note">已含早餐</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--kin); box-shadow:0 0 0 2px var(--kin);"></div>
+        <div class="card">
+          <div class="tl-time">08:40<small>（判斷點①）</small></div>
+          <div class="tl-title">⏳ 上午行程 A／B 二選一</div>
+          <div class="tl-note">A優先、B次選，各自獨立退房時間，不共用同一段退房</div>
+
+          <div class="branch">
+            <div class="branch-label">▶ 方案A（優先）：十和田湖畔活動</div>
+            <div class="tl-note">
+              <b>08:40–09:30</b> 湖畔活動擇一（遊覽船8:45班次／天鵝船／手划船／乙女之像散步）<br>
+              <b>09:30–10:30</b> 收拾、退房<br>
+              <b>10:30–11:30</b> 開車往十和田市方向<br>
+              <b>11:30–13:00</b> 午餐（見下方三選項）
+            </div>
+            <div class="tl-note">遊覽船周遊コース休屋発8:45／10:15，大人¥1,430・小孩¥660，一般定期航班免預約<span class="tag verified">【查】</span></div>
+            <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E9%81%8A%E8%A6%A7%E8%88%B9%E4%BC%91%E5%B1%8B%E3%81%AE%E3%82%8A%E3%81%B0" target="_blank">
+              <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+              導航：遊覽船碼頭
+            </a>
+            <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E4%B9%99%E5%A5%B3%E3%81%AE%E5%83%8F" target="_blank">
+              <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+              導航：乙女之像
+            </a>
+          </div>
+
+          <div class="branch">
+            <div class="branch-label">▶ 方案B（次選，可省略）：十和田市現代美術館</div>
+            <div class="tl-note">
+              <b>08:40–09:10</b> 退房、裝車<br>
+              <b>09:20</b> 開車出發往美術館（經燒山，約60分）<br>
+              <b>10:20–12:00</b> 參觀美術館<br>
+              <b>12:00–13:00</b> 午餐（見下方三選項）
+            </div>
+            <div class="tl-note">9:00–17:00開放（最終入館16:30），2026年度8月休館日僅17、24、31日，8/25確認開館。門票大人¥1,800（企劃展「椿昇 フリーダム―像(ゾウ)と生きる」，展至11/8）、高校生以下免費<span class="tag verified">【查】</span></div>
+            <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8D%81%E5%92%8C%E7%94%B0%E5%B8%82%E7%8F%BE%E4%BB%A3%E7%BE%8E%E8%A1%93%E9%A4%A8" target="_blank">
+              <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+              導航：十和田市現代美術館
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--kin); box-shadow:0 0 0 2px var(--kin);"></div>
+        <div class="card">
+          <div class="tl-time">13:00<small>（判斷點②）</small></div>
+          <div class="tl-title">⏳ 午後：UNIQLO購物／提早逛免費設施 二選一</div>
+          <div class="tl-note">兩個上午方案午餐後皆在13:00左右銜接</div>
+
+          <div class="branch">
+            <div class="branch-label">▶ 分支①：去UNIQLO十和田店</div>
+            <div class="tl-note">
+              <b>13:00–14:00</b> UNIQLO十和田店購物<br>
+              <b>14:00–14:25</b> 開車往青森屋（約25分）<br>
+              <b>14:25–15:00</b> 抵達，稍作休息／自由活動（提早約30分鐘到）
+            </div>
+            <div class="tl-note">平日11:00–19:00（8/25週二正常營業），距美術館約9分/3.7km<span class="tag verified">【查】</span></div>
+            <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E3%83%A6%E3%83%8B%E3%82%AF%E3%83%AD%E5%8D%81%E5%92%8C%E7%94%B0%E5%BA%97" target="_blank">
+              <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+              導航：UNIQLO十和田店
+            </a>
+          </div>
+
+          <div class="branch">
+            <div class="branch-label">▶ 分支②：不去UNIQLO，直接前往</div>
+            <div class="tl-note">
+              <b>13:00–13:30</b> 開車往青森屋（約25分，含出發緩衝）<br>
+              <b>13:30–15:00</b> 提早抵達：先逛免費設施（足湯、日式庭園、蘋果燈籠迴廊等；行李可先寄放櫃台）
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">15:00</div>
+          <div class="tl-title">🏨 Check-in 青森屋<span class="tag verified">【查】</span></div>
+          <div class="tl-note">已確認入住15:00</div>
+          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E6%98%9F%E9%87%8E%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88%E9%9D%92%E6%A3%AE%E5%B1%8B" target="_blank">
+            <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
+            導航：星野リゾート青森屋
+          </a>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">15:00 <small>–17:15</small></div>
+          <div class="tl-title">🎡 園區設施體驗<span class="tag verified">【查】</span></div>
+          <div class="tl-note">足湯（公園池畔，全天開放）、りんごジュース蛇口（じゃわめぐ広場，約15:00–20:00供應）、日式庭園散策、蘋果燈籠迴廊，皆為免費設施</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">17:45</div>
+          <div class="tl-title">🍽️ 晚餐：のれそれ食堂自助餐</div>
+          <div class="tl-note">訂單編號5180577，4人（大人×2、7-11歳×2），現場付款0円。營業約17:30–21:00，原則無嚴格用餐時間限制</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">19:00 <small>–20:30</small></div>
+          <div class="tl-title">♨️ 溫泉泡湯（浮湯露天風呂／大浴場）<span class="tag verified">【查】</span></div>
+          <div class="tl-note">開放05:00–24:00（11:30–14:30清掃暫停開放），僅住宿旅客</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">20:30 <small>–20:55</small></div>
+          <div class="tl-title">🚶 前往「みちのく祭りや」會場、入座</div>
+          <div class="tl-note">開演前30分可入場</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">21:00 <small>–22:00</small></div>
+          <div class="tl-title">🏮 みちのく祭りや公演</div>
+          <div class="tl-note">座位C3、C4、C5、C6，信用卡已付款¥6,120（¥1,800×2＋¥1,260×2）</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">22:00 <small>–22:15</small></div>
+          <div class="tl-title">📸 散場、拍照</div>
+          <div class="tl-note">心得文提到拍照排隊常拖到22:30左右</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">22:15 <small>–22:30</small></div>
+          <div class="tl-title">🏨 回房</div>
+          <div class="tl-note">已壓線門禁，建議這天下午讓小孩多休息</div>
+        </div>
+      </div>
+
+    </div>
+
+    <details class="rain">
+      <summary>☔ 雨天備案</summary>
+      <div class="rain-body">
+        上午雨天建議改選方案B（十和田市現代美術館，室內為主，本身即雨備）；午後若下雨可省略UNIQLO移動，直接前往青森屋室內設施（浮湯、庭園迴廊皆有頂棚可走）休息。
+      </div>
+    </details>
+
+    <div class="section-title">🍜 午餐三選項（兩個上午方案皆適用，皆已查證可避蝦蟹貝）</div>
+    <div class="card">
+      <div class="opt" data-opt="a" onclick="chooseOpt('a')">
+        <div class="opt-head"><span class="opt-letter">A・司バラ焼き大衆食堂</span><span class="pick-pill">選這個</span></div>
+        <div class="opt-name">十和田名物「十和田バラ焼き」，牛五花肉＋大量洋蔥鐵板燒</div>
+        <div class="opt-meta">十和田市稲生町15-41（Art Station TOWADA内）・週二至週六11:00–14:00、17:30–22:00（中間公休）；週日僅11:00–14:00；週一定休；僅收現金</div>
+        <span class="chip verified">非海鮮：牛肉料理為主</span><br>
+        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8F%B8%E3%83%90%E3%83%A9%E7%84%BC%E3%81%8D%E5%A4%A7%E8%A1%86%E9%A3%9F%E5%A0%82" target="_blank">
+          <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+          導航
+        </a>
+      </div>
+      <div class="opt" data-opt="b" onclick="chooseOpt('b')">
+        <div class="opt-head"><span class="opt-letter">B・cube cafe&shop（美術館內）</span><span class="pick-pill">選這個</span></div>
+        <div class="opt-name">青森りんごカレー、とわだ短角牛とごぼうのビーフパイ、ごぼうサンドイッチ</div>
+        <div class="opt-meta">美術館內，不需另外移動・9:00–16:30（L.O.16:30）</div>
+        <span class="chip verified">非海鮮：避開含帆立貝的クラムチャウダー即可</span><br>
+        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8D%81%E5%92%8C%E7%94%B0%E5%B8%82%E7%8F%BE%E4%BB%A3%E7%BE%8E%E8%A1%93%E9%A4%A8%20cube%20cafe" target="_blank">
+          <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+          導航
+        </a>
+      </div>
+      <div class="opt" data-opt="c" onclick="chooseOpt('c')">
+        <div class="opt-head"><span class="opt-letter">C・ガスト十和田店</span><span class="pick-pill">選這個</span></div>
+        <div class="opt-name">家庭餐廳，兒童餐、菜單附照片</div>
+        <div class="opt-meta">十和田市大字相坂字小林24-1・開車約10–15分【推】，與UNIQLO十和田店同一區塊・09:00–23:00</div>
+        <span class="chip verified">非海鮮：漢堡排、義大利麵等選擇多</span><br>
+        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%92%E6%A3%AE%E7%9C%8C%E5%8D%81%E5%92%8C%E7%94%B0%E5%B8%82%E5%A4%A7%E5%AD%97%E7%9B%B8%E5%9D%82%E5%AD%97%E5%B0%8F%E6%9E%9724-1" target="_blank">
+          <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+          導航
+        </a>
+      </div>
+    </div>
+    <div class="card small">
+      <div class="opt-meta">若選上午方案B（不進美術館），建議選A或C；若午後打算去UNIQLO，選C最順路（步行可達）。</div>
+    </div>
+
+    <div class="section-title">📋 資料來源</div>
+    <div class="card">
+      <div class="opt-meta" style="line-height:2;">
+        十和田市現代美術館官網（休館日、門票、企劃展資訊）／十和田湖遊覽船・レンタルボート官方時刻與票價／司バラ焼き大衆食堂・cube cafe&shop・ガスト十和田店・UNIQLO十和田店 Google Maps店家資訊／星野リゾート青森屋官網（浮湯開放時段、のれそれ食堂、園區免費設施）／Google Maps路線規劃（美術館⇄青森屋、美術館⇄UNIQLO、UNIQLO⇄青森屋車程）
+      </div>
+    </div>
+
+  </main>
+
+  <nav class="bottom">
+    <a class="navbtn active" href="202608-aomori_index.html"><span class="ic">🗓️</span>行程</a>
+    <a class="navbtn" href="202608-aomori_transport.html"><span class="ic">🚌</span>交通</a>
+    <a class="navbtn" href="202608-aomori_hotel.html"><span class="ic">🏨</span>住宿</a>
+    <a class="navbtn" href="202608-aomori_tips.html"><span class="ic">🎒</span>錦囊</a>
+    <a class="navbtn" href="202608-aomori_budget.html"><span class="ic">💰</span>預算</a>
+  </nav>
+
+</div>
+
+<script>
+  function chooseOpt(letter){
+    document.querySelectorAll('.opt').forEach(function(o){ o.classList.remove('chosen'); });
+    document.querySelector('.opt[data-opt="' + letter + '"]').classList.add('chosen');
+  }
+</script>
+</body>
+</html>

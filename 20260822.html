@@ -2,291 +2,371 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>8/22 弘前一日 | 青森親子夏旅</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Day2｜8/22 弘前一日</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --sora:#EAF6FB; --sora-deep:#CFEAF5;
-    --ink:#33424F; --ink-soft:#7A8B99;
-    --ringo:#E8574C; --ringo-deep:#C93E35;
-    --mizu:#2E9BA6; --ha:#6FBF73; --kin:#F2B84B; --momo:#FBD9D3;
-    --day-theme:#E8574C;
-    --shadow:0 4px 14px rgba(51,66,79,.10);
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0; background:var(--sora); color:var(--ink);
-    font-family:'Noto Sans TC',sans-serif;
-    display:flex; justify-content:center;
-  }
-  .app{width:100%; max-width:520px; min-height:100vh; padding-bottom:88px; position:relative;}
-  h1,h2,h3,.title-font{font-family:'Zen Maru Gothic','Noto Sans TC',sans-serif;}
-  @media (prefers-reduced-motion: no-preference){
-    .fade-in{animation:fadeIn .5s ease both;}
-    @keyframes fadeIn{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
-  }
+    :root{
+      --sora:#EAF6FB;
+      --sora-deep:#CFEAF5;
+      --ink:#33424F;
+      --ink-soft:#7A8B99;
+      --ringo:#E8574C;
+      --ringo-deep:#C93E35;
+      --mizu:#2E9BA6;
+      --ha:#6FBF73;
+      --kin:#F2B84B;
+      --momo:#FBD9D3;
+      --shadow: 0 4px 14px rgba(51,66,79,.10);
+      --safe-b: env(safe-area-inset-bottom, 0px);
+    }
+    *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+    html,body{ margin:0; padding:0; }
+    body{
+      background: var(--sora);
+      color: var(--ink);
+      font-family: 'Noto Sans TC', sans-serif;
+      display:flex; justify-content:center;
+    }
+    h1,h2,h3,.display{ font-family:'Zen Maru Gothic','Noto Sans TC',sans-serif; }
+    .app{ width:100%; max-width:480px; min-height:100vh; position:relative; padding-bottom: calc(84px + var(--safe-b)); }
 
-  header.day-head{
-    background:linear-gradient(160deg, var(--day-theme), #F08277);
-    color:#fff; padding:18px 20px 26px; border-radius:0 0 28px 28px;
-    box-shadow:var(--shadow);
-  }
-  .back-link{color:#fff; text-decoration:none; font-size:14px; opacity:.9; display:inline-block; margin-bottom:10px;}
-  .day-badge-row{display:flex; align-items:center; gap:14px;}
-  .day-icon{font-size:52px; line-height:1;}
-  .day-num{font-weight:900; font-size:15px; opacity:.85;}
-  .day-date{font-weight:900; font-size:26px; margin:2px 0;}
-  .day-title{font-weight:700; font-size:16px; opacity:.95;}
+    .head{
+      background: linear-gradient(160deg, var(--headcolor,var(--ringo)), var(--headcolor2,var(--ringo-deep)));
+      color:#fff; padding: 18px 20px 46px; border-radius: 0 0 28px 28px; position:relative; overflow:hidden;
+    }
+    .head::after{ content:""; position:absolute; right:-20px; bottom:-30px; width:150px; height:150px; border-radius:50%; background: rgba(255,255,255,0.10); }
+    .backlink{ display:inline-flex; align-items:center; gap:4px; color: rgba(255,255,255,0.9); text-decoration:none; font-size: 13px; font-weight:500; }
+    .head .icon{ font-size: 34px; margin: 10px 0 2px; }
+    .head-badge{
+      width:88px; height:88px; border-radius:50%;
+      background: rgba(255,255,255,0.20);
+      border: 2px solid rgba(255,255,255,0.35);
+      display:flex; align-items:center; justify-content:center;
+      font-size:46px; margin: 12px 0 6px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    }
+    .deco-kingyo{ position:absolute; opacity:.85; pointer-events:none; }
+    .deco-kingyo.head-deco{ right:-6px; top:6px; width:92px; height:auto; }
+    .deco-kingyo.section-deco{ right:8px; top:-6px; width:46px; height:auto; opacity:.5; }
+    .head h1{ font-size: 24px; font-weight:900; margin:2px 0 4px; }
+    .head .sub{ font-size: 13px; opacity:.92; font-weight:500; }
+    .daydots{ display:flex; gap:5px; margin-top:12px; }
+    .daydots span{ width:18px; height:5px; border-radius:999px; background: rgba(255,255,255,0.35); }
+    .daydots span.on{ background:#fff; }
 
-  main{padding:16px;}
-  .card{
-    background:#fff; border-radius:22px; box-shadow:var(--shadow);
-    padding:16px; margin-bottom:14px; transition:transform .15s;
-  }
-  .card:active{transform:scale(.98);}
+    .summary{ background:#fff; border-radius:22px; box-shadow: var(--shadow); margin: -30px 16px 18px; padding: 16px 18px; position:relative; z-index:2; }
+    .summary-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+    .summary .weather{ display:flex; align-items:center; gap:8px; background: var(--sora-deep); border-radius:16px; padding:10px 12px; font-size: 12.5px; color: var(--ink-soft); }
 
-  .chip{
-    display:inline-flex; align-items:center; gap:4px;
-    background:var(--sora-deep); color:var(--ink);
-    font-size:12px; font-weight:700; padding:5px 12px; border-radius:999px;
-  }
-  .chip.done{background:#E4F5E6; color:#2F7A3B;}
-  .chip.wip{background:var(--momo); color:var(--ringo-deep);}
-  .chip.warn{background:#FFF3D6; color:#8A6A17;}
+    .chip{ display:inline-flex; align-items:center; gap:4px; font-size:11.5px; font-weight:700; padding: 5px 11px; border-radius:999px; background: var(--sora-deep); color: var(--mizu); }
+    .chip.done{ background: rgba(111,191,115,0.18); color:#4C9451; }
+    .chip.wip{ background: var(--momo); color: var(--ringo-deep); }
+    .chip.verified{ background: rgba(111,191,115,0.18); color:#4C9451; }
+    .chip.infer{ background: var(--momo); color: var(--ringo-deep); }
 
-  .summary-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px;}
+    main{ padding: 0 16px; }
+    .section-title{ font-weight:900; font-size:15px; margin: 18px 2px 10px; display:flex; align-items:center; gap:6px; }
+    .section-title:first-child{ margin-top:2px; }
 
-  .update-box{
-    background:#FFF3D6; border-radius:18px; padding:14px 16px; margin-bottom:16px;
-    font-size:13.5px; line-height:1.7;
-  }
-  .update-box b{color:var(--ringo-deep);}
+    .card{ background:#fff; border-radius:22px; box-shadow: var(--shadow); padding:16px 18px; margin-bottom:14px; transition: transform .12s; }
+    .card:active{ transform: scale(.98); }
+    .card.small{ border-radius:16px; padding:12px 14px; }
 
-  .timeline{position:relative; padding-left:26px;}
-  .timeline::before{
-    content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px;
-    background:var(--sora-deep);
-  }
-  .t-item{position:relative; margin-bottom:16px;}
-  .t-dot{
-    position:absolute; left:-26px; top:4px; width:14px; height:14px; border-radius:50%;
-    background:var(--day-theme); border:3px solid #fff; box-shadow:0 0 0 2px var(--day-theme);
-  }
-  .t-time{font-weight:900; font-size:15px; color:var(--day-theme); font-family:'Zen Maru Gothic';}
-  .t-icon{font-size:18px; margin-right:4px;}
-  .t-content{font-size:14.5px; margin:4px 0 6px; line-height:1.6;}
-  .t-note{font-size:12.5px; color:var(--ink-soft); line-height:1.6; background:var(--sora); border-radius:14px; padding:8px 10px; margin-top:4px;}
+    .timeline{ position:relative; padding-left:22px; }
+    .timeline::before{ content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px; background: var(--sora-deep); }
+    .tl-item{ position:relative; margin-bottom:14px; }
+    .tl-dot{ position:absolute; left:-22px; top:4px; width:14px; height:14px; border-radius:50%; background: var(--headcolor,var(--ringo)); border:3px solid #fff; box-shadow:0 0 0 2px var(--headcolor,var(--ringo)); }
+    .tl-time{ font-weight:900; font-size:14px; color: var(--headcolor,var(--ringo)); margin-bottom:2px; }
+    .tl-time small{ color: var(--ink-soft); font-weight:500; font-size:11.5px; margin-left:4px; }
+    .tl-title{ font-weight:700; font-size:15px; margin-bottom:3px; }
+    .tl-title .tag{ display:inline-block; font-size:10px; font-weight:700; padding:2px 7px; border-radius:999px; margin-left:6px; vertical-align:middle; }
+    .tl-title .tag.verified{ background: rgba(111,191,115,0.18); color:#4C9451; }
+    .tl-title .tag.infer{ background: var(--momo); color: var(--ringo-deep); }
+    .tl-note{ font-size:12.5px; color: var(--ink-soft); line-height:1.6; }
 
-  .map-btn{
-    display:inline-flex; align-items:center; gap:5px;
-    background:var(--ringo); color:#fff; font-size:12.5px; font-weight:700;
-    padding:7px 14px; border-radius:999px; text-decoration:none; margin-top:6px; margin-right:6px;
-  }
-  .map-btn.outline{background:#fff; color:var(--ringo); border:1.5px solid var(--ringo);}
-  .map-btn svg{ width:13px; height:13px; }
-  .pin-badge{ display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:#fff; flex-shrink:0; }
-  .pin-badge svg{ width:13px; height:13px; }
+    .map-btn{ display:inline-flex; align-items:center; gap:6px; background: var(--ringo); color:#fff; font-weight:700; font-size:12.5px; padding:9px 16px; border-radius:999px; border:none; text-decoration:none; margin-top:10px; }
+    .map-btn:active{ background: var(--ringo-deep); }
+    .map-btn.outline{ background:#fff; color: var(--ringo); border:1.5px solid var(--ringo); }
+    .map-btn svg{ width:13px; height:13px; }
+    .pin-badge{ display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:#fff; flex-shrink:0; }
+    .pin-badge svg{ width:13px; height:13px; }
 
-  .branch{border-left:3px solid var(--sora-deep); margin:10px 0 10px 4px; padding-left:14px;}
-  .branch-label{font-weight:900; font-size:13px; color:var(--mizu); margin-bottom:4px;}
+    .opt{ border: 2px solid var(--sora-deep); border-radius:16px; padding:12px 14px; margin-bottom:10px; cursor:pointer; }
+    .opt.chosen{ border-color: var(--ringo); background: rgba(232,87,76,0.05); }
+    .opt-head{ display:flex; justify-content:space-between; align-items:center; }
+    .opt-letter{ font-weight:900; font-size:13px; color: var(--ringo); }
+    .opt-name{ font-weight:700; font-size:14px; margin-top:3px; }
+    .opt-meta{ font-size:12px; color: var(--ink-soft); margin-top:4px; line-height:1.6; }
+    .pick-pill{ font-size:10.5px; font-weight:700; padding:3px 10px; border-radius:999px; background: var(--sora-deep); color: var(--ink-soft); }
+    .opt.chosen .pick-pill{ background: var(--ringo); color:#fff; }
 
-  details.rain{
-    background:#fff; border-radius:18px; box-shadow:var(--shadow); padding:14px 16px; margin-bottom:14px;
-  }
-  details.rain summary{font-weight:700; cursor:pointer; font-size:14.5px;}
-  details.rain .rain-body{font-size:13.5px; line-height:1.8; margin-top:10px; color:var(--ink-soft);}
+    .branch{ border-left:3px solid var(--sora-deep); margin:10px 0 6px 2px; padding-left:14px; }
+    .branch-label{ font-weight:900; font-size:12.5px; color: var(--mizu); margin-bottom:4px; }
 
-  .section-title{font-weight:900; font-size:16px; margin:22px 0 10px; display:flex; align-items:center; gap:6px;}
+    details.rain{ background: var(--sora-deep); border-radius:16px; padding: 12px 16px; margin-bottom:14px; }
+    details.rain summary{ font-weight:700; cursor:pointer; list-style:none; display:flex; align-items:center; gap:6px; }
+    details.rain summary::-webkit-details-marker{ display:none; }
+    details.rain[open] summary{ margin-bottom:8px; }
+    .rain-body{ font-size:12.5px; color: var(--ink-soft); line-height:1.7; }
 
-  .food-card{margin-bottom:10px;}
-  .food-name{font-weight:900; font-size:15px;}
-  .food-jp{font-size:12px; color:var(--ink-soft); margin-bottom:4px;}
-  .food-eat{font-size:13.5px; margin:6px 0;}
+    nav.bottom{ position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:480px; height: calc(64px + var(--safe-b)); padding-bottom: var(--safe-b); background: rgba(255,255,255,0.85); backdrop-filter: blur(14px); box-shadow: 0 -2px 14px rgba(51,66,79,.08); display:flex; z-index:50; }
+    .navbtn{ flex:1; background:none; border:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; color: var(--ink-soft); font-family:'Noto Sans TC',sans-serif; font-size:10.5px; font-weight:500; text-decoration:none; }
+    .navbtn .ic{ font-size:19px; line-height:1; }
+    .navbtn.active{ color: var(--ringo); font-weight:700; }
 
-  .todo-list{font-size:13px; line-height:2; color:var(--ink-soft); padding-left:18px;}
-  .verified-list{font-size:13px; line-height:2; color:var(--ink); padding-left:18px;}
-
-  nav.bottom-nav{
-    position:fixed; bottom:0; left:50%; transform:translateX(-50%);
-    width:100%; max-width:520px; height:64px;
-    background:rgba(255,255,255,.92); backdrop-filter:blur(10px);
-    display:flex; border-top:1px solid var(--sora-deep);
-    padding-bottom:env(safe-area-inset-bottom);
-  }
-  nav.bottom-nav a{
-    flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center;
-    text-decoration:none; color:var(--ink-soft); font-size:11px; gap:2px;
-  }
-  nav.bottom-nav a.active{color:var(--ringo); font-weight:700;}
-  nav.bottom-nav .nav-icon{font-size:18px;}
+    @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
+    .head{ --headcolor:#E8574C; --headcolor2:#C93E35; }
 </style>
 </head>
 <body>
 <div class="app">
 
-  <header class="day-head">
-    <a class="back-link" href="202608-aomori_index.html">← 回首頁</a>
-    <div class="day-badge-row">
-      <div class="day-icon">🍎</div>
-      <div>
-        <div class="day-num">DAY 2</div>
-        <div class="day-date">8/22（六）</div>
-        <div class="day-title">弘前一日・傍晚取車</div>
-      </div>
+  <header class="head">
+    <svg class="deco-kingyo head-deco" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 50 C4 34, 2 30, 0 20 C11 26, 21 30, 28 40 Z" fill="#fff" opacity=".5"/>
+      <path d="M18 50 C4 66, 2 70, 0 80 C11 74, 21 70, 28 60 Z" fill="#fff" opacity=".5"/>
+      <ellipse cx="64" cy="50" rx="42" ry="27" fill="var(--kin)" opacity=".65"/>
+      <path d="M40 26 Q64 21 88 26" stroke="#fff" stroke-width="2" fill="none" opacity=".4"/>
+      <path d="M40 74 Q64 79 88 74" stroke="#fff" stroke-width="2" fill="none" opacity=".4"/>
+      <path d="M58 24 Q67 6 78 20 Q68 23 58 24Z" fill="#fff" opacity=".45"/>
+      <circle cx="92" cy="43" r="4.2" fill="#fff" opacity=".95"/>
+      <circle cx="93.6" cy="43" r="1.9" fill="var(--ink)" opacity=".8"/>
+    </svg>
+    <a class="backlink" href="202608-aomori_index.html">← 回首頁</a>
+    <div class="head-badge">🍎</div>
+    <h1>8/22（六）弘前一日</h1>
+    <div class="sub">特急つがる09:04出發・傍晚回青森・19:00駅東口取車</div>
+    <div class="daydots">
+      <span></span><span class="on"></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
     </div>
   </header>
 
+  <div class="summary">
+    <div class="summary-row">
+      <span class="chip">🚃 JR特急＋普通</span>
+      <span class="chip">🚌 循環巴士</span>
+      <span class="chip">🚗 傍晚取車</span>
+    </div>
+    <div class="weather">
+      ☀️ 出發前一晚查詢弘前天氣預報，備輕便雨具（<a href="https://www.jma.go.jp/bosai/forecast/#area_type=offices&area_code=020000" target="_blank" style="color:var(--mizu)">氣象廳連結</a>）
+    </div>
+  </div>
+
   <main>
 
-    <div class="card fade-in">
-      <div class="summary-row">
-        <span class="chip">🚃 JR特急＋普通</span>
-        <span class="chip">🚌 循環巴士</span>
-        <span class="chip">🚗 傍晚取車</span>
-      </div>
-      <div class="summary-row">
-        <span class="chip wip">☀️/☔ 天氣提醒待填</span>
-      </div>
-    </div>
-
-    <div class="update-box fade-in">
-      ⚠️ <b>本次更新</b>：Google Map實測弘前駅→大正浪漫喫茶室步行需36分鐘（2.5km），比預估更遠，<b>改回搭土手町循環バス</b>（首班車10:00發車，需在弘前駅稍等）。租車、取車19:00、貝類過敏「不吃」等其餘資訊維持不變。
-    </div>
+    <div class="section-title">🗓️ 今日時間軸</div>
 
     <div class="timeline">
 
-      <div class="t-item">
-        <div class="t-dot"></div>
-        <div class="t-time">07:30</div>
-        <div class="t-content"><span class="t-icon">🛏️</span>起床</div>
-      </div>
-
-      <div class="t-item">
-        <div class="t-dot"></div>
-        <div class="t-time">08:15</div>
-        <div class="t-content"><span class="t-icon">🚶</span>步行至JR青森駅</div>
-        <div class="t-note">✅已查證：Google Map實測約17分鐘</div>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=JR%E9%9D%92%E6%A3%AE%E9%A7%85" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> JR青森駅</a>
-      </div>
-
-      <div class="t-item">
-        <div class="t-dot"></div>
-        <div class="t-time">09:04 → 09:38</div>
-        <div class="t-content"><span class="t-icon">🚃</span>搭特急「つがる」（自由席）往弘前</div>
-        <div class="t-note">✅已查證（Yahoo!路線情報即時資料）：車程約34分。票價推論約大人¥1,960／小孩約半價，建議上車前用えきねっと或窗口確認</div>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=JR%E5%BC%98%E5%89%8D%E9%A7%85" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> JR弘前駅</a>
-      </div>
-
-      <div class="t-item">
-        <div class="t-dot"></div>
-        <div class="t-time">09:38–10:00</div>
-        <div class="t-content"><span class="t-icon">🚶</span>弘前駅稍作休息（廁所、買飲料）</div>
-        <div class="t-note">⚠️已修正：Google Map實測步行需36分鐘（2.5km），改搭巴士對小孩比較輕鬆；但巴士首班車10:00才發車，需在站內稍等約22分鐘</div>
-      </div>
-
-      <div class="t-item">
-        <div class="t-dot"></div>
-        <div class="t-time">10:00</div>
-        <div class="t-content"><span class="t-icon">🚌</span>搭土手町循環バス（首班車，1號乘車處）往藤田記念庭園</div>
-        <div class="t-note">✅已查證：¥150，車程約15分，於「市役所前・公園入口」下車後步行約5分</div>
-      </div>
-
-      <div class="t-item">
-        <div class="t-dot"></div>
-        <div class="t-time">約10:20</div>
-        <div class="t-content"><span class="t-icon">🎡</span>抵達藤田記念庭園，<b>先登記大正浪漫喫茶室候位</b></div>
-        <div class="t-note">✅已查證：有候位系統，登記後可先離開，不用現場乾等</div>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E8%97%A4%E7%94%B0%E8%A8%98%E5%BF%B5%E5%BA%AD%E5%9C%92%20%E5%BC%98%E5%89%8D%E5%B8%82%E4%B8%8A%E7%99%BD%E9%8A%80%E7%94%BA8-1" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> 藤田記念庭園</a>
-      </div>
-
-      <div class="t-item">
-        <div class="t-dot"></div>
-        <div class="t-time">10:20–11:30</div>
-        <div class="t-content"><span class="t-icon">🎡</span>弘前公園散步（護城河、下乗橋、追手門）</div>
-        <div class="t-note">⚠️已查證：弘前城天守因保存修復工程，內部暫停開放數年，只能看外觀。若要進本丸近拍需買票（大人¥320、小孩¥100），可省略只在免費區散步</div>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%BC%98%E5%89%8D%E5%85%AC%E5%9C%92" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> 弘前公園</a>
-      </div>
-
-      <div class="t-item">
-        <div class="t-dot"></div>
-        <div class="t-time">11:30</div>
-        <div class="t-content"><span class="t-icon">⚠️</span><b>叫號判斷點</b></div>
-
-        <div class="branch">
-          <div class="branch-label">▶ 情況A：已叫號</div>
-          <div class="t-content">11:30–13:00 <b>大正浪漫喫茶室</b>午餐＋蘋果派</div>
-          <div class="t-note">座位90分鐘制。吃什麼：蘋果咖哩飯、義大利麵（非海鮮）＋招牌蘋果派（7種口味可比較）</div>
-          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%A4%A7%E6%AD%A3%E6%B5%AA%E6%BC%AB%E5%96%AB%E8%8C%B6%E5%AE%A4" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> 大正浪漫喫茶室</a>
-        </div>
-
-        <div class="branch">
-          <div class="branch-label">▶ 情況B：還要久候（備案）</div>
-          <div class="t-content">11:30–12:20 改在同園區「匠館」用餐＋喫茶室外帶蘋果派</div>
-          <div class="t-note">吃什麼：和風パフェ（日式聖代）、おばんざいランチ（家常菜定食，現場確認避開海鮮配菜）</div>
-          <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8C%A0%E9%A4%A8%20%E5%BC%98%E5%89%8D" target="_blank"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg> 匠館（備案）</a>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">07:30</div>
+          <div class="tl-title">🛏️ 起床</div>
         </div>
       </div>
 
-      <div class="t-item">
-        <div class="t-dot"></div>
-        <div class="t-time">13:00–15:00</div>
-        <div class="t-content"><span class="t-icon">🥁</span>津軽藩ねぷた村：太鼓體驗、三味線現場演奏、工藝見學</div>
-        <div class="t-note">✅已查證：9:00–17:00（最終入場17:00），大人¥600、小學生¥300、幼兒(3歲以上)¥100；緊鄰弘前公園，徒步2–5分；完整2小時不趕</div>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E6%B4%A5%E8%BB%BD%E8%97%A9%E3%81%AD%E3%81%B7%E3%81%9F%E6%9D%91" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> 津軽藩ねぷた村</a>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">08:25</div>
+          <div class="tl-title">🚶 步行至JR青森駅<span class="tag verified">【查】</span></div>
+          <div class="tl-note">Google Map實測步行約17分鐘；出發時間由08:15調整為08:25，縮短青森駅候車時間至約22分鐘</div>
+          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=JR%E9%9D%92%E6%A3%AE%E9%A7%85" target="_blank">
+            <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
+            導航到JR青森駅
+          </a>
+        </div>
       </div>
 
-      <div class="t-item">
-        <div class="t-dot"></div>
-        <div class="t-time">15:00–16:35</div>
-        <div class="t-content"><span class="t-icon">🛍️</span>慢慢走回JR弘前駅，沿路逛土手町通、買伴手禮</div>
-        <div class="t-note">不特別切一段購物時間，邊走邊逛，配合下方兩班車彈性抓時間</div>
-        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E3%83%A9%E3%82%B0%E3%83%8E%E3%82%AA%E5%9C%9F%E6%89%8B%E7%94%BA%E6%9C%AC%E5%BA%97" target="_blank"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg> ラグノオ土手町本店</a>
-        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E6%B4%8B%E8%8F%93%E5%AD%90%E5%B7%A5%E6%88%BF%E3%83%8E%E3%82%A8%E3%83%AB%20%E5%BC%98%E5%89%8D" target="_blank"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg> 洋菓子工房ノエル</a>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">約08:42<small>–09:04</small></div>
+          <div class="tl-title">🍙 改札外NewDays買早餐、候車<span class="tag verified">【查】</span></div>
+          <div class="tl-note">改札內無便利商店，於2樓改札外NewDays先買好，候車22分鐘邊等邊吃，不額外佔用時間</div>
+        </div>
       </div>
 
-      <div class="t-item">
-        <div class="t-dot"></div>
-        <div class="t-time">16:16 或 16:51</div>
-        <div class="t-content"><span class="t-icon">🚃</span>普通車返回青森，<b>兩班皆列入，現場視狀況二選一</b></div>
-        <div class="t-note">⚠️已用兩個獨立App交叉查證這兩班存在，但仍有第三方App查到不同數字，出發前建議再次確認</div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">09:04 <small>→ 09:38</small></div>
+          <div class="tl-title">🚃 搭特急「つがる」42号（自由席）往弘前<span class="tag verified">【查】</span></div>
+          <div class="tl-note">車程約34分（Yahoo!路線情報，5番線發車）。票價推論約大人¥1,960／小孩約半價，建議上車前用えきねっと或窗口確認</div>
+          <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=JR%E5%BC%98%E5%89%8D%E9%A7%85" target="_blank">
+            <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+            導航到JR弘前駅
+          </a>
+        </div>
       </div>
 
-      <div class="t-item">
-        <div class="t-dot"></div>
-        <div class="t-time">約17:00或17:35</div>
-        <div class="t-content"><span class="t-icon">🚃</span>抵達JR青森駅</div>
-        <div class="t-note">車程約45分（推論）；之後可到ASPAM走走或回飯店放東西</div>
-        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%92%E6%A3%AE%E7%9C%8C%E8%A6%B3%E5%85%89%E7%89%A9%E7%94%A2%E9%A4%A8%E3%82%A2%E3%82%B9%E3%83%91%E3%83%A0" target="_blank"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg> ASPAM</a>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">09:38 <small>–10:00</small></div>
+          <div class="tl-title">🚶 弘前駅稍候（廁所、買飲料）<span class="tag verified">【查】</span></div>
+          <div class="tl-note">弘前駅→大正浪漫喫茶室步行需36分鐘（2.5km），改搭巴士對小孩比較輕鬆；巴士首班車10:00才發車，需稍等約22分鐘</div>
+        </div>
       </div>
 
-      <div class="t-item">
-        <div class="t-dot"></div>
-        <div class="t-time">19:00</div>
-        <div class="t-content"><span class="t-icon">🚗</span>ニッポンレンタカー青森駅東口営業所取車</div>
-        <div class="t-note">✅正確地址：青森県青森市安方1-6-5，TEL 050-1712-2897，JR青森駅東口徒步約8分，就在觀光物產館ASPAM前，營業08:00–19:00。✅取車時間已定案19:00（以訂單為準），剛好卡在打烊時間，建議提早幾分鐘抵店辦手續</div>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%92%E6%A3%AE%E7%B8%A3%E9%9D%92%E6%A3%AE%E5%B8%82%E5%AE%89%E6%96%B91-6-5" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> ニッポンレンタカー</a>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">10:00</div>
+          <div class="tl-title">🚌 搭土手町循環バス（首班車，1號乘車處）<span class="tag verified">【查】</span></div>
+          <div class="tl-note">¥100（大人）／¥50（小學生），<b>僅收現金、不接受IC卡</b>，車程約15分，於「市役所前・公園入口」下車後步行約5分往藤田記念庭園</div>
+        </div>
       </div>
 
-      <div class="t-item">
-        <div class="t-dot"></div>
-        <div class="t-time">取車後</div>
-        <div class="t-content"><span class="t-icon">🚗</span>開車回Richmond Hotel停車</div>
-        <div class="t-note">車程約5分（推論）</div>
-        <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E3%83%AA%E3%83%83%E3%83%81%E3%83%A2%E3%83%B3%E3%83%89%E3%83%9B%E3%83%86%E3%83%AB%E9%9D%92%E6%A3%AE" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> Richmond Hotel</a>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">約10:20</div>
+          <div class="tl-title">🎡 抵達藤田記念庭園，先登記大正浪漫喫茶室候位<span class="tag verified">【查】</span></div>
+          <div class="tl-note">有候位系統，登記後可先離開，不用現場乾等</div>
+          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E8%97%A4%E7%94%B0%E8%A8%98%E5%BF%B5%E5%BA%AD%E5%9C%92%20%E5%BC%98%E5%89%8D%E5%B8%82%E4%B8%8A%E7%99%BD%E9%8A%80%E7%94%BA8-1" target="_blank">
+            <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
+            導航到藤田記念庭園
+          </a>
+        </div>
       </div>
 
-      <div class="t-item">
-        <div class="t-dot"></div>
-        <div class="t-time">晚餐</div>
-        <div class="t-content"><span class="t-icon">🍽️</span>步行至晚餐地點（二選一，見下方候補）</div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">10:20 <small>–11:30</small></div>
+          <div class="tl-title">🎡 弘前公園散步（護城河、下乗橋、追手門）<span class="tag verified">【查】</span></div>
+          <div class="tl-note">弘前城天守因保存修復工程，內部暫停開放數年，只能看外觀。若要進本丸近拍需買票（大人¥320、小孩¥100），可省略只在免費區散步</div>
+          <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E5%BC%98%E5%89%8D%E5%85%AC%E5%9C%92" target="_blank">
+            <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+            導航到弘前公園
+          </a>
+        </div>
       </div>
 
-      <div class="t-item">
-        <div class="t-dot"></div>
-        <div class="t-time">21:00前</div>
-        <div class="t-content"><span class="t-icon">🏨</span>返回Richmond Hotel</div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--kin); box-shadow:0 0 0 2px var(--kin);"></div>
+        <div class="card">
+          <div class="tl-time">11:30<small>（判準時間點）</small></div>
+          <div class="tl-title">⏳ 叫號判斷點</div>
+          <div class="tl-note">依候位狀況走以下方案</div>
+
+          <div class="branch">
+            <div class="branch-label">▶ 情況A：已叫號</div>
+            <div class="tl-title" style="font-size:14px;">11:30–13:00 大正浪漫喫茶室午餐＋蘋果派</div>
+            <div class="tl-note">座位90分鐘制。吃什麼：蘋果咖哩飯、義大利麵（非海鮮）＋招牌蘋果派（7種口味可比較）</div>
+            <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E5%A4%A7%E6%AD%A3%E6%B5%AA%E6%BC%AB%E5%96%AB%E8%8C%B6%E5%AE%A4" target="_blank">
+              <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+              導航到大正浪漫喫茶室
+            </a>
+          </div>
+
+          <div class="branch">
+            <div class="branch-label">▶ 情況B：還要久候（備案）</div>
+            <div class="tl-title" style="font-size:14px;">11:30–12:20 改在同園區「匠館」用餐＋喫茶室外帶蘋果派</div>
+            <div class="tl-note">吃什麼：和風パフェ（日式聖代）、おばんざいランチ（家常菜定食，現場確認避開海鮮配菜）</div>
+            <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8C%A0%E9%A4%A8%20%E5%BC%98%E5%89%8D" target="_blank">
+              <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+              導航到匠館
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">13:00 <small>–15:00</small></div>
+          <div class="tl-title">🥁 津軽藩ねぷた村：太鼓體驗、三味線演奏、工藝見學<span class="tag verified">【查】</span></div>
+          <div class="tl-note">9:00–17:00（最終入場17:00），大人¥600、小學生¥300、幼兒(3歲以上)¥100；緊鄰弘前公園，徒步2–5分；完整2小時不趕</div>
+          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E6%B4%A5%E8%BB%BD%E8%97%A9%E3%81%AD%E3%81%B7%E3%81%9F%E6%9D%91" target="_blank">
+            <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
+            導航到津軽藩ねぷた村
+          </a>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">15:00 <small>–16:35</small></div>
+          <div class="tl-title">🛍️ 慢慢走回JR弘前駅，沿路逛土手町通、買伴手禮</div>
+          <div class="tl-note">不特別切一段購物時間，邊走邊逛，配合下方兩班車彈性抓時間。沿路蘋果派候補：ラグノオ土手町本店（気になるリンゴ）／洋菓子工房ノエル（弘前市長賞）</div>
+          <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E3%83%A9%E3%82%B0%E3%83%8E%E3%82%AA%E5%9C%9F%E6%89%8B%E7%94%BA%E6%9C%AC%E5%BA%97" target="_blank">
+            <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+            ラグノオ土手町本店
+          </a>
+          <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E6%B4%8B%E8%8F%93%E5%AD%90%E5%B7%A5%E6%88%BF%E3%83%8E%E3%82%A8%E3%83%AB%20%E5%BC%98%E5%89%8D" target="_blank">
+            <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+            洋菓子工房ノエル
+          </a>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">16:16 <small>或16:51</small></div>
+          <div class="tl-title">🚃 普通車返回青森，兩班皆列入，現場二選一<span class="tag verified">【查】</span></div>
+          <div class="tl-note">16:16→17:04（48分）／16:51→17:45（54分）（JR東日本官網時刻表）</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">17:04 <small>或17:45</small></div>
+          <div class="tl-title">🚃 抵達JR青森駅<span class="tag verified">【查】</span></div>
+          <div class="tl-note">之後可到ASPAM走走或回飯店放東西</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">19:00</div>
+          <div class="tl-title">🚗 ニッポンレンタカー青森駅東口営業所取車<span class="tag verified">【查】</span></div>
+          <div class="tl-note">地址：青森県青森市安方1-6-5，TEL 050-1712-2897，JR青森駅東口徒步約8分，就在觀光物產館ASPAM前，營業08:00–19:00。取車時間19:00以Tabirai訂單登記為準，剛好卡在打烊時間，建議提早幾分鐘抵店辦手續</div>
+          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%92%E6%A3%AE%E7%B8%A3%E9%9D%92%E6%A3%AE%E5%B8%82%E5%AE%89%E6%96%B91-6-5" target="_blank">
+            <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
+            導航到租車店
+          </a>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">取車後</div>
+          <div class="tl-title">🚗 開車回Richmond Hotel停車<span class="tag infer">【推】</span></div>
+          <div class="tl-note">車程約5分</div>
+          <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E3%83%AA%E3%83%83%E3%83%81%E3%83%A2%E3%83%B3%E3%83%89%E3%83%9B%E3%83%86%E3%83%AB%E9%9D%92%E6%A3%AE" target="_blank">
+            <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+            導航到飯店
+          </a>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">晚餐</div>
+          <div class="tl-title">🍽️ 二選一，現場決定（見下方候補清單）</div>
+          <div class="tl-note">兩間皆免預約、免開口問，走進去點餐即可</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">21:00前</div>
+          <div class="tl-title">🏨 返回Richmond Hotel</div>
+        </div>
       </div>
 
     </div>
@@ -294,70 +374,75 @@
     <details class="rain">
       <summary>☔ 雨天備案</summary>
       <div class="rain-body">
-        小雨：弘前公園護城河散步縮短為20–30分，提早進藤田記念庭園室內候位/用餐。<br>
-        大雨：直接跳過弘前公園戶外散步，登記候位後在藤田記念庭園室內（洋館、喫茶室）多待，或提前去津軽藩ねぷた村（室內展示區）填時間。
+        縮短弘前公園戶外行程（護城河散步縮短為20–30分），拉長藤田記念庭園室內喫茶室時間；大雨可提前去津軽藩ねぷた村室內展示區填時間。
       </div>
     </details>
 
     <div class="section-title">🍎 蘋果派備案（若都沒吃到）</div>
-    <div class="card food-card">
-      <div class="food-name">磚窯工廠 BRICK A-FACTORY</div>
-      <div class="food-jp">弘前駅站內「APPLIESE」2樓選品店</div>
-      <div class="food-eat">吃什麼：人氣洋菓子店「ボンジュール」監製蘋果派，候車時直接買，完全不用候位</div>
-      <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=APPLIESE%20%E5%BC%98%E5%89%8D%E9%A7%85" target="_blank"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg> 磚窯工廠</a>
+    <div class="card small">
+      <div class="opt-name">磚窯工廠 BRICK A-FACTORY</div>
+      <div class="opt-meta">弘前駅站內「APPLIESE」2樓選品店・人氣洋菓子店「ボンジュール」監製蘋果派・候車時直接買，完全不用候位</div>
+      <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=APPLIESE%20%E5%BC%98%E5%89%8D%E9%A7%85" target="_blank">
+        <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+        導航
+      </a>
     </div>
 
-    <div class="section-title">🍽️ 晚餐二選一</div>
-    <div class="card food-card">
-      <div class="food-name">樂斯特（Gusto）新町店 <span class="chip">免預約</span></div>
-      <div class="food-jp">ガスト青森新町店</div>
-      <div class="food-eat">吃什麼：漢堡排、義大利麵、兒童餐（附玩具），菜單附照片</div>
-      <div class="t-note">飯店附近新町通一帶，徒步約5–10分。營業07:00–翌1:00（全年無休）</div>
-      <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E3%82%AC%E3%82%B9%E3%83%88%E9%9D%92%E6%A3%AE%E6%96%B0%E7%94%BA%E5%BA%97" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> Gusto新町店</a>
+    <div class="section-title">🍽️ 晚餐候補清單</div>
+    <div class="card">
+      <div class="opt" data-opt="a" onclick="chooseOpt('a')">
+        <div class="opt-head"><span class="opt-letter">A・樂斯特（Gusto）新町店</span><span class="pick-pill">選這個</span></div>
+        <div class="opt-name">漢堡排、義大利麵、兒童餐</div>
+        <div class="opt-meta">飯店附近新町通一帶，徒步約5–10分・07:00–23:30（全年無休）・菜單附照片</div>
+        <span class="chip verified">兒童餐附玩具，非海鮮選項多</span><br>
+        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E3%82%AC%E3%82%B9%E3%83%88%E9%9D%92%E6%A3%AE%E6%96%B0%E7%94%BA%E5%BA%97" target="_blank">
+          <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+          導航
+        </a>
+      </div>
+      <div class="opt" data-opt="b" onclick="chooseOpt('b')">
+        <div class="opt-head"><span class="opt-letter">B・卡布里喬莎 青森THREE店</span><span class="pick-pill">選這個</span></div>
+        <div class="opt-name">大份量披薩、義大利麵，適合全家分食</div>
+        <div class="opt-meta">飯店附近新町通一帶，徒步約6–10分・8/22週六11:00–22:00（L.O.21:30）；平日11:00–21:00（L.O.20:30）</div>
+        <span class="chip verified">披薩可挑非海鮮口味</span><br>
+        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E3%82%AB%E3%83%97%E3%83%AA%E3%83%81%E3%83%A7%E3%83%BC%E3%82%B6%E9%9D%92%E6%A3%AETHREE%E5%BA%97" target="_blank">
+          <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+          導航
+        </a>
+      </div>
     </div>
-    <div class="card food-card">
-      <div class="food-name">卡布里喬莎 青森THREE店 <span class="chip">免預約</span></div>
-      <div class="food-jp">カプリチョーザ青森THREE店</div>
-      <div class="food-eat">吃什麼：大份量披薩、義大利麵，適合全家分食</div>
-      <div class="t-note">飯店附近新町通一帶，徒步約6–10分。營業11:00–20:30（L.O.20:00）</div>
-      <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E3%82%AB%E3%83%97%E3%83%AA%E3%83%81%E3%83%A7%E3%83%BC%E3%82%B6%E9%9D%92%E6%A3%AETHREE%E5%BA%97" target="_blank"><span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span> 卡布里喬莎</a>
+
+    <div class="section-title">📋 資料來源</div>
+    <div class="card">
+      <div class="opt-meta" style="line-height:2;">
+        JR奧羽本線・特急つがる青森⇄弘前時刻表（去程Yahoo!路線情報，回程JR東日本官網）／Richmond Hotel到JR青森駅步行距離／土手町循環バス路線與票價／大正浪漫喫茶室候位系統與菜單／弘前城天守整修現況與本丸門票／津軽藩ねぷた村資訊／ニッポンレンタカー青森駅東口営業所資訊／Gusto、Capricciosa兩店資訊
+      </div>
     </div>
 
     <div class="section-title">⚠️ 待查證清單</div>
     <div class="card">
-      <ol class="todo-list">
-        <li>弘前→青森16:16、16:51班次的精確到站時間，不同App數字有出入，出發前再確認</li>
-        <li>藤田記念庭園付費區當日開放時間是否有變動</li>
-        <li>津軽藩ねぷた村當天太鼓體驗／三味線演奏實際場次時刻</li>
-        <li>Richmond Hotel到租車店、晚餐地點的實際步行/開車距離</li>
-        <li>Richmond Hotel停車費與車位狀況</li>
-      </ol>
-    </div>
-
-    <div class="section-title">✅ 已查證事實彙整</div>
-    <div class="card">
-      <ul class="verified-list">
-        <li>JR奧羽本線・特急つがる青森⇄弘前時刻表</li>
-        <li>Richmond Hotel到JR青森駅實際步行距離（約17分）</li>
-        <li>土手町循環バス路線、票價、頻率</li>
-        <li>大正浪漫喫茶室候位系統、營業時間、非海鮮菜單</li>
-        <li>弘前城天守整修暫停開放現況、本丸門票價格</li>
-        <li>津軽藩ねぷた村位置、營業時間、票價、體驗內容</li>
-        <li>ニッポンレンタカー青森駅東口営業所正確地址、電話、營業時間（取代先前誤植資訊）</li>
-        <li>ガスト、カプリチョーザ兩店位置、營業時間</li>
-      </ul>
+      <div class="opt-meta" style="line-height:2;">
+        藤田記念庭園付費區當日開放時間是否有變動／津軽藩ねぷた村當天太鼓體驗・三味線演奏實際場次時刻／Richmond Hotel到租車店・晚餐地點的實際步行距離／Richmond Hotel停車費與車位狀況
+      </div>
     </div>
 
   </main>
 
-  <nav class="bottom-nav">
-    <a class="active" href="202608-aomori_index.html"><span class="nav-icon">🗓️</span>行程</a>
-    <a href="202608-aomori_transport.html"><span class="nav-icon">🚗</span>交通</a>
-    <a href="202608-aomori_hotel.html"><span class="nav-icon">🏨</span>住宿</a>
-    <a href="202608-aomori_tips.html"><span class="nav-icon">🎒</span>錦囊</a>
-    <a href="202608-aomori_budget.html"><span class="nav-icon">💰</span>預算</a>
+  <nav class="bottom">
+    <a class="navbtn active" href="202608-aomori_index.html"><span class="ic">🗓️</span>行程</a>
+    <a class="navbtn" href="202608-aomori_transport.html"><span class="ic">🚌</span>交通</a>
+    <a class="navbtn" href="202608-aomori_hotel.html"><span class="ic">🏨</span>住宿</a>
+    <a class="navbtn" href="202608-aomori_tips.html"><span class="ic">🎒</span>錦囊</a>
+    <a class="navbtn" href="202608-aomori_budget.html"><span class="ic">💰</span>預算</a>
   </nav>
 
 </div>
+
+<script>
+  function chooseOpt(letter){
+    document.querySelectorAll('.opt').forEach(function(o){ o.classList.remove('chosen'); });
+    document.querySelector('.opt[data-opt="' + letter + '"]').classList.add('chosen');
+  }
+</script>
 </body>
 </html>
