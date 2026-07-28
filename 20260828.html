@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Day3｜8/23 八甲田山區移動日</title>
+<title>Day8｜8/28 回程日</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
@@ -113,6 +113,17 @@
     details.rain[open] summary{ margin-bottom:8px; }
     .rain-body{ font-size:12.5px; color: var(--ink-soft); line-height:1.7; }
 
+    .jp-card{ background: #F9F5FF; border-left:4px solid var(--headcolor,#9A7DC8); border-radius:12px; padding:12px 14px; font-size:13.5px; line-height:1.9; cursor:pointer; position:relative; }
+    .jp-card::after{ content:"🔍 點擊放大"; position:absolute; right:8px; bottom:6px; font-size:10px; color:var(--ink-soft); background:rgba(255,255,255,.85); padding:2px 8px; border-radius:999px; }
+    .jp-zoom{ display:none; position:fixed; inset:0; background:rgba(51,66,79,.92); z-index:999; align-items:center; justify-content:center; padding:24px; }
+    .jp-zoom.show{ display:flex; }
+    .jp-zoom-box{ background:#fff; border-radius:20px; padding:28px 24px; font-size:26px; line-height:1.9; font-weight:700; color:var(--ink); max-width:92vw; max-height:80vh; overflow:auto; text-align:center; }
+    .jp-zoom-hint{ position:fixed; top:22px; left:0; right:0; text-align:center; color:#fff; font-size:13px; font-weight:500; }
+
+    table.t{ width:100%; border-collapse:collapse; font-size:12px; margin-top:6px; }
+    table.t th,table.t td{ padding:6px 4px; border-bottom:1px solid var(--sora-deep); vertical-align:top; text-align:left; }
+    table.t th{ color:var(--ink-soft); font-weight:500; }
+
     nav.bottom{ position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:520px; height: calc(64px + var(--safe-b)); padding-bottom: var(--safe-b); background: rgba(255,255,255,0.85); backdrop-filter: blur(14px); box-shadow: 0 -2px 14px rgba(51,66,79,.08); display:flex; z-index:50; }
     .navbtn{ flex:1; background:none; border:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; color: var(--ink-soft); font-family:'Noto Sans TC',sans-serif; font-size:10.5px; font-weight:500; text-decoration:none; }
     .navbtn .ic{ font-size:19px; line-height:1; }
@@ -120,7 +131,7 @@
     .navbtn svg{ width:23px; height:23px; }
 
     @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
-    .app{ --headcolor:#5E8F6A; --headcolor2:#4A7458; }
+    .app{ --headcolor:#8FA3B0; --headcolor2:#5F7684; }
 </style>
 </head>
 <body>
@@ -130,7 +141,7 @@
     <svg class="deco-kingyo head-deco" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
       <path d="M18 50 C4 34, 2 30, 0 20 C11 26, 21 30, 28 40 Z" fill="#fff" opacity=".5"/>
       <path d="M18 50 C4 66, 2 70, 0 80 C11 74, 21 70, 28 60 Z" fill="#fff" opacity=".5"/>
-      <ellipse cx="64" cy="50" rx="42" ry="27" fill="var(--kin)" opacity=".65"/>
+      <ellipse cx="64" cy="50" rx="42" ry="27" fill="#fff" opacity=".3"/>
       <path d="M40 26 Q64 21 88 26" stroke="#fff" stroke-width="2" fill="none" opacity=".4"/>
       <path d="M40 74 Q64 79 88 74" stroke="#fff" stroke-width="2" fill="none" opacity=".4"/>
       <path d="M58 24 Q67 6 78 20 Q68 23 58 24Z" fill="#fff" opacity=".45"/>
@@ -138,23 +149,22 @@
       <circle cx="93.6" cy="43" r="1.9" fill="var(--ink)" opacity=".8"/>
     </svg>
     <a class="backlink" href="202608-aomori_index.html">← 回首頁</a>
-    <div class="head-badge">🚡</div>
-    <h1>8/23（日）八甲田山區移動日</h1>
-    <div class="sub">自駕・八甲田纜車・十和田湖畔換宿</div>
+    <div class="head-badge">✈️</div>
+    <h1>8/28（五）回程日</h1>
+    <div class="sub">睡魔之家＋A-FACTORY最後伴手禮→機場→15:30飛回桃園</div>
     <div class="daydots">
-      <span></span><span></span><span class="on"></span><span></span>
       <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span class="on"></span>
     </div>
   </header>
 
   <div class="summary">
     <div class="summary-row">
-      <span class="chip">🚗 開車為主</span>
-      <span class="chip">🎡 八甲田纜車</span>
-      <span class="chip">🏨 換宿Sakura</span>
+      <span class="chip">🚶 步行＋機場巴士</span>
+      <span class="chip done">✅ 11:30柳町通（柳町通り）班次（備用12:35）</span>
     </div>
     <div class="weather">
-      🌤 出發前記得查八甲田當日天氣與纜車是否正常運行，山區容易起霧（<a href="https://www.jma.go.jp/bosai/forecast/#area_type=offices&area_code=020000" target="_blank" style="color:var(--mizu)">氣象廳連結</a>）
+      🧳 退房前行李寄放前台，逛完睡魔之家＋A-FACTORY再取回，只搬一次（<a href="https://www.jma.go.jp/bosai/forecast/#area_type=offices&area_code=020000" target="_blank" style="color:var(--mizu)">氣象廳連結</a>）
     </div>
   </div>
 
@@ -167,29 +177,108 @@
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="card small">
-          <div class="tl-time">07:55</div>
+          <div class="tl-time">07:30</div>
           <div class="tl-title">🛏️ 起床</div>
-          <div class="tl-note">較原訂07:30往後移，這天早餐改超商買了車上吃，不用趕早</div>
         </div>
       </div>
 
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="card small">
-          <div class="tl-time">07:55 <small>–08:40</small></div>
-          <div class="tl-title">🧳 盥洗、收拾行李、準備退房</div>
+          <div class="tl-time">07:30 <small>–08:20</small></div>
+          <div class="tl-title">🧳 梳洗、換裝、行李收拾完成</div>
+          <div class="tl-note">大件行李打包好</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">08:20 <small>–08:30</small></div>
+          <div class="tl-title">🍽️ 超商早餐</div>
+          <div class="tl-note">Richmond Hotel不含早餐</div>
         </div>
       </div>
 
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="card">
-          <div class="tl-time">08:40 <small>–09:00</small></div>
-          <div class="tl-title">🏪 退房＋至飯店周邊超商買早餐<span class="tag infer">【推】</span></div>
-          <div class="tl-note">Richmond Hotel官方標示「コンビニ徒歩5分以内」，早餐買了帶到車上吃，抓20分鐘採買（框架文件v8守則）</div>
-          <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%92%E6%A3%AE%E7%B8%A3%E9%9D%92%E6%A3%AE%E5%B8%82%E9%95%B7%E5%B3%B61-6-6" target="_blank">
+          <div class="tl-time">08:30 <small>–08:40</small></div>
+          <div class="tl-title">🏨 飯店退房手續＋行李寄放前台<span class="tag verified">【查】</span></div>
+          <div class="tl-note">空手出門，沿用8/26已確認過的寄放模式</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">08:40 <small>–09:05</small></div>
+          <div class="tl-title">🚶 步行至睡魔之家／A-FACTORY一帶<span class="tag verified">【查】</span></div>
+          <div class="tl-note">約17–20分，抓25分含孩童步伐緩衝</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">09:05 <small>–09:55</small></div>
+          <div class="tl-title">🏮 睡魔之家 參觀＋紀念品店<span class="tag verified">【查】</span></div>
+          <div class="tl-note">常設展約30分＋商店逛20分；5–8月9:00–19:00，行程期間僅8/9–10換睡魔閉館，8/28正常開放。囃子演奏場次11:10/13:10/15:10/17:10，本日不排入——跳人表演已於8/25青森屋看過</div>
+          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E3%81%AD%E3%81%B6%E3%81%9F%E3%81%AE%E5%AE%B6%20%E3%83%AF%E3%83%BB%E3%83%A9%E3%83%83%E3%82%BB" target="_blank">
+            <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
+            導航到睡魔之家
+          </a>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">09:55 <small>–10:50</small></div>
+          <div class="tl-title">🛍️ A-FACTORY 最後伴手禮採買<span class="tag verified">【查】</span></div>
+          <div class="tl-note">55分鐘，購物區10:00–19:00；蘋果製品、青森限定零食為主</div>
+          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=A-FACTORY%20%E9%9D%92%E6%A3%AE" target="_blank">
+            <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
+            導航到A-FACTORY
+          </a>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">10:50 <small>–11:15</small></div>
+          <div class="tl-title">🚶 步行返回飯店</div>
+          <div class="tl-note">25分鐘</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">11:15 <small>–11:25</small></div>
+          <div class="tl-title">🧳 取回寄放行李，確認退房完成</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">11:25 <small>–11:28</small></div>
+          <div class="tl-title">🚶 步行至柳町通（柳町通り）站牌<span class="tag verified">【查】</span></div>
+          <div class="tl-note">僅1–2分鐘（實測約94m）</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="card">
+          <div class="tl-time">11:30 <small>→ 12:00</small></div>
+          <div class="tl-title">🚌 機場巴士發車（柳町通（柳町通り））<span class="tag verified">【查】</span></div>
+          <div class="tl-note">大人¥690／小孩¥350（單程）；備用班次12:35（機場13:05著）。⚠️時刻表約每1–2個月依航班調整，建議出發前一週上JR巴士東北官網核對</div>
+          <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E6%9F%B3%E7%94%BA%E9%80%9A%E3%82%8A%20%E3%83%90%E3%82%B9%E5%81%9C" target="_blank">
             <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
-            Richmond Hotel周邊
+            導航到柳町通（柳町通り）站牌
           </a>
         </div>
       </div>
@@ -197,47 +286,12 @@
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="card">
-          <div class="tl-time">09:00 <small>–09:50</small></div>
-          <div class="tl-title">🚗 開車往八甲田纜車山麓駅，早餐車上吃<span class="tag verified">【查】</span></div>
-          <div class="tl-note">約21.9km，實際車程約37分（Google Maps），時段保留50分緩衝</div>
-          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%85%AB%E7%94%B2%E7%94%B0%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%82%A4%E5%B1%B1%E9%BA%93%E9%A7%85" target="_blank">
+          <div class="tl-time">12:00 <small>–13:00</small></div>
+          <div class="tl-title">✈️ 機場2樓自由活動<span class="tag verified">【查】</span></div>
+          <div class="tl-note">ASPAM物產／JAL PLAZA伴手禮店、3樓送迎展望台（免費，看飛機起降）、航空展示室</div>
+          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%92%E6%A3%AE%E7%A9%BA%E6%B8%AF" target="_blank">
             <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
-            導航到八甲田纜車山麓駅
-          </a>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="card">
-          <div class="tl-time">09:50 <small>–11:20</small></div>
-          <div class="tl-title">🎡 八甲田纜車來回＋山頂散策<span class="tag verified">【查】</span></div>
-          <div class="tl-note">纜車來回搭乘＋山頂田茂萢湿原木道散策30–60分。營業9:00–16:20、間隔15–20分、單程約10分。來回票大人2,200円・小孩700円（官方2026/8/1調整票價，查證後新舊金額相同）。強風約25m/s以上將臨時停駛</div>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="card">
-          <div class="tl-time">11:20 <small>–12:20</small></div>
-          <div class="tl-title">🍽️ 午餐：八甲田休息所（レストハウス八甲田）<span class="tag verified">【查】</span></div>
-          <div class="tl-note">山麓駅內，10:00–15:00營業，蕎麥／咖哩／丼類，不用額外開車（候補見下方候補清單）</div>
-          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E3%83%AC%E3%82%B9%E3%83%88%E3%83%8F%E3%82%A6%E3%82%B9%E5%85%AB%E7%94%B2%E7%94%B0" target="_blank">
-            <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
-            導航到レストハウス八甲田
-          </a>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="card">
-          <div class="tl-time">12:20 <small>–12:40</small></div>
-          <div class="tl-title">🚗 開車經酸湯（酸ヶ湯，路過不入浴）往睡蓮沼<span class="tag verified">【查】</span></div>
-          <div class="tl-note">約11.2km，實際車程約17分（Google Maps），時段保留20分緩衝</div>
-          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E7%9D%A1%E8%93%AE%E6%B2%BC" target="_blank">
-            <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
-            導航到睡蓮沼
+            導航到青森空港
           </a>
         </div>
       </div>
@@ -245,102 +299,44 @@
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="card small">
-          <div class="tl-time">12:40 <small>–13:05</small></div>
-          <div class="tl-title">🎡 睡蓮沼景觀停留拍照<span class="tag verified">【查】</span></div>
-          <div class="tl-note">路邊景觀點，約25分鐘；無正式停車場，僅路肩約10台車空間</div>
+          <div class="tl-time">13:00 <small>–13:30</small></div>
+          <div class="tl-title">✈️ BR121報到、託運行李<span class="tag verified">【查】</span></div>
+          <div class="tl-note">起飛前60分截止（14:30最晚），此時段充裕</div>
         </div>
       </div>
 
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="card">
-          <div class="tl-time">13:05 <small>–13:35</small></div>
-          <div class="tl-title">🚗 開車往燒山（奧入瀨入口）<span class="tag verified">【查】</span></div>
-          <div class="tl-note">約15.3km，實際車程約24分（Google Maps），時段保留30分緩衝</div>
-          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E7%84%BC%E5%B1%B1%20%E5%A5%A5%E5%85%A5%E7%80%AC" target="_blank">
-            <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
-            導航到燒山
-          </a>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="card">
-          <div class="tl-time">13:35 <small>–14:25</small></div>
-          <div class="tl-title">🚗 經石戶（石ヶ戸）、子之口（子ノ口）往休屋<span class="tag verified">【查】</span></div>
-          <div class="tl-note">約23.9km，實際車程約37分（Google Maps），時段保留50分緩衝，沿途城ヶ倉大橋等視情況彈性稍停</div>
-          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E4%BC%91%E5%B1%8B%20%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96" target="_blank">
-            <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
-            導航到休屋
-          </a>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="card">
-          <div class="tl-time">14:45 <small>–15:30</small></div>
-          <div class="tl-title">🏨 抵達 Towadakohan Sakura，check-in<span class="tag verified">【查】</span></div>
-          <div class="tl-note">受理時間15:00–21:00（Klook訂房QBF754033確認）</div>
-          <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E7%95%94%E4%BC%91%E5%B1%8B486" target="_blank">
-            <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
-            導航到Towadakohan Sakura
-          </a>
+          <div class="tl-time">13:30 <small>–14:20</small></div>
+          <div class="tl-title">🍽️ 機場內午餐（二選一，見下）</div>
+          <div class="tl-note">保安檢查前2樓；國際線管制區內僅免稅店無正餐，午餐須在安檢前解決</div>
         </div>
       </div>
 
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="card small">
-          <div class="tl-time">15:30 <small>–17:00</small></div>
-          <div class="tl-title">♨️ 飯店大浴場放鬆／房間休息</div>
+          <div class="tl-time">14:20 <small>–14:50</small></div>
+          <div class="tl-title">🛂 安檢＋證照查驗</div>
+          <div class="tl-note">國際線出境流程，抓30分鐘</div>
         </div>
       </div>
 
       <div class="tl-item">
         <div class="tl-dot"></div>
+        <div class="card small">
+          <div class="tl-time">14:50 <small>–15:10</small></div>
+          <div class="tl-title">🛍️ 候機／免稅店</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--kin); box-shadow:0 0 0 2px var(--kin);"></div>
         <div class="card">
-          <div class="tl-time">17:00 <small>–17:30</small></div>
-          <div class="tl-title">🚶 湖畔散步：乙女之像／十和田神社</div>
-          <div class="tl-note">視小孩體力調整，可縮短或跳過</div>
-          <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E4%B9%99%E5%A5%B3%E3%81%AE%E5%83%8F" target="_blank">
-            <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
-            導航到乙女之像
-          </a>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="card small">
-          <div class="tl-time">17:30 <small>–18:00</small></div>
-          <div class="tl-title">🏨 返回飯店、準備晚餐</div>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="card">
-          <div class="tl-time">18:00 <small>–19:30</small></div>
-          <div class="tl-title">🍽️ 晚餐，二選一（見下方候補清單）</div>
-          <div class="tl-note">不含在Towadakohan Sakura訂房內（只包早餐），已備妥兩種方案</div>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="card small">
-          <div class="tl-time">19:30 <small>–22:00</small></div>
-          <div class="tl-title">🏨 房內休息</div>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="card small">
-          <div class="tl-time">22:30前</div>
-          <div class="tl-title">😴 就寢</div>
+          <div class="tl-time">15:30</div>
+          <div class="tl-title">✈️ BR121 起飛</div>
+          <div class="tl-note">飛往桃園機場第二航廈，預定18:40降落</div>
         </div>
       </div>
 
@@ -348,70 +344,88 @@
 
     <details class="rain">
       <summary>☔ 雨天備案</summary>
-      <div class="rain-body">
-        雲霧或雨天跳過纜車（山上無景），改在酸ヶ湯周邊（不入浴，路過拍照即可）停留較久，提早前往十和田湖畔飯店休息，大浴場泡湯放鬆。
-      </div>
+      <div class="rain-body">睡魔之家、A-FACTORY、機場皆為室內，無需雨備調整；僅步行段可攜帶雨傘備用。</div>
     </details>
 
-    <div class="section-title">🍜 午餐候補清單</div>
+    <div class="section-title">🧳 寄放行李用日文</div>
     <div class="card">
-      <div class="opt chosen" data-opt="a" onclick="chooseOpt('a')">
-        <div class="opt-head"><span class="opt-letter">A・レストハウス八甲田</span><span class="pick-pill">選這個</span></div>
-        <div class="opt-name">纜車山麓駅內，蕎麥／咖哩／丼類</div>
-        <div class="opt-meta">10:00–15:00營業，玩完纜車直接用餐不用額外開車，建議首選</div>
-        <span class="chip verified">山菜そば、肉そば、カレー、カツカレー、カツ丼、唐揚げ丼皆可避開蝦蟹貝</span><br>
-        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E3%83%AC%E3%82%B9%E3%83%88%E3%83%8F%E3%82%A6%E3%82%B9%E5%85%AB%E7%94%B2%E7%94%B0" target="_blank">
+      <div class="tl-note" style="margin-bottom:8px;">① 完整版：辦理退房時直接跟櫃檯說（不用說「已經退房」）</div>
+      <div class="jp-card" onclick="openJpZoom(this)">
+        これから少し出かけますので、<br>
+        荷物だけ預かっていただけますでしょうか。<br>
+        お昼頃に戻って参ります。<br>
+        よろしくお願いいたします。
+      </div>
+      <div class="tl-note" style="margin:12px 0 8px;">② 簡短版（大約11:00左右會回來拿）</div>
+      <div class="jp-card" onclick="openJpZoom(this)">
+        お荷物を先に預けてもよろしいでしょうか。<br>
+        11時頃に戻って参ります。
+      </div>
+      <div class="tl-note" style="margin-top:8px;">沿用8/26已確認過的寄放模式；點卡片可放大方便給前台看</div>
+    </div>
+
+    <div class="section-title">🏮 睡魔之家資訊</div>
+    <div class="card">
+      <table class="t">
+        <tr><th>項目</th><th>資訊</th></tr>
+        <tr><td>地址</td><td>青森市安方1-1-1</td></tr>
+        <tr><td>展示廳</td><td>09:00–19:00（最終入場18:30）</td></tr>
+        <tr><td>門票</td><td>大人620円・中小學生260円（合計1,760円）</td></tr>
+        <tr><td>紀念品商店</td><td>09:00–19:30</td></tr>
+        <tr><td>囃子演奏</td><td>11:10/13:10/15:10/17:10，各20分（本日不排入）</td></tr>
+      </table>
+    </div>
+
+    <div class="section-title">✈️ 青森空港2樓設施</div>
+    <div class="card">
+      <table class="t">
+        <tr><th>設施</th><th>營業時間</th></tr>
+        <tr><td>ASPAM物產／JAL PLAZA（伴手禮）</td><td>配合航班</td></tr>
+        <tr><td>美食廣場（かわら／あじまし亭）</td><td>10:30–20:30</td></tr>
+        <tr><td>森のレストランライアン</td><td>08:45–20:00</td></tr>
+        <tr><td>TULLY'S COFFEE</td><td>07:00–20:15</td></tr>
+        <tr><td>3樓送迎展望台（免費）</td><td>依機場公告</td></tr>
+      </table>
+      <div class="tl-note" style="margin-top:8px;">國際線管制區內（保安檢查後）僅免稅店，無正餐</div>
+    </div>
+
+    <div class="section-title">🍽️ 機場午餐二選一</div>
+    <div class="card">
+      <div class="opt" data-opt="a" onclick="chooseOpt('a')">
+        <div class="opt-head"><span class="opt-letter">A（推薦）・森のレストランライアン</span><span class="pick-pill">選這個</span></div>
+        <div class="opt-name">洋食，青森在地食材定食</div>
+        <div class="opt-meta">機場2樓・08:45–20:00 L.O.20:00</div>
+        <span class="chip verified">非海鮮：定食類可避開蝦蟹貝配料</span><br>
+        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%92%E6%A3%AE%E7%A9%BA%E6%B8%AF" target="_blank">
           <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
           導航
         </a>
       </div>
       <div class="opt" data-opt="b" onclick="chooseOpt('b')">
-        <div class="opt-head"><span class="opt-letter">B・鬼面庵（酸ヶ湯温泉旅館內）</span><span class="pick-pill">選這個</span></div>
-        <div class="opt-name">酸湯蕎麥（酸ヶ湯蕎麦，十割蕎麥）、山菜蕎麥</div>
-        <div class="opt-meta">10:00–16:30（L.O.16:15），離纜車約10分車程</div>
-        <span class="chip verified">蕎麥類品項，高湯可食不必避</span><br>
-        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E9%85%B8%E3%83%B6%E6%B9%AF%E6%B8%A9%E6%B3%89" target="_blank">
+        <div class="opt-head"><span class="opt-letter">B・あじまし亭（美食廣場）</span><span class="pick-pill">選這個</span></div>
+        <div class="opt-name">定食、丼飯類</div>
+        <div class="opt-meta">機場2樓・10:30–20:30 L.O.20:00</div>
+        <span class="chip verified">非海鮮：避開海鮮丼／蝦蟹配料選項，選定食類</span><br>
+        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%92%E6%A3%AE%E7%A9%BA%E6%B8%AF" target="_blank">
           <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
           導航
         </a>
       </div>
     </div>
 
-    <div class="section-title">🍽️ 晚餐候補清單</div>
+    <div class="section-title">📝 待查證</div>
     <div class="card">
-      <div class="opt chosen" data-opt="c" onclick="chooseOpt('c')">
-        <div class="opt-head"><span class="opt-letter">A・寿司龍神（Sakura飯店附設）</span><span class="pick-pill">選這個</span></div>
-        <div class="opt-name">牛五花燒丼（牛バラ焼き丼），非生食套餐</div>
-        <div class="opt-meta">2025/7新開幕，就在飯店裡，非住客也能用餐。營業11:30–14:00（L.O.13:30）／17:30–22:00（L.O.21:30），一般不需預約</div>
-        <span class="chip verified">官方特別提供牛バラ焼き丼牛肉蓋飯套餐，適合不吃生食/海鮮者</span><br>
-        <div class="opt-meta">待現場確認：牛バラ焼き丼以外是否還有其他非海鮮品項可供小孩選擇</div>
-        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E7%95%94%E4%BC%91%E5%B1%8B486" target="_blank">
-          <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
-          導航
-        </a>
-      </div>
-      <div class="opt" data-opt="d" onclick="chooseOpt('d')">
-        <div class="opt-head"><span class="opt-letter">B・Richmond Hotel周邊超商，早上買好帶著走</span><span class="pick-pill">選這個</span></div>
-        <div class="opt-name">麵包／餅乾／常溫零食飲料</div>
-        <div class="opt-meta">早上08:40買、傍晚18:00左右吃，中間約9–10小時多在車上，不建議買生鮮飯糰/便當；山區沿路（八甲田、酸ヶ湯、睡蓮沼一帶）無便利商店可補買，需一次買齊</div>
-        <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%92%E6%A3%AE%E7%B8%A3%E9%9D%92%E6%A3%AE%E5%B8%82%E9%95%B7%E5%B3%B61-6-6" target="_blank">
-          <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
-          導航：Richmond Hotel周邊
-        </a>
+      <div class="tl-note" style="line-height:2.0;">
+        1. 機場巴士11:30／12:35班次是否因航班調整而變動（出發前一週上JR巴士東北官網核對）<br>
+        2. 森のレストランライアン、あじまし亭當日菜單細節（有無蝦蟹配料需現場詢問）<br>
+        3. 3樓送迎展望台當日開放時間
       </div>
     </div>
 
     <div class="section-title">📋 資料來源</div>
     <div class="card">
       <div class="opt-meta" style="line-height:2;">
-        八甲田ロープウェー官網票價與營運時間／レストハウス八甲田・鬼面庵營業時間與菜單／寿司龍神營業時間（agy Web Search重新查證）／Towadakohan Sakura Klook訂房QBF754033／Richmond Hotel官方設施說明／各段開車距離時間（agy Google Maps查證）／2026年奧入瀨私家車管制公告（9/7–9/13，8月不受影響）
-      </div>
-    </div>
-
-    <div class="section-title">⚠️ 待查證清單</div>
-    <div class="card">
-      <div class="opt-meta" style="line-height:2;">
-        Richmond Hotel 8/23 早餐（超商）確切採買動線與商品／寿司龍神除牛バラ焼き丼外的非海鮮菜色／睡蓮沼旺季（暑假）路肩停車位（約10台）是否常滿——已與旅客確認不加備案，維持原行程
+        Google Maps MCP（距離／步行時間）／agy web_search（機場巴士時刻、EVA Air報到規則、機場設施、睡魔之家資訊）
       </div>
     </div>
 
@@ -442,10 +456,19 @@
 
 </div>
 
+<div class="jp-zoom" id="jp-zoom" onclick="this.classList.remove('show')">
+  <div class="jp-zoom-hint">點畫面任一處關閉</div>
+  <div class="jp-zoom-box" id="jp-zoom-box"></div>
+</div>
+
 <script>
   function chooseOpt(letter){
     document.querySelectorAll('.opt').forEach(function(o){ o.classList.remove('chosen'); });
     document.querySelector('.opt[data-opt="' + letter + '"]').classList.add('chosen');
+  }
+  function openJpZoom(el){
+    document.getElementById('jp-zoom-box').innerHTML = el.innerHTML;
+    document.getElementById('jp-zoom').classList.add('show');
   }
 </script>
 </body>

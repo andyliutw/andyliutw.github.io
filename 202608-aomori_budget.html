@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>預算｜青森親子夏旅</title>
+<!-- 版本紀錄：v2.0 | 2026-07-28 | 8天全部細化完成，依8個各日_subpages.md預算預估表彙整補齊Day2-8（原僅Day1有資料）；新增固定費用（住宿/租車）區塊；底部導覽列圖示依風格指南v8.0改為SVG -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,11 +28,12 @@
     body{
       background: var(--sora);
       color: var(--ink);
-      font-family: 'Noto Sans TC', sans-serif;
+      font-family: 'Noto Sans TC','Zen Maru Gothic',sans-serif;
+      font-size:16px; line-height:1.6;
       display:flex; justify-content:center;
     }
     h1,h2,h3,.display{ font-family:'Zen Maru Gothic','Noto Sans TC',sans-serif; }
-    .app{ width:100%; max-width:480px; min-height:100vh; position:relative; padding-bottom: calc(84px + var(--safe-b)); }
+    .app{ width:100%; max-width:520px; min-height:100vh; position:relative; padding-bottom: calc(84px + var(--safe-b)); }
 
     .head{
       background: linear-gradient(160deg, var(--headcolor,var(--ringo)), var(--headcolor2,var(--ringo-deep)));
@@ -57,7 +59,7 @@
     .chip.infer{ background: var(--momo); color: var(--ringo-deep); }
 
     main{ padding: 0 16px; }
-    .section-title{ font-weight:900; font-size:15px; margin: 18px 2px 10px; display:flex; align-items:center; gap:6px; }
+    .section-title{ font-weight:900; font-size:19px; margin: 18px 2px 10px; display:flex; align-items:center; gap:6px; }
     .section-title:first-child{ margin-top:2px; }
 
     .card{ background:#fff; border-radius:22px; box-shadow: var(--shadow); padding:16px 18px; margin-bottom:14px; transition: transform .12s; }
@@ -68,10 +70,10 @@
     .timeline::before{ content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px; background: var(--sora-deep); }
     .tl-item{ position:relative; margin-bottom:14px; }
     .tl-dot{ position:absolute; left:-22px; top:4px; width:14px; height:14px; border-radius:50%; background: var(--headcolor,var(--mizu)); border:3px solid #fff; box-shadow:0 0 0 2px var(--headcolor,var(--mizu)); }
-    .tl-time{ font-weight:900; font-size:14px; color: var(--headcolor,var(--mizu)); margin-bottom:2px; }
+    .tl-time{ font-weight:900; font-size:16.5px; color: var(--headcolor,var(--mizu)); margin-bottom:2px; }
     .tl-time small{ color: var(--ink-soft); font-weight:500; font-size:11.5px; margin-left:4px; }
-    .tl-title{ font-weight:700; font-size:15px; margin-bottom:3px; }
-    .tl-note{ font-size:12.5px; color: var(--ink-soft); line-height:1.6; }
+    .tl-title{ font-weight:700; font-size:16.5px; margin-bottom:3px; }
+    .tl-note{ font-size:13px; color: var(--ink-soft); line-height:1.6; }
 
     .map-btn{ display:inline-flex; align-items:center; gap:6px; background: var(--ringo); color:#fff; font-weight:700; font-size:12.5px; padding:9px 16px; border-radius:999px; border:none; text-decoration:none; margin-top:10px; }
     .map-btn:active{ background: var(--ringo-deep); }
@@ -123,10 +125,11 @@
     .daycard .dc-title{ font-weight:700; font-size:15px; }
     .daycard .dc-sub{ font-size:12px; color:var(--ink-soft); margin-top:2px; }
 
-    nav.bottom{ position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:480px; height: calc(64px + var(--safe-b)); padding-bottom: var(--safe-b); background: rgba(255,255,255,0.85); backdrop-filter: blur(14px); box-shadow: 0 -2px 14px rgba(51,66,79,.08); display:flex; z-index:50; }
+    nav.bottom{ position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:520px; height: calc(64px + var(--safe-b)); padding-bottom: var(--safe-b); background: rgba(255,255,255,0.85); backdrop-filter: blur(14px); box-shadow: 0 -2px 14px rgba(51,66,79,.08); display:flex; z-index:50; }
     .navbtn{ flex:1; background:none; border:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; color: var(--ink-soft); font-family:'Noto Sans TC',sans-serif; font-size:10.5px; font-weight:500; text-decoration:none; }
     .navbtn .ic{ font-size:19px; line-height:1; }
     .navbtn.active{ color: var(--ringo); font-weight:700; }
+    .navbtn svg{ width:23px; height:23px; }
 
     @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
     .head{ --headcolor:#6FBF73; --headcolor2:#4C9451; padding-bottom:34px; }
@@ -139,10 +142,21 @@
     <a class="backlink" href="202608-aomori_index.html">← 回首頁</a>
     <div class="icon">💰</div>
     <h1 style="font-size:22px;">預算總覽</h1>
-    <div class="sub">依日期記帳，逐日細化時補上</div>
+    <div class="sub">8天全數細化完成・依日期記帳</div>
   </header>
 
   <main style="padding-top:16px;">
+
+    <div class="section-title">🏨 固定費用（已預訂）</div>
+    <div class="card">
+      <div class="budget-row"><span>住宿 Richmond 8/21–23</span><span class="amt">NT$8,570</span></div>
+      <div class="budget-row"><span>住宿 Sakura 8/23–25（含早餐）</span><span class="amt">NT$14,389</span></div>
+      <div class="budget-row"><span>住宿 青森屋 8/25–26（一泊兩餐）</span><span class="amt">——（待補）</span></div>
+      <div class="budget-row"><span>住宿 Richmond 8/26–28</span><span class="amt">NT$7,030</span></div>
+      <div class="budget-row"><span>租車（現地信用卡付）</span><span class="amt">¥38,170</span></div>
+      <div class="budget-row"><span>みちのく祭りや（已付款）</span><span class="amt">¥6,120</span></div>
+      <div class="info-line">以上皆為Klook／官網／現場已確認金額，不重複計入下方各日預估。</div>
+    </div>
 
     <div class="section-title">Day 1・8/21（¥日圓）</div>
     <div class="card">
@@ -150,29 +164,110 @@
       <div class="budget-row"><span>A-FACTORY 點心／伴手禮探路</span><span class="amt">約¥2,000</span></div>
       <div class="budget-row"><span>睡魔之家門票（若進場，2大2小）</span><span class="amt">約¥1,760</span></div>
       <div class="budget-row"><span>晚餐（4人，依選項A/B/C）</span><span class="amt">約¥6,000–9,000</span></div>
-      <div class="budget-row"><span>飯店停車（待查證）</span><span class="amt">約¥1,000</span></div>
+      <div class="budget-row"><span>飯店停車</span><span class="amt">約¥1,000</span></div>
       <div class="budget-total"><span>Day1 預估小計</span><span class="amt">¥12,800–15,800</span></div>
     </div>
 
-    <div class="section-title">Day 2–8</div>
-    <div class="card small">
-      <div class="tl-note">尚未細化，會依序在各日確認行程後補入本頁。</div>
-      <span class="chip wip">規劃中</span>
+    <div class="section-title">Day 2・8/22（弘前一日＋晚間取車）</div>
+    <div class="card">
+      <div class="budget-row"><span>JR（4人來回）</span><span class="amt">約¥3,900起</span></div>
+      <div class="budget-row"><span>弘前市內巴士（單程4人）</span><span class="amt">¥300</span></div>
+      <div class="budget-row"><span>津軽藩ねぷた村門票（4人）</span><span class="amt">¥1,800</span></div>
+      <div class="budget-row"><span>午餐（大正浪漫喫茶室，4人）</span><span class="amt">約¥6,000–8,000</span></div>
+      <div class="budget-row"><span>晚餐（Gusto/Capricciosa，4人）</span><span class="amt">約¥5,000–7,000</span></div>
+      <div class="budget-total"><span>Day2 預估小計</span><span class="amt">約¥17,000–21,000</span></div>
     </div>
 
-    <div class="info-line" style="margin-top:12px;">
-      💴 匯率參考：約 ¥1 ≈ NT$0.21（實際請以刷卡/兌換當下匯率為準）<br>
-      已查證金額：機場巴士、睡魔之家門票；其餘餐飲/購物金額為推論估計。
+    <div class="section-title">Day 3・8/23（八甲田山區移動日）</div>
+    <div class="card">
+      <div class="budget-row"><span>八甲田纜車（2大2小來回）</span><span class="amt">¥5,800</span></div>
+      <div class="budget-row"><span>午餐（4人）</span><span class="amt">約¥5,000–7,000</span></div>
+      <div class="budget-row"><span>晚餐（寿司龍神，4人）</span><span class="amt">約¥6,000–9,000</span></div>
+      <div class="budget-total"><span>Day3 預估小計</span><span class="amt">約¥16,800–21,800</span></div>
+    </div>
+
+    <div class="section-title">Day 4・8/24（奧入瀨溪流日）</div>
+    <div class="card">
+      <div class="budget-row"><span>JR巴士（4人，子ノ口⇄雲井之瀧）</span><span class="amt">約¥2,000起</span></div>
+      <div class="budget-row"><span>遊覽船（2大2小）</span><span class="amt">¥4,180</span></div>
+      <div class="budget-row"><span>午餐（4人）</span><span class="amt">約¥6,000–8,000</span></div>
+      <div class="budget-row"><span>晚餐（4人，依方案）</span><span class="amt">約¥6,000–10,000</span></div>
+      <div class="budget-total"><span>Day4 預估小計</span><span class="amt">約¥18,180–24,180</span></div>
+    </div>
+
+    <div class="section-title">Day 5・8/25（十和田市→青森屋）</div>
+    <div class="card">
+      <div class="budget-row"><span>遊覽船（方案A優先，2大2小）</span><span class="amt">¥4,180</span></div>
+      <div class="budget-row"><span>美術館門票（方案B次選，2大人，小孩免費）</span><span class="amt">¥3,600</span></div>
+      <div class="budget-row"><span>午餐（4人）</span><span class="amt">約¥5,000–7,000</span></div>
+      <div class="budget-row"><span>晚餐（のれそれ食堂，已含一泊兩餐）</span><span class="amt">¥0</span></div>
+      <div class="budget-row"><span>みちのく祭りや</span><span class="amt">已付款¥6,120</span></div>
+      <div class="info-line">上方固定費用區已列みちのく祭りや¥6,120，此處不重複加總。</div>
+      <div class="budget-total"><span>Day5 預估小計（方案A＋午餐）</span><span class="amt">約¥9,180–11,180</span></div>
+    </div>
+
+    <div class="section-title">Day 6・8/26（青森屋→五所川原ELM）</div>
+    <div class="card">
+      <div class="budget-row"><span>早餐（已含一泊兩餐）</span><span class="amt">¥0</span></div>
+      <div class="budget-row"><span>青森屋活動（金魚祭扇貝釣り／うちわ手作）</span><span class="amt">約¥3,000–6,000</span></div>
+      <div class="budget-row"><span>午餐（ELM內，4人）</span><span class="amt">約¥5,000–7,000</span></div>
+      <div class="budget-row"><span>購物（3COINS＋無印＋UNIQLO）</span><span class="amt">依採購</span></div>
+      <div class="budget-row"><span>加油（還車前加滿）</span><span class="amt">依油量</span></div>
+      <div class="budget-row"><span>晚餐（牛角，4人）</span><span class="amt">約¥6,000–9,000</span></div>
+      <div class="budget-total"><span>Day6 預估小計（不含購物/加油）</span><span class="amt">約¥14,000–22,000</span></div>
+    </div>
+
+    <div class="section-title">Day 7・8/27（全天購物日）</div>
+    <div class="card">
+      <div class="budget-row"><span>早餐（超商，4人）</span><span class="amt">約¥1,500–2,000</span></div>
+      <div class="budget-row"><span>公車（市役所前→浜田，4人）</span><span class="amt">約¥1,000–1,400</span></div>
+      <div class="budget-row"><span>午餐（サンロード青森，4人）</span><span class="amt">約¥4,000–6,000</span></div>
+      <div class="budget-row"><span>計程車（浜田⇄三好⇄市區，2趟）</span><span class="amt">約¥4,300–4,800</span></div>
+      <div class="budget-row"><span>晚餐（4人）</span><span class="amt">約¥5,000–8,000</span></div>
+      <div class="budget-row"><span>購物（唐吉軻德／UNIQLO／無印／文具）</span><span class="amt">依採購</span></div>
+      <div class="budget-total"><span>Day7 預估小計（不含購物）</span><span class="amt">約¥15,800–22,200</span></div>
+    </div>
+
+    <div class="section-title">Day 8・8/28（回程日）</div>
+    <div class="card">
+      <div class="budget-row"><span>早餐（超商，4人）</span><span class="amt">約¥1,500–2,000</span></div>
+      <div class="budget-row"><span>睡魔之家門票（4人）</span><span class="amt">¥1,760</span></div>
+      <div class="budget-row"><span>A-FACTORY伴手禮</span><span class="amt">依採購</span></div>
+      <div class="budget-row"><span>機場巴士（4人，單程）</span><span class="amt">¥2,080</span></div>
+      <div class="budget-row"><span>機場午餐（4人）</span><span class="amt">約¥4,000–6,000</span></div>
+      <div class="budget-row"><span>機場伴手禮</span><span class="amt">依採購</span></div>
+      <div class="budget-total"><span>Day8 預估小計（不含伴手禮）</span><span class="amt">約¥9,340–11,840</span></div>
+    </div>
+
+    <div class="section-title">💴 8天合計（餐飲＋活動＋交通，不含住宿/租車/購物/加油）</div>
+    <div class="card">
+      <div class="budget-total"><span>Day1–8 預估合計</span><span class="amt">約¥119,200–156,100</span></div>
+      <div class="info-line">匯率參考：約 ¥1 ≈ NT$0.21（實際請以刷卡/兌換當下匯率為準）。已查證金額：機場巴士、租車、各項門票、遊覽船；餐飲多為推論區間【推】，購物與加油因人而異未列入。</div>
     </div>
 
   </main>
 
   <nav class="bottom">
-    <a class="navbtn" href="202608-aomori_index.html"><span class="ic">🗓️</span>行程</a>
-    <a class="navbtn" href="202608-aomori_transport.html"><span class="ic">🚌</span>交通</a>
-    <a class="navbtn" href="202608-aomori_hotel.html"><span class="ic">🏨</span>住宿</a>
-    <a class="navbtn" href="202608-aomori_tips.html"><span class="ic">🎒</span>錦囊</a>
-    <a class="navbtn active" href="202608-aomori_budget.html"><span class="ic">💰</span>預算</a>
+    <a class="navbtn" href="202608-aomori_index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+      行程
+    </a>
+    <a class="navbtn" href="202608-aomori_transport.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="14" rx="3"/><path d="M4 11h16M8 21l2-4M16 21l-2-4"/><circle cx="8.5" cy="14" r=".5"/><circle cx="15.5" cy="14" r=".5"/></svg>
+      交通
+    </a>
+    <a class="navbtn" href="202608-aomori_hotel.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg>
+      住宿
+    </a>
+    <a class="navbtn" href="202608-aomori_tips.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="14" rx="3"/><path d="M9 7V5a3 3 0 0 1 6 0v2M12 12v4"/></svg>
+      錦囊
+    </a>
+    <a class="navbtn active" href="202608-aomori_budget.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 8l3 4 3-4M12 12v5M9.5 13.5h5M9.5 16h5"/></svg>
+      預算
+    </a>
   </nav>
 
 </div>

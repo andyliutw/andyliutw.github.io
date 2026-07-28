@@ -27,11 +27,12 @@
     body{
       background: var(--sora);
       color: var(--ink);
-      font-family: 'Noto Sans TC', sans-serif;
+      font-family: 'Noto Sans TC','Zen Maru Gothic',sans-serif;
+      font-size:16px; line-height:1.6;
       display:flex; justify-content:center;
     }
     h1,h2,h3,.display{ font-family:'Zen Maru Gothic','Noto Sans TC',sans-serif; }
-    .app{ width:100%; max-width:480px; min-height:100vh; position:relative; padding-bottom: calc(84px + var(--safe-b)); }
+    .app{ width:100%; max-width:520px; min-height:100vh; position:relative; padding-bottom: calc(84px + var(--safe-b)); }
 
     .head{
       background: linear-gradient(160deg, var(--headcolor,var(--ringo)), var(--headcolor2,var(--ringo-deep)));
@@ -68,7 +69,7 @@
     .chip.infer{ background: var(--momo); color: var(--ringo-deep); }
 
     main{ padding: 0 16px; }
-    .section-title{ font-weight:900; font-size:15px; margin: 18px 2px 10px; display:flex; align-items:center; gap:6px; }
+    .section-title{ font-weight:900; font-size:19px; margin: 18px 2px 10px; display:flex; align-items:center; gap:6px; }
     .section-title:first-child{ margin-top:2px; }
 
     .card{ background:#fff; border-radius:22px; box-shadow: var(--shadow); padding:16px 18px; margin-bottom:14px; transition: transform .12s; }
@@ -79,13 +80,13 @@
     .timeline::before{ content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px; background: var(--sora-deep); }
     .tl-item{ position:relative; margin-bottom:14px; }
     .tl-dot{ position:absolute; left:-22px; top:4px; width:14px; height:14px; border-radius:50%; background: var(--headcolor,var(--mizu)); border:3px solid #fff; box-shadow:0 0 0 2px var(--headcolor,var(--mizu)); }
-    .tl-time{ font-weight:900; font-size:14px; color: var(--headcolor,var(--mizu)); margin-bottom:2px; }
+    .tl-time{ font-weight:900; font-size:16.5px; color: var(--headcolor,var(--mizu)); margin-bottom:2px; }
     .tl-time small{ color: var(--ink-soft); font-weight:500; font-size:11.5px; margin-left:4px; }
-    .tl-title{ font-weight:700; font-size:15px; margin-bottom:3px; }
+    .tl-title{ font-weight:700; font-size:16.5px; margin-bottom:3px; }
     .tl-title .tag{ display:inline-block; font-size:10px; font-weight:700; padding:2px 7px; border-radius:999px; margin-left:6px; vertical-align:middle; }
     .tl-title .tag.verified{ background: rgba(111,191,115,0.18); color:#4C9451; }
     .tl-title .tag.infer{ background: var(--momo); color: var(--ringo-deep); }
-    .tl-note{ font-size:12.5px; color: var(--ink-soft); line-height:1.6; }
+    .tl-note{ font-size:13px; color: var(--ink-soft); line-height:1.6; }
 
     .map-btn{ display:inline-flex; align-items:center; gap:6px; background: var(--ringo); color:#fff; font-weight:700; font-size:12.5px; padding:9px 16px; border-radius:999px; border:none; text-decoration:none; margin-top:10px; }
     .map-btn:active{ background: var(--ringo-deep); }
@@ -117,13 +118,14 @@
     .verify-ul{ margin:0; padding-left:18px; font-size:12.5px; color: var(--ink-soft); line-height:1.9; }
     .verify-ul li{ margin-bottom:2px; }
 
-    nav.bottom{ position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:480px; height: calc(64px + var(--safe-b)); padding-bottom: var(--safe-b); background: rgba(255,255,255,0.85); backdrop-filter: blur(14px); box-shadow: 0 -2px 14px rgba(51,66,79,.08); display:flex; z-index:50; }
+    nav.bottom{ position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:520px; height: calc(64px + var(--safe-b)); padding-bottom: var(--safe-b); background: rgba(255,255,255,0.85); backdrop-filter: blur(14px); box-shadow: 0 -2px 14px rgba(51,66,79,.08); display:flex; z-index:50; }
     .navbtn{ flex:1; background:none; border:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; color: var(--ink-soft); font-family:'Noto Sans TC',sans-serif; font-size:10.5px; font-weight:500; text-decoration:none; }
     .navbtn .ic{ font-size:19px; line-height:1; }
     .navbtn.active{ color: var(--ringo); font-weight:700; }
+    .navbtn svg{ width:23px; height:23px; }
 
     @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
-    .head{ --headcolor:#3E9E8C; --headcolor2:#2E8272; }
+    .app{ --headcolor:#3E9E8C; --headcolor2:#2E8272; }
 </style>
 </head>
 <body>
@@ -143,7 +145,7 @@
     <a class="backlink" href="202608-aomori_index.html">← 回首頁</a>
     <div class="head-badge">🌊</div>
     <h1>8/24（一）奧入瀨溪流日</h1>
-    <div class="sub">石ヶ戸精華段散策・十和田湖遊覽船・湖畔散步</div>
+    <div class="sub">石戶（石ヶ戸）精華段散策・十和田湖遊覽船・湖畔散步</div>
     <div class="daydots">
       <span></span><span></span><span></span><span class="on"></span>
       <span></span><span></span><span></span><span></span>
@@ -197,11 +199,11 @@
         <div class="tl-dot"></div>
         <div class="card">
           <div class="tl-time">08:50</div>
-          <div class="tl-title">🚗 出發，開車往子ノ口<span class="tag infer">【推】</span></div>
+          <div class="tl-title">🚗 出發，開車往子之口（子ノ口）<span class="tag infer">【推】</span></div>
           <div class="tl-note">約15分（框架文件第五節參考表）；agy Google Maps實測約12分，緩衝更充足</div>
           <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E5%AD%90%E3%83%8E%E5%8F%A3" target="_blank">
             <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
-            導航到子ノ口
+            導航到子之口（子ノ口）
           </a>
         </div>
       </div>
@@ -210,7 +212,7 @@
         <div class="tl-dot"></div>
         <div class="card small">
           <div class="tl-time">約09:02 <small>–09:05</small></div>
-          <div class="tl-title">🅿️ 抵達子ノ口，停車</div>
+          <div class="tl-title">🅿️ 抵達子之口（子ノ口），停車</div>
           <div class="tl-note">免費停車場、廁所、遊覽船碼頭</div>
         </div>
       </div>
@@ -219,8 +221,8 @@
         <div class="tl-dot"></div>
         <div class="card small">
           <div class="tl-time">09:05 <small>–09:15</small></div>
-          <div class="tl-title">📷 子ノ口湖畔散步、拍照、上廁所</div>
-          <div class="tl-note">候車緩衝約10分鐘；子ノ口本身即十和田湖出口景點，非純粹等待</div>
+          <div class="tl-title">📷 子之口（子ノ口）湖畔散步、拍照、上廁所</div>
+          <div class="tl-note">候車緩衝約10分鐘；子之口（子ノ口）本身即十和田湖出口景點，非純粹等待</div>
         </div>
       </div>
 
@@ -228,7 +230,7 @@
         <div class="tl-dot"></div>
         <div class="card">
           <div class="tl-time">09:15 <small>→ 09:34</small></div>
-          <div class="tl-title">🚌 搭JR巴士（みずうみ号）子ノ口 → 石ヶ戸<span class="tag verified">【查】</span></div>
+          <div class="tl-title">🚌 搭JR湖號巴士（みずうみ号）子之口（子ノ口） → 石戶（石ヶ戸）<span class="tag verified">【查】</span></div>
           <div class="tl-note">2026/4/1起新時刻表（JRバス東北官方），車程約19分</div>
         </div>
       </div>
@@ -237,7 +239,7 @@
         <div class="tl-dot"></div>
         <div class="card">
           <div class="tl-time">09:34 <small>–09:40</small></div>
-          <div class="tl-title">🚻 石ヶ戸休憩所稍作停留</div>
+          <div class="tl-title">🚻 石戶（石ヶ戸）休憩所稍作停留</div>
           <div class="tl-note">奧入瀨渓流唯一賣店，有廁所、輕食（そば・うどん・ラーメン）</div>
           <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E7%9F%B3%E3%83%B6%E6%88%B8%E4%BC%91%E6%86%A9%E6%89%80" target="_blank">
             <svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
@@ -250,7 +252,7 @@
         <div class="tl-dot"></div>
         <div class="card">
           <div class="tl-time">09:40 <small>約50分</small></div>
-          <div class="tl-title">🚶 步行：石ヶ戸 → 阿修羅之流<span class="tag verified">【查】</span></div>
+          <div class="tl-title">🚶 步行：石戶（石ヶ戸） → 阿修羅之流<span class="tag verified">【查】</span></div>
           <div class="tl-note">1.7km／官方約35分（環境省官方步行時間），親子抓約50分；沿溪逆流而上，坡度平緩</div>
           <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%A5%A5%E5%85%A5%E7%80%AC%E6%B8%93%E6%B5%81%20%E9%98%BF%E4%BF%AE%E7%BE%85%E3%81%AE%E6%B5%81%E3%82%8C" target="_blank">
             <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
@@ -264,7 +266,7 @@
         <div class="card">
           <div class="tl-time">約10:30 <small>–10:40</small></div>
           <div class="tl-title">🚶 步行：阿修羅之流 → 雲井之瀧<span class="tag verified">【查】</span></div>
-          <div class="tl-note">1.1km／官方約25分，親子抓約35–40分；本段最著名的溪流景致之一（石ヶ戸⇄雲井之瀧全段共2.8km，親子總抓約85–90分）</div>
+          <div class="tl-note">1.1km／官方約25分，親子抓約35–40分；本段最著名的溪流景致之一（石戶（石ヶ戸）⇄雲井之瀧全段共2.8km，親子總抓約85–90分）</div>
           <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%A5%A5%E5%85%A5%E7%80%AC%E6%B8%93%E6%B5%81%20%E9%9B%B2%E4%BA%95%E3%81%AE%E6%BB%9D" target="_blank">
             <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
             導航到雲井之瀧
@@ -285,7 +287,7 @@
           </div>
           <div class="branch">
             <div class="branch-label">▶ 版本A（全程走完，備案）</div>
-            <div class="tl-title" style="font-size:14px;">續走 雲井之瀧→銚子大瀧(約12:15–12:45)→子ノ口(約13:10–13:30)</div>
+            <div class="tl-title" style="font-size:14px;">續走 雲井之瀧→銚子大瀧(約12:15–12:45)→子之口（子ノ口）(約13:10–13:30)</div>
             <div class="tl-note">全程約8.9km，含拍照休息共3.5–4小時；午餐延後到約14:00，下午湖畔活動只能保留1樣</div>
           </div>
         </div>
@@ -295,7 +297,7 @@
         <div class="tl-dot"></div>
         <div class="card">
           <div class="tl-time">11:50 <small>→ 12:05</small></div>
-          <div class="tl-title">🚌 搭巴士（おいらせ21号）雲井之瀧 → 子ノ口<span class="tag verified">【查】</span></div>
+          <div class="tl-title">🚌 搭奧入瀨21號巴士（おいらせ21号）雲井之瀧 → 子之口（子ノ口）<span class="tag verified">【查】</span></div>
           <div class="tl-note">JRバス東北官方時刻表確認：中途站（雲井の滝）上車不需預約，空位候車即可，僅八戸駅西口起點才需要預約；車程約15分。若當天客滿，備案改搭13:15班次（みずうみ号，確定無爭議），午餐會順延至約14:00（JRバス東北官方時刻表：jrbustohoku.co.jp/print/route/11/274）</div>
         </div>
       </div>
@@ -304,7 +306,7 @@
         <div class="tl-dot"></div>
         <div class="card small">
           <div class="tl-time">12:05</div>
-          <div class="tl-title">🚗 抵達子ノ口，取車</div>
+          <div class="tl-title">🚗 抵達子之口（子ノ口），取車</div>
         </div>
       </div>
 
@@ -343,7 +345,7 @@
         <div class="tl-dot"></div>
         <div class="card">
           <div class="tl-time">14:40 <small>–15:30</small></div>
-          <div class="tl-title">⛴️ 十和田湖遊覽船周遊コース<span class="tag verified">【查】</span></div>
+          <div class="tl-title">⛴️ 十和田湖遊覽船周遊路線（周遊コース）<span class="tag verified">【查】</span></div>
           <div class="tl-note">2026官方時刻表，休屋⇔休屋約50分，繞行御倉・中山半島，大人¥1,430／小孩¥660</div>
           <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E9%81%8A%E8%A6%A7%E8%88%B9%E4%BC%91%E5%B1%8B%E3%81%AE%E3%82%8A%E3%81%B0" target="_blank">
             <span class="pin-badge"><svg viewBox="0 0 24 24"><path fill="var(--ringo)" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.4 7.3 12a1 1 0 0 0 1.4 0C13.4 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg></span>
@@ -404,7 +406,7 @@
 
     <details class="rain">
       <summary>☔ 雨天備案</summary>
-      <div class="rain-body">奧入瀨小雨反而有氛圍，備輕便雨衣照走精華段即可。若為大雨，改為全程開車沿溪流公路停靠石ヶ戸、銚子大瀧、雲井之瀧等點下車拍照，下午提早回飯店泡湯休息。</div>
+      <div class="rain-body">奧入瀨小雨反而有氛圍，備輕便雨衣照走精華段即可。若為大雨，改為全程開車沿溪流公路停靠石戶（石ヶ戸）、銚子大瀧、雲井之瀧等點下車拍照，下午提早回飯店泡湯休息。</div>
     </details>
 
     <div class="section-title">🍽️ 午餐候補清單</div>
@@ -421,7 +423,7 @@
       </div>
       <div class="opt" data-opt="lunch-b" onclick="chooseOpt('lunch-b')">
         <div class="opt-head"><span class="opt-letter">B・御食事処神田川</span><span class="pick-pill">選這個</span></div>
-        <div class="opt-name">十和田名物バラ焼き</div>
+        <div class="opt-name">十和田名物五花燒（バラ焼き）</div>
         <div class="opt-meta">十和田バラ焼き（牛肉）、比内地鶏料理、十和田湖高原ポーク桃豚、釜飯、定食類・休屋486・☎0176-75-2515・10:00–16:00</div>
         <span class="chip verified">已查證有非蝦蟹貝主菜</span><br>
         <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E5%BE%A1%E9%A3%9F%E4%BA%8B%E5%87%A6%E7%A5%9E%E7%94%B0%E5%B7%9D" target="_blank">
@@ -431,7 +433,7 @@
       </div>
       <div class="opt" data-opt="lunch-c" onclick="chooseOpt('lunch-c')">
         <div class="opt-head"><span class="opt-letter">C・レストランやすみや</span><span class="pick-pill">選這個</span></div>
-        <div class="opt-name">きりたんぽ鍋、青森県産牛ステーキ</div>
+        <div class="opt-name">米棒鍋（きりたんぽ鍋）、青森縣產牛排</div>
         <div class="opt-meta">きりたんぽ鍋（¥1,430起）、青森県産牛ステーキセット（¥3,200）；姫鱒塩焼定食含魚類可少量或跳過・休屋486・☎0176-75-2141</div>
         <span class="chip wip">⚠️ 營業時間查證落差較大，當天現場或電話再確認</span><br>
         <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%E3%82%84%E3%81%99%E3%81%BF%E3%82%84" target="_blank">
@@ -445,7 +447,7 @@
     <div class="card">
       <div class="opt" data-opt="dinner-a" onclick="chooseOpt('dinner-a')">
         <div class="opt-head"><span class="opt-letter">A・飯店房內加購晚餐</span><span class="pick-pill">選這個</span></div>
-        <div class="opt-name">すき焼き鍋等地元食材鍋物</div>
+        <div class="opt-name">壽喜燒（すき焼き）鍋等在地食材鍋物</div>
         <div class="opt-meta">不受休屋店家提早打烊限制、不用移動・☎81-176-275480</div>
         <span class="chip wip">⚠️ 需事先致電飯店確認能否加購、費用、能否避開蝦蟹貝</span><br>
         <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=Towadakohan%20Sakura" target="_blank">
@@ -489,11 +491,26 @@
   </main>
 
   <nav class="bottom">
-    <a class="navbtn active" href="202608-aomori_index.html"><span class="ic">🗓️</span>行程</a>
-    <a class="navbtn" href="202608-aomori_transport.html"><span class="ic">🚌</span>交通</a>
-    <a class="navbtn" href="202608-aomori_hotel.html"><span class="ic">🏨</span>住宿</a>
-    <a class="navbtn" href="202608-aomori_tips.html"><span class="ic">🎒</span>錦囊</a>
-    <a class="navbtn" href="202608-aomori_budget.html"><span class="ic">💰</span>預算</a>
+    <a class="navbtn active" href="202608-aomori_index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+      行程
+    </a>
+    <a class="navbtn" href="202608-aomori_transport.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="14" rx="3"/><path d="M4 11h16M8 21l2-4M16 21l-2-4"/><circle cx="8.5" cy="14" r=".5"/><circle cx="15.5" cy="14" r=".5"/></svg>
+      交通
+    </a>
+    <a class="navbtn" href="202608-aomori_hotel.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg>
+      住宿
+    </a>
+    <a class="navbtn" href="202608-aomori_tips.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="14" rx="3"/><path d="M9 7V5a3 3 0 0 1 6 0v2M12 12v4"/></svg>
+      錦囊
+    </a>
+    <a class="navbtn" href="202608-aomori_budget.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 8l3 4 3-4M12 12v5M9.5 13.5h5M9.5 16h5"/></svg>
+      預算
+    </a>
   </nav>
 
 </div>

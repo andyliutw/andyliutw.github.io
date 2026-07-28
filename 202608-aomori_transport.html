@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>交通｜青森親子夏旅</title>
+<!-- 版本紀錄：v2.0 | 2026-07-28 | 8天全部細化完成，依共通檔＋8個各日_subpages.md重新彙整產出；補齊8/22弘前JR＋土手町巴士、8/24奧入瀨JR巴士＋遊覽船、8/26開車全段、8/27購物日交通、8/28機場巴士11:30定案班次；底部導覽列圖示依風格指南v8.0改為SVG -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,11 +28,12 @@
     body{
       background: var(--sora);
       color: var(--ink);
-      font-family: 'Noto Sans TC', sans-serif;
+      font-family: 'Noto Sans TC','Zen Maru Gothic',sans-serif;
+      font-size:16px; line-height:1.6;
       display:flex; justify-content:center;
     }
     h1,h2,h3,.display{ font-family:'Zen Maru Gothic','Noto Sans TC',sans-serif; }
-    .app{ width:100%; max-width:480px; min-height:100vh; position:relative; padding-bottom: calc(84px + var(--safe-b)); }
+    .app{ width:100%; max-width:520px; min-height:100vh; position:relative; padding-bottom: calc(84px + var(--safe-b)); }
 
     .head{
       background: linear-gradient(160deg, var(--headcolor,var(--ringo)), var(--headcolor2,var(--ringo-deep)));
@@ -57,7 +59,7 @@
     .chip.infer{ background: var(--momo); color: var(--ringo-deep); }
 
     main{ padding: 0 16px; }
-    .section-title{ font-weight:900; font-size:15px; margin: 18px 2px 10px; display:flex; align-items:center; gap:6px; }
+    .section-title{ font-weight:900; font-size:19px; margin: 18px 2px 10px; display:flex; align-items:center; gap:6px; }
     .section-title:first-child{ margin-top:2px; }
 
     .card{ background:#fff; border-radius:22px; box-shadow: var(--shadow); padding:16px 18px; margin-bottom:14px; transition: transform .12s; }
@@ -68,10 +70,13 @@
     .timeline::before{ content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px; background: var(--sora-deep); }
     .tl-item{ position:relative; margin-bottom:14px; }
     .tl-dot{ position:absolute; left:-22px; top:4px; width:14px; height:14px; border-radius:50%; background: var(--headcolor,var(--mizu)); border:3px solid #fff; box-shadow:0 0 0 2px var(--headcolor,var(--mizu)); }
-    .tl-time{ font-weight:900; font-size:14px; color: var(--headcolor,var(--mizu)); margin-bottom:2px; }
+    .tl-time{ font-weight:900; font-size:16.5px; color: var(--headcolor,var(--mizu)); margin-bottom:2px; }
     .tl-time small{ color: var(--ink-soft); font-weight:500; font-size:11.5px; margin-left:4px; }
-    .tl-title{ font-weight:700; font-size:15px; margin-bottom:3px; }
-    .tl-note{ font-size:12.5px; color: var(--ink-soft); line-height:1.6; }
+    .tl-title{ font-weight:700; font-size:16.5px; margin-bottom:3px; }
+    .tl-title .tag{ display:inline-block; font-size:10px; font-weight:700; padding:2px 7px; border-radius:999px; margin-left:6px; vertical-align:middle; }
+    .tl-title .tag.verified{ background: rgba(111,191,115,0.18); color:#4C9451; }
+    .tl-title .tag.infer{ background: var(--momo); color: var(--ringo-deep); }
+    .tl-note{ font-size:13px; color: var(--ink-soft); line-height:1.6; }
 
     .map-btn{ display:inline-flex; align-items:center; gap:6px; background: var(--ringo); color:#fff; font-weight:700; font-size:12.5px; padding:9px 16px; border-radius:999px; border:none; text-decoration:none; margin-top:10px; }
     .map-btn:active{ background: var(--ringo-deep); }
@@ -123,10 +128,11 @@
     .daycard .dc-title{ font-weight:700; font-size:15px; }
     .daycard .dc-sub{ font-size:12px; color:var(--ink-soft); margin-top:2px; }
 
-    nav.bottom{ position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:480px; height: calc(64px + var(--safe-b)); padding-bottom: var(--safe-b); background: rgba(255,255,255,0.85); backdrop-filter: blur(14px); box-shadow: 0 -2px 14px rgba(51,66,79,.08); display:flex; z-index:50; }
+    nav.bottom{ position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:520px; height: calc(64px + var(--safe-b)); padding-bottom: var(--safe-b); background: rgba(255,255,255,0.85); backdrop-filter: blur(14px); box-shadow: 0 -2px 14px rgba(51,66,79,.08); display:flex; z-index:50; }
     .navbtn{ flex:1; background:none; border:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; color: var(--ink-soft); font-family:'Noto Sans TC',sans-serif; font-size:10.5px; font-weight:500; text-decoration:none; }
     .navbtn .ic{ font-size:19px; line-height:1; }
     .navbtn.active{ color: var(--ringo); font-weight:700; }
+    .navbtn svg{ width:23px; height:23px; }
 
     @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
     .head{ --headcolor:#2E9BA6; --headcolor2:#257F89; padding-bottom:34px; }
@@ -139,57 +145,136 @@
     <a class="backlink" href="202608-aomori_index.html">← 回首頁</a>
     <div class="icon">🚌</div>
     <h1 style="font-size:22px;">交通總覽</h1>
-    <div class="sub">機場巴士・租車・鐵路，全程共用資訊</div>
+    <div class="sub">機場巴士・租車・JR・巴士・計程車，全程8天完整資訊</div>
   </header>
 
   <main style="padding-top:16px;">
 
-    <div class="section-title">✈️ 機場巴士（8/21）</div>
+    <div class="section-title">✈️ 機場巴士</div>
     <div class="card">
-      <div class="tl-title">青森空港 → 柳町通り</div>
-      <div class="tl-note">主要規劃班次 <b>16:10 発</b>（前一班15:20・後一班17:20），約30分鐘抵達柳町通り。<br>票價：大人 ¥690／小孩 ¥350</div>
-      <span class="chip verified">【查】已查證</span><br>
+      <div class="tl-title">8/21 青森空港 → 柳町通（柳町通り）<span class="tag verified">【查】</span></div>
+      <div class="tl-note">定案班次 <b>16:10 発 → 16:40 著</b>（前一班15:20・後一班17:20），約30分鐘抵達，步行1分到飯店。票價：大人¥690／小孩¥350</div>
       <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%92%E6%A3%AE%E7%A9%BA%E6%B8%AF" target="_blank">
         <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 21s7-7.5 7-12a7 7 0 0 0-14 0c0 4.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
         導航到機場
       </a>
     </div>
-
-    <div class="section-title">🚗 租車（8/22–8/26）</div>
     <div class="card">
-      <div class="tl-title">Tabirai・預訂號碼 102121854</div>
+      <div class="tl-title">8/28 柳町通（柳町通り） → 青森空港<span class="tag verified">【查】</span></div>
+      <div class="tl-note">定案班次 <b>11:30 発 → 12:00 著</b>（緩衝留給機場，非市區；備用班次12:35／12:45），約30分鐘。票價：大人¥690／小孩¥350（4人單程合計¥2,080）</div>
+      <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E6%9F%B3%E7%94%BA%E9%80%9A%E3%82%8A%E3%83%90%E3%82%B9%E5%81%9C" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 21s7-7.5 7-12a7 7 0 0 0-14 0c0 4.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        導航到柳町通り站牌
+      </a>
+    </div>
+
+    <div class="section-title">🚗 租車（8/22 19:00 – 8/26 19:00）</div>
+    <div class="card">
+      <div class="tl-title">Nippon租車（ニッポンレンタカー）・Tabirai預訂號碼102121854<span class="tag verified">【查】</span></div>
       <div class="tl-note">
         取車：2026/8/22（六）19:00｜還車：2026/8/26（三）19:00<br>
-        地點：青森駅東口営業所（青森市安方1-6-5，青森駅東口旁）<br>
-        方案：免責補償込み＋NOC補償(ECO)＋兒童安全座椅（加購）
+        地點：青森駅東口営業所（青森市安方1-6-5，TEL 050-1712-2897，JR青森駅東口徒步約8分）<br>
+        方案：免責補償込み＋NOC補償(ECO)＋兒童安全座椅×1＋ETC車載器，合計¥38,170（税込）<br>
+        現地決済原則信用卡；還車前加滿油；全員駕駛需出示台灣駕照＋日文譯本
       </div>
-      <span class="chip done">已定案</span><br>
       <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%92%E6%A3%AE%E9%A7%85%E6%9D%B1%E5%8F%A3%E5%96%B6%E6%A5%AD%E6%89%80%20%E5%AE%89%E6%96%B91-6-5%20%E9%9D%92%E6%A3%AE%E5%B8%82" target="_blank">
         <svg viewBox="0 0 24 24" fill="none" stroke="var(--ringo)" stroke-width="2"><path d="M12 21s7-7.5 7-12a7 7 0 0 0-14 0c0 4.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
         導航到租車店
       </a>
-      <div class="info-line">⚠️ 待查證：預訂憑證上的租車公司名稱與營業所電話請以Tabirai憑證為準，行前確認19:00取車無誤。</div>
     </div>
 
-    <div class="section-title">🚃 鐵路原則</div>
-    <div class="card small">
+    <div class="section-title">🚃 8/22 弘前一日：JR＋巴士</div>
+    <div class="card">
+      <div class="tl-title">青森⇄弘前 特急津輕（つがる）<span class="tag verified">【查】</span></div>
       <div class="tl-note">
-        以最快到達班次規劃，不考慮費用。<br>
-        青森⇄弘前：特急つがる約35分（班次少，優先查）／普通約45–50分【班次待查證】<br>
-        淺蟲：青い森鐵道，青森駅→淺蟲溫泉駅約20分＋步行約10分至水族館【查】
+        去程：特急つがる42号 <b>09:04 → 09:38</b>（34分，IC¥1,235，5番線發車）<br>
+        回程二選一（現場視狀況）：<b>16:16 → 17:04</b>（48分）／<b>16:51 → 17:45</b>（54分），皆IC¥715
+      </div>
+    </div>
+    <div class="card">
+      <div class="tl-title">弘前市內：土手町循環巴士（土手町循環バス）<span class="tag verified">【查】</span></div>
+      <div class="tl-note">
+        弘前駅→大正浪漫喫茶室搭首班車 <b>10:00発</b>，車程約15分<br>
+        票價：大人¥100／小學生¥50（<b>現金制，不接受IC卡</b>）；運行4–11月10:00–18:00，每10分一班
       </div>
     </div>
 
-    <div class="info-line" style="margin:10px 4px 0;">📌 8/22之後的JR特急つがる詳細班次、8/23–8/27開車路段導航，會在各日細化時陸續補進本頁。</div>
+    <div class="section-title">🚌 8/24 奧入瀨：JR巴士＋遊覽船</div>
+    <div class="card">
+      <div class="tl-title">JR巴士：湖號（みずうみ号）／奧入瀨號（おいらせ号）<span class="tag verified">【查】</span></div>
+      <div class="tl-note">
+        子ノ口 → 石ヶ戸：<b>09:15 → 09:34</b>（19分）<br>
+        雲井之瀧 → 子ノ口：<b>11:50 → 12:05</b>（おいらせ21号，15分；中途站上車不需預約）；備案13:15発（みずうみ号，確定無爭議）
+      </div>
+    </div>
+    <div class="card">
+      <div class="tl-title">十和田湖遊覽船（周遊路線／Bコース）<span class="tag verified">【查】</span></div>
+      <div class="tl-note">休屋発 8:45／10:15／11:45／13:15／14:40／16:00，各約50分；大人¥1,430／小孩¥660；免預約，現場排隊購票</div>
+      <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E9%81%8A%E8%A6%A7%E8%88%B9%E4%BC%91%E5%B1%8B%E3%81%AE%E3%82%8A%E3%81%B0" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--ringo)" stroke-width="2"><path d="M12 21s7-7.5 7-12a7 7 0 0 0-14 0c0 4.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        導航到遊覽船碼頭
+      </a>
+    </div>
+
+    <div class="section-title">🚙 開車路段距離參考（8/23–8/26）</div>
+    <div class="card small">
+      <div class="tl-note">
+        8/23：Richmond→纜車山麓駅21.9km/37分；纜車→酸ヶ湯6.2km/9分；酸ヶ湯→睡蓮沼5.0km/8分；睡蓮沼→燒山15.3km/24分；燒山→休屋23.9km/37分【查】<br><br>
+        8/25：休屋⇄美術館約60分（經燒山）；美術館→UNIQLO十和田約9分；UNIQLO→青森屋約25分【查】<br><br>
+        8/26：青森屋→五所川原ELM 1h24min/94.6km；ELM→Richmond Hotel 41分/35.6km；Richmond→加油站3分/908m；加油站→租車店約1分/147m；租車店→Richmond步行15分/1.1km【查】
+      </div>
+    </div>
+
+    <div class="section-title">🚌 8/27 全天購物日：巴士＋計程車</div>
+    <div class="card">
+      <div class="tl-title">市役所前 → CiiNA CiiNA青森前（シーナシーナ）K系統觀光通線<span class="tag verified">【查】</span></div>
+      <div class="tl-note">
+        Richmond Hotel→市役所前 步行371m/6分 → 搭K系統観光通り線約20–25分<br>
+        ⚠️確切班次建議出發前一晚用「あおもりマイ時刻表」（bus-aomori.jp）再次確認
+      </div>
+    </div>
+    <div class="card small">
+      <div class="tl-title">計程車：浜田⇄三好⇄市區</div>
+      <div class="tl-note">
+        オフィスバリュー→Gala Town：7.1km／約18分（單趟粗估¥2,500–2,800）<br>
+        Gala Town→Richmond Hotel：4.7km／約11分（單趟粗估¥1,800–2,000）<br>
+        青森縣計程車費率：起跳¥700（0.9km內）／每256m加算¥100
+      </div>
+    </div>
+
+    <div class="section-title">🚶 8/28 回程：步行＋機場巴士</div>
+    <div class="card small">
+      <div class="tl-note">
+        Richmond Hotel→睡魔之家／A-FACTORY：約1.2km／17–20分（來回同段）<br>
+        Richmond Hotel→柳町通り機場巴士站牌：約94m／1–2分（幾乎緊鄰）
+      </div>
+    </div>
+
+    <div class="info-line" style="margin:10px 4px 0;">📌 所有班次時刻表以出發前一週再次官網核對為準，尤其JR巴士東北時刻表約每1–2個月調整一次。</div>
 
   </main>
 
   <nav class="bottom">
-    <a class="navbtn" href="202608-aomori_index.html"><span class="ic">🗓️</span>行程</a>
-    <a class="navbtn active" href="202608-aomori_transport.html"><span class="ic">🚌</span>交通</a>
-    <a class="navbtn" href="202608-aomori_hotel.html"><span class="ic">🏨</span>住宿</a>
-    <a class="navbtn" href="202608-aomori_tips.html"><span class="ic">🎒</span>錦囊</a>
-    <a class="navbtn" href="202608-aomori_budget.html"><span class="ic">💰</span>預算</a>
+    <a class="navbtn" href="202608-aomori_index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+      行程
+    </a>
+    <a class="navbtn active" href="202608-aomori_transport.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="14" rx="3"/><path d="M4 11h16M8 21l2-4M16 21l-2-4"/><circle cx="8.5" cy="14" r=".5"/><circle cx="15.5" cy="14" r=".5"/></svg>
+      交通
+    </a>
+    <a class="navbtn" href="202608-aomori_hotel.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg>
+      住宿
+    </a>
+    <a class="navbtn" href="202608-aomori_tips.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="14" rx="3"/><path d="M9 7V5a3 3 0 0 1 6 0v2M12 12v4"/></svg>
+      錦囊
+    </a>
+    <a class="navbtn" href="202608-aomori_budget.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 8l3 4 3-4M12 12v5M9.5 13.5h5M9.5 16h5"/></svg>
+      預算
+    </a>
   </nav>
 
 </div>

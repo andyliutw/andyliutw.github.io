@@ -27,11 +27,12 @@
     body{
       background: var(--sora);
       color: var(--ink);
-      font-family: 'Noto Sans TC', sans-serif;
+      font-family: 'Noto Sans TC','Zen Maru Gothic',sans-serif;
+      font-size:16px; line-height:1.6;
       display:flex; justify-content:center;
     }
     h1,h2,h3,.display{ font-family:'Zen Maru Gothic','Noto Sans TC',sans-serif; }
-    .app{ width:100%; max-width:480px; min-height:100vh; position:relative; padding-bottom: calc(84px + var(--safe-b)); }
+    .app{ width:100%; max-width:520px; min-height:100vh; position:relative; padding-bottom: calc(84px + var(--safe-b)); }
 
     .head{
       background: linear-gradient(160deg, var(--headcolor,var(--ringo)), var(--headcolor2,var(--ringo-deep)));
@@ -68,7 +69,7 @@
     .chip.infer{ background: var(--momo); color: var(--ringo-deep); }
 
     main{ padding: 0 16px; }
-    .section-title{ font-weight:900; font-size:15px; margin: 18px 2px 10px; display:flex; align-items:center; gap:6px; }
+    .section-title{ font-weight:900; font-size:19px; margin: 18px 2px 10px; display:flex; align-items:center; gap:6px; }
     .section-title:first-child{ margin-top:2px; }
 
     .card{ background:#fff; border-radius:22px; box-shadow: var(--shadow); padding:16px 18px; margin-bottom:14px; transition: transform .12s; }
@@ -79,13 +80,13 @@
     .timeline::before{ content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px; background: var(--sora-deep); }
     .tl-item{ position:relative; margin-bottom:14px; }
     .tl-dot{ position:absolute; left:-22px; top:4px; width:14px; height:14px; border-radius:50%; background: var(--headcolor,var(--ringo)); border:3px solid #fff; box-shadow:0 0 0 2px var(--headcolor,var(--ringo)); }
-    .tl-time{ font-weight:900; font-size:14px; color: var(--headcolor,var(--ringo)); margin-bottom:2px; }
+    .tl-time{ font-weight:900; font-size:16.5px; color: var(--headcolor,var(--ringo)); margin-bottom:2px; }
     .tl-time small{ color: var(--ink-soft); font-weight:500; font-size:11.5px; margin-left:4px; }
-    .tl-title{ font-weight:700; font-size:15px; margin-bottom:3px; }
+    .tl-title{ font-weight:700; font-size:16.5px; margin-bottom:3px; }
     .tl-title .tag{ display:inline-block; font-size:10px; font-weight:700; padding:2px 7px; border-radius:999px; margin-left:6px; vertical-align:middle; }
     .tl-title .tag.verified{ background: rgba(111,191,115,0.18); color:#4C9451; }
     .tl-title .tag.infer{ background: var(--momo); color: var(--ringo-deep); }
-    .tl-note{ font-size:12.5px; color: var(--ink-soft); line-height:1.6; }
+    .tl-note{ font-size:13px; color: var(--ink-soft); line-height:1.6; }
 
     .map-btn{ display:inline-flex; align-items:center; gap:6px; background: var(--ringo); color:#fff; font-weight:700; font-size:12.5px; padding:9px 16px; border-radius:999px; border:none; text-decoration:none; margin-top:10px; }
     .map-btn:active{ background: var(--ringo-deep); }
@@ -112,13 +113,14 @@
     details.rain[open] summary{ margin-bottom:8px; }
     .rain-body{ font-size:12.5px; color: var(--ink-soft); line-height:1.7; }
 
-    nav.bottom{ position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:480px; height: calc(64px + var(--safe-b)); padding-bottom: var(--safe-b); background: rgba(255,255,255,0.85); backdrop-filter: blur(14px); box-shadow: 0 -2px 14px rgba(51,66,79,.08); display:flex; z-index:50; }
+    nav.bottom{ position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:520px; height: calc(64px + var(--safe-b)); padding-bottom: var(--safe-b); background: rgba(255,255,255,0.85); backdrop-filter: blur(14px); box-shadow: 0 -2px 14px rgba(51,66,79,.08); display:flex; z-index:50; }
     .navbtn{ flex:1; background:none; border:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; color: var(--ink-soft); font-family:'Noto Sans TC',sans-serif; font-size:10.5px; font-weight:500; text-decoration:none; }
     .navbtn .ic{ font-size:19px; line-height:1; }
     .navbtn.active{ color: var(--ringo); font-weight:700; }
+    .navbtn svg{ width:23px; height:23px; }
 
     @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
-    .head{ --headcolor:#F2B84B; --headcolor2:#C98A1F; }
+    .app{ --headcolor:#F2B84B; --headcolor2:#C98A1F; }
 </style>
 </head>
 <body>
@@ -279,7 +281,7 @@
         <div class="tl-dot"></div>
         <div class="card">
           <div class="tl-time">17:45</div>
-          <div class="tl-title">🍽️ 晚餐：のれそれ食堂自助餐</div>
+          <div class="tl-title">🍽️ 晚餐：若竹食堂自助餐（のれそれ食堂）</div>
           <div class="tl-note">訂單編號5180577，4人（大人×2、7-11歳×2），現場付款0円。營業約17:30–21:00，原則無嚴格用餐時間限制</div>
         </div>
       </div>
@@ -297,7 +299,7 @@
         <div class="tl-dot"></div>
         <div class="card small">
           <div class="tl-time">20:30 <small>–20:55</small></div>
-          <div class="tl-title">🚶 前往「みちのく祭りや」會場、入座</div>
+          <div class="tl-title">🚶 前往「陸奧祭屋」會場、入座（みちのく祭りや）</div>
           <div class="tl-note">開演前30分可入場</div>
         </div>
       </div>
@@ -306,7 +308,7 @@
         <div class="tl-dot"></div>
         <div class="card">
           <div class="tl-time">21:00 <small>–22:00</small></div>
-          <div class="tl-title">🏮 みちのく祭りや公演</div>
+          <div class="tl-title">🏮 陸奧祭屋公演（みちのく祭りや）</div>
           <div class="tl-note">座位C3、C4、C5、C6，信用卡已付款¥6,120（¥1,800×2＋¥1,260×2）</div>
         </div>
       </div>
@@ -342,7 +344,7 @@
     <div class="card">
       <div class="opt" data-opt="a" onclick="chooseOpt('a')">
         <div class="opt-head"><span class="opt-letter">A・司バラ焼き大衆食堂</span><span class="pick-pill">選這個</span></div>
-        <div class="opt-name">十和田名物「十和田バラ焼き」，牛五花肉＋大量洋蔥鐵板燒</div>
+        <div class="opt-name">十和田名物「十和田五花燒（十和田バラ焼き）」，牛五花肉＋大量洋蔥鐵板燒</div>
         <div class="opt-meta">十和田市稲生町15-41（Art Station TOWADA内）・週二至週六11:00–14:00、17:30–22:00（中間公休）；週日僅11:00–14:00；週一定休；僅收現金</div>
         <span class="chip verified">非海鮮：牛肉料理為主</span><br>
         <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8F%B8%E3%83%90%E3%83%A9%E7%84%BC%E3%81%8D%E5%A4%A7%E8%A1%86%E9%A3%9F%E5%A0%82" target="_blank">
@@ -352,7 +354,7 @@
       </div>
       <div class="opt" data-opt="b" onclick="chooseOpt('b')">
         <div class="opt-head"><span class="opt-letter">B・cube cafe&shop（美術館內）</span><span class="pick-pill">選這個</span></div>
-        <div class="opt-name">青森りんごカレー、とわだ短角牛とごぼうのビーフパイ、ごぼうサンドイッチ</div>
+        <div class="opt-name">青森蘋果咖哩、十和田短角牛牛蒡奶油派、牛蒡三明治</div>
         <div class="opt-meta">美術館內，不需另外移動・9:00–16:30（L.O.16:30）</div>
         <span class="chip verified">非海鮮：避開含帆立貝的クラムチャウダー即可</span><br>
         <a class="map-btn outline" href="https://www.google.com/maps/dir/?api=1&destination=%E5%8D%81%E5%92%8C%E7%94%B0%E5%B8%82%E7%8F%BE%E4%BB%A3%E7%BE%8E%E8%A1%93%E9%A4%A8%20cube%20cafe" target="_blank">
@@ -385,11 +387,26 @@
   </main>
 
   <nav class="bottom">
-    <a class="navbtn active" href="202608-aomori_index.html"><span class="ic">🗓️</span>行程</a>
-    <a class="navbtn" href="202608-aomori_transport.html"><span class="ic">🚌</span>交通</a>
-    <a class="navbtn" href="202608-aomori_hotel.html"><span class="ic">🏨</span>住宿</a>
-    <a class="navbtn" href="202608-aomori_tips.html"><span class="ic">🎒</span>錦囊</a>
-    <a class="navbtn" href="202608-aomori_budget.html"><span class="ic">💰</span>預算</a>
+    <a class="navbtn active" href="202608-aomori_index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+      行程
+    </a>
+    <a class="navbtn" href="202608-aomori_transport.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="14" rx="3"/><path d="M4 11h16M8 21l2-4M16 21l-2-4"/><circle cx="8.5" cy="14" r=".5"/><circle cx="15.5" cy="14" r=".5"/></svg>
+      交通
+    </a>
+    <a class="navbtn" href="202608-aomori_hotel.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg>
+      住宿
+    </a>
+    <a class="navbtn" href="202608-aomori_tips.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="14" rx="3"/><path d="M9 7V5a3 3 0 0 1 6 0v2M12 12v4"/></svg>
+      錦囊
+    </a>
+    <a class="navbtn" href="202608-aomori_budget.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 8l3 4 3-4M12 12v5M9.5 13.5h5M9.5 16h5"/></svg>
+      預算
+    </a>
   </nav>
 
 </div>
