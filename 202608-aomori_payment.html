@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>消費支付｜青森親子夏旅</title>
+<!-- 版本紀錄：
+v1.0 | 2026-07-29 | 新增消費支付子頁：優惠券提醒（唐吉訶德Japan+）、Suica、PayPay帳戶組合、信用卡回饋率清單；依aomori-app-style-guide.md標準頁面骨架建立，底部導覽列新增第6個項目「支付」，同步更新index/8個每日頁/4個既有子頁的底部導覽列
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+    :root{
+      --sora:#EAF6FB;
+      --sora-deep:#CFEAF5;
+      --ink:#33424F;
+      --ink-soft:#7A8B99;
+      --ringo:#E8574C;
+      --ringo-deep:#C93E35;
+      --mizu:#2E9BA6;
+      --ha:#6FBF73;
+      --kin:#F2B84B;
+      --momo:#FBD9D3;
+      --shadow: 0 4px 14px rgba(51,66,79,.10);
+      --safe-b: env(safe-area-inset-bottom, 0px);
+    }
+    *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+    html,body{ margin:0; padding:0; }
+    body{
+      background: var(--sora);
+      color: var(--ink);
+      font-family: 'Noto Sans TC','Zen Maru Gothic',sans-serif;
+      font-size:16px; line-height:1.6;
+      display:flex; justify-content:center;
+    }
+    h1,h2,h3,.display{ font-family:'Zen Maru Gothic','Noto Sans TC',sans-serif; }
+    .app{ width:100%; max-width:520px; min-height:100vh; position:relative; padding-bottom: calc(84px + var(--safe-b)); }
+
+    .head{
+      background: linear-gradient(160deg, var(--headcolor,var(--ringo)), var(--headcolor2,var(--ringo-deep)));
+      color:#fff; padding: 18px 20px 46px; border-radius: 0 0 28px 28px; position:relative; overflow:hidden;
+    }
+    .head::after{ content:""; position:absolute; right:-20px; bottom:-30px; width:150px; height:150px; border-radius:50%; background: rgba(255,255,255,0.10); }
+    .backlink{ display:inline-flex; align-items:center; gap:4px; color: rgba(255,255,255,0.9); text-decoration:none; font-size: 13px; font-weight:500; }
+    .head .icon{ font-size: 34px; margin: 10px 0 2px; }
+    .head h1{ font-size: 24px; font-weight:900; margin:2px 0 4px; }
+    .head .sub{ font-size: 13px; opacity:.92; font-weight:500; }
+    .daydots{ display:flex; gap:5px; margin-top:12px; }
+    .daydots span{ width:18px; height:5px; border-radius:999px; background: rgba(255,255,255,0.35); }
+    .daydots span.on{ background:#fff; }
+
+    .summary{ background:#fff; border-radius:22px; box-shadow: var(--shadow); margin: -30px 16px 18px; padding: 16px 18px; position:relative; z-index:2; }
+    .summary-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+    .summary .weather{ display:flex; align-items:center; gap:8px; background: var(--sora-deep); border-radius:16px; padding:10px 12px; font-size: 12.5px; color: var(--ink-soft); }
+
+    .chip{ display:inline-flex; align-items:center; gap:4px; font-size:11.5px; font-weight:700; padding: 5px 11px; border-radius:999px; background: var(--sora-deep); color: var(--mizu); }
+    .chip.done{ background: rgba(111,191,115,0.18); color:#4C9451; }
+    .chip.wip{ background: var(--momo); color: var(--ringo-deep); }
+    .chip.verified{ background: rgba(111,191,115,0.18); color:#4C9451; }
+    .chip.infer{ background: var(--momo); color: var(--ringo-deep); }
+    .chip.rate{ background: rgba(139,111,199,0.14); color: var(--headcolor,#6B4FA0); font-size:12px; }
+
+    main{ padding: 0 16px; }
+    .section-title{ font-weight:900; font-size:19px; margin: 18px 2px 10px; display:flex; align-items:center; gap:6px; }
+    .section-title:first-child{ margin-top:2px; }
+
+    .card{ background:#fff; border-radius:22px; box-shadow: var(--shadow); padding:16px 18px; margin-bottom:14px; transition: transform .12s; }
+    .card:active{ transform: scale(.98); }
+    .card.small{ border-radius:16px; padding:12px 14px; }
+
+    .timeline{ position:relative; padding-left:22px; }
+    .timeline::before{ content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px; background: var(--sora-deep); }
+    .tl-item{ position:relative; margin-bottom:14px; }
+    .tl-dot{ position:absolute; left:-22px; top:4px; width:14px; height:14px; border-radius:50%; background: var(--headcolor,var(--mizu)); border:3px solid #fff; box-shadow:0 0 0 2px var(--headcolor,var(--mizu)); }
+    .tl-time{ font-weight:900; font-size:16.5px; color: var(--headcolor,var(--mizu)); margin-bottom:2px; }
+    .tl-time small{ color: var(--ink-soft); font-weight:500; font-size:11.5px; margin-left:4px; }
+    .tl-title{ font-weight:700; font-size:16.5px; margin-bottom:3px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+    .tl-note{ font-size:13px; color: var(--ink-soft); line-height:1.6; }
+
+    .map-btn{ display:inline-flex; align-items:center; gap:6px; background: var(--ringo); color:#fff; font-weight:700; font-size:12.5px; padding:9px 16px; border-radius:999px; border:none; text-decoration:none; margin-top:10px; }
+    .map-btn:active{ background: var(--ringo-deep); }
+    .map-btn.outline{ background:#fff; color: var(--ringo); border:1.5px solid var(--ringo); }
+    .map-btn svg{ width:13px; height:13px; }
+
+    .opt{ border: 2px solid var(--sora-deep); border-radius:16px; padding:12px 14px; margin-bottom:10px; cursor:pointer; }
+    .opt.chosen{ border-color: var(--ringo); background: rgba(232,87,76,0.05); }
+    .opt-head{ display:flex; justify-content:space-between; align-items:center; }
+    .opt-letter{ font-weight:900; font-size:13px; color: var(--ringo); }
+    .opt-name{ font-weight:700; font-size:14px; margin-top:3px; }
+    .opt-meta{ font-size:12px; color: var(--ink-soft); margin-top:4px; line-height:1.6; }
+    .pick-pill{ font-size:10.5px; font-weight:700; padding:3px 10px; border-radius:999px; background: var(--sora-deep); color: var(--ink-soft); }
+    .opt.chosen .pick-pill{ background: var(--ringo); color:#fff; }
+
+    .jp-card{ background: #F9F5FF; border-left:4px solid var(--headcolor,#F2B84B); border-radius:12px; padding:12px 14px; font-size:13.5px; line-height:1.9; cursor:pointer; position:relative; margin-bottom:8px; }
+    .allergy-card{ cursor:pointer; position:relative; }
+    .jp-card::after{ content:"🔍 點擊放大"; position:absolute; right:8px; bottom:6px; font-size:10px; color:var(--ink-soft); background:rgba(255,255,255,.85); padding:2px 8px; border-radius:999px; }
+    .jp-zoom{ display:none; position:fixed; inset:0; background:rgba(51,66,79,.92); z-index:999; align-items:center; justify-content:center; padding:24px; }
+    .jp-zoom.show{ display:flex; }
+    .jp-zoom-box{ background:#fff; border-radius:20px; padding:28px 24px; font-size:26px; line-height:1.9; font-weight:700; color:var(--ink); max-width:92vw; max-height:80vh; overflow:auto; text-align:center; }
+    .jp-zoom-hint{ position:fixed; top:22px; left:0; right:0; text-align:center; color:#fff; font-size:13px; font-weight:500; }
+
+    details.rain{ background: var(--sora-deep); border-radius:16px; padding: 12px 16px; margin-bottom:14px; }
+    details.rain summary{ font-weight:700; cursor:pointer; list-style:none; display:flex; align-items:center; gap:6px; }
+    details.rain summary::-webkit-details-marker{ display:none; }
+    details.rain[open] summary{ margin-bottom:8px; }
+    .rain-body{ font-size:12.5px; color: var(--ink-soft); line-height:1.7; }
+
+    .pack-item{ display:flex; align-items:center; gap:10px; padding:10px 0; border-bottom:1px solid var(--sora-deep); font-size:14px; }
+    .pack-item:last-child{ border-bottom:none; }
+    .box{ width:20px; height:20px; border-radius:7px; border:2px solid var(--sora-deep); flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+    .box svg{ width:12px; height:12px; opacity:0; stroke:#fff; }
+    .pack-item.done .box{ background: var(--ha); border-color: var(--ha); }
+    .pack-item.done .box svg{ opacity:1; }
+    .pack-item.done .lbl{ color: var(--ink-soft); text-decoration:line-through; }
+    .progress-bar{ height:8px; border-radius:999px; background: var(--sora-deep); overflow:hidden; margin-bottom:14px; }
+    .progress-fill{ height:100%; background: var(--ha); width:0%; transition:width .3s; }
+
+    .allergy-card{ background: var(--ringo); color:#fff; border-radius:22px; padding:18px; margin-bottom:14px; box-shadow: var(--shadow); }
+    .allergy-card .big{ font-size:17px; font-weight:900; line-height:1.6; margin-bottom:8px; }
+    .allergy-card .sub{ font-size:12.5px; opacity:.92; line-height:1.7; }
+
+    .info-line{ font-size:12px; color: var(--ink-soft); line-height:1.7; margin-top:4px; }
+    .info-line b{ color: var(--ink); }
+
+    .budget-row{ display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px dashed var(--sora-deep); font-size:13.5px; }
+    .budget-row:last-child{ border-bottom:none; }
+    .budget-row .amt{ font-weight:700; color: var(--mizu); }
+    .budget-total{ display:flex; justify-content:space-between; align-items:center; margin-top:10px; padding-top:12px; border-top:2px solid var(--sora-deep); font-weight:900; font-size:16px; }
+    .budget-total .amt{ color: var(--ringo); }
+
+    .daycard{ display:flex; align-items:center; gap:14px; background:#fff; border-radius:22px; box-shadow:var(--shadow); padding:14px 16px; margin-bottom:12px; text-decoration:none; color:var(--ink); transition:transform .12s; }
+    .daycard:active{ transform:scale(.98); }
+    .daycard.disabled{ opacity:.55; pointer-events:none; }
+    .daycard .badge{ width:52px; height:52px; border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0; color:#fff; }
+    .daycard .dc-title{ font-weight:700; font-size:15px; }
+    .daycard .dc-sub{ font-size:12px; color:var(--ink-soft); margin-top:2px; }
+
+    nav.bottom{ position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:520px; height: calc(64px + var(--safe-b)); padding-bottom: var(--safe-b); background: rgba(255,255,255,0.85); backdrop-filter: blur(14px); box-shadow: 0 -2px 14px rgba(51,66,79,.08); display:flex; z-index:50; }
+    .navbtn{ flex:1; background:none; border:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; color: var(--ink-soft); font-family:'Noto Sans TC',sans-serif; font-size:10.5px; font-weight:500; text-decoration:none; }
+    .navbtn .ic{ font-size:19px; line-height:1; }
+    .navbtn.active{ color: var(--ringo); font-weight:700; }
+    .navbtn svg{ width:23px; height:23px; }
+
+    @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
+    .head{ --headcolor:#8B6FC7; --headcolor2:#6B4FA0; padding-bottom:34px; }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header class="head">
+    <a class="backlink" href="202608-aomori_index.html">← 回首頁</a>
+    <div class="icon">🪙</div>
+    <h1 style="font-size:22px;">消費支付</h1>
+    <div class="sub">優惠券・Suica・PayPay・信用卡回饋</div>
+  </header>
+
+  <main style="padding-top:16px;">
+
+    <div class="section-title">🎫 優惠券別忘記</div>
+    <div class="card small">
+      <div class="tl-title">唐吉訶德</div>
+      <div class="tl-note">Japan+ App優惠券（Andy／Annie帳號可各用兩次），滿NT$10,000或滿NT$30,000折抵，結帳前記得先開App出示。</div>
+    </div>
+
+    <div class="section-title">🚃 Suica</div>
+    <div class="card small">
+      <div class="tl-title">Suica <span class="chip rate">7~8.5%</span></div>
+      <div class="tl-note">便利商店、搭車，或任何可以刷Suica的地方都適用。</div>
+    </div>
+
+    <div class="section-title">📱 PayPay</div>
+    <div class="card small">
+      <div class="info-line" style="margin:0 0 10px;">都有活動限額，<b>支付前先確認</b>當下額度／活動是否還有餘額再刷。</div>
+      <div class="tl-title">iPassMoney帳戶</div>
+      <div class="tl-note" style="margin-bottom:10px;">綁定iPass一卡通錢包帳戶付款。</div>
+      <div class="tl-title">全支付＋國泰世華帳戶</div>
+      <div class="tl-note" style="margin-bottom:10px;">全支付綁定國泰世華銀行帳戶。</div>
+      <div class="tl-title">全支付＋將來銀行帳戶</div>
+      <div class="tl-note" style="margin-bottom:10px;">全支付綁定將來銀行帳戶。</div>
+      <div class="tl-title">全支付帳戶</div>
+      <div class="tl-note" style="margin-bottom:10px;">全支付本身的帳戶餘額付款。</div>
+      <div class="tl-title">街口＋郵局帳戶</div>
+      <div class="tl-note">街口支付綁定中華郵政帳戶。</div>
+    </div>
+
+    <div class="section-title">💳 信用卡（回饋率高到低）</div>
+    <div class="card small">
+      <div class="tl-title">中信Lalaport卡 <span class="chip rate">10.5%</span></div>
+      <div class="tl-note" style="margin-bottom:10px;">刷卡累積滿25,000日元才能拿到此回饋率，注意消費總額門檻。</div>
+      <div class="tl-title">玉山熊本熊卡 <span class="chip rate">7%</span></div>
+      <div class="tl-note" style="margin-bottom:10px;">租車專用，這趟用完額度就收起來。</div>
+      <div class="tl-title">聯邦吉鶴卡 <span class="chip rate">5.5%</span></div>
+      <div class="tl-note" style="margin-bottom:10px;">用Apple Pay感應（日語跟店員說「Touch」即可），永旺AEON／唐吉訶德適用。</div>
+      <div class="tl-title">富邦J卡 <span class="chip rate">4.5%</span></div>
+      <div class="tl-note" style="margin-bottom:10px;">日本實體消費。</div>
+      <div class="tl-title">永豐幣倍卡 <span class="chip rate">4.5%</span></div>
+      <div class="tl-note" style="margin-bottom:10px;">日本實體消費。</div>
+      <div class="tl-title">王道橘卡 <span class="chip rate">4.5%</span></div>
+      <div class="tl-note" style="margin-bottom:10px;">日本實體消費。</div>
+      <div class="tl-title">中信LINE Pay卡 <span class="chip rate">3.5%</span></div>
+      <div class="tl-note">日本實體消費。</div>
+    </div>
+
+  </main>
+
+  <nav class="bottom">
+    <a class="navbtn" href="202608-aomori_index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+      行程
+    </a>
+    <a class="navbtn" href="202608-aomori_transport.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="14" rx="3"/><path d="M4 11h16M8 21l2-4M16 21l-2-4"/><circle cx="8.5" cy="14" r=".5"/><circle cx="15.5" cy="14" r=".5"/></svg>
+      交通
+    </a>
+    <a class="navbtn" href="202608-aomori_hotel.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg>
+      住宿
+    </a>
+    <a class="navbtn" href="202608-aomori_tips.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="14" rx="3"/><path d="M9 7V5a3 3 0 0 1 6 0v2M12 12v4"/></svg>
+      錦囊
+    </a>
+    <a class="navbtn" href="202608-aomori_budget.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 8l3 4 3-4M12 12v5M9.5 13.5h5M9.5 16h5"/></svg>
+      預算
+    </a>
+    <a class="navbtn active" href="202608-aomori_payment.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6"/><path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
+      支付
+    </a>
+  </nav>
+
+</div>
+</body>
+</html>
