@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>錦囊｜青森親子夏旅</title>
 <!-- 版本紀錄：
+v3.3 | 2026-08-12 | 使用者手動修正：①過敏日文卡與食材對照表移除「貝類」相關文字，改為僅標示エビ・カニ等甲殻類（食材對照表：エビ蝦／カニ蟹／ウニ海膽／イクラ鮭魚卵）；②常用日文句前兩句同步移除「貝」；③寄放行李用日文由4句精簡改寫為3句：①8/26停車場人員／②8/26櫃檯／③8/28退房，移除原8/22卸行李暫停車一句與8/28完整版；已同步更新202608-aomori_subpages_common.md、20260826.md、20260828.md、HTML/20260826.html、HTML/20260828.html
 v3.2 | 2026-07-28 | 全頁「給別人看」的日文都加上點擊全螢幕放大功能：過敏日文卡（含中文說明的原卡）、常見甲殼類／貝類食材對照表、常用日文句（4句各自可放大），與原已有的寄放行李用日文4句一致
 v3.1 | 2026-07-28 | 修正寄放行李②：8/28是辦理退房當下直接對櫃檯說，移除開頭「チェックアウトは済んでいますが」（已經退房了）避免情境矛盾
 v3.0 | 2026-07-28 | 新增「寄放行李用日文」卡片（8/22卸行李暫停車、8/26先寄放、8/28退房後外出取回＋使用者指定簡短版共4句）；區塊順序調整為：過敏日文卡／常用日文句／寄放行李用日文／出發前檢查清單／緊急資訊／天氣連結；出發前檢查清單新增駕照、駕照譯本、牙線、洗沐用品、相機、相機電池、開車用品，移除兒童零食、小玩具／畫本（車程用）、室內拖鞋
@@ -162,27 +163,27 @@ v2.0 | 2026-07-28 | 底部導覽列圖示依風格指南v8.0改為SVG（內容�
 
     <div class="section-title">🦐 過敏日文卡</div>
     <div class="allergy-card" onclick="openJpZoom(document.getElementById('allergy-jp-full'))">
-      <div class="big">🦐🚫 エビ・カニなど甲殻類のアレルギーがあります</div>
+      <div class="big">🦐🚫 エビ・カニなどの甲殻類アレルギーがあります</div>
       <div class="sub">
-        貝類も食べられません。魚のだし（出汁）は大丈夫です。エビ・カニ・貝が入っていない料理をお願いします。<br><br>
+        魚の出汁は大丈夫ですので、エビ・カニが入っていない料理をお願いします<br><br>
         （中文：主要過敏蝦蟹等甲殼類；貝類不吃；魚類還好可少量；<b>高湯／出汁沒關係</b>，拉麵蕎麥麵湯底不用排除）點餐前出示這張卡給店員看。
       </div>
       <div style="position:absolute;right:10px;bottom:8px;font-size:10px;color:rgba(255,255,255,.85);background:rgba(0,0,0,.15);padding:2px 8px;border-radius:999px;">🔍 點擊放大</div>
     </div>
-    <div id="allergy-jp-full" style="display:none;">🦐🚫 エビ・カニなど甲殻類のアレルギーがあります<br><br>貝類も食べられません。魚のだし（出汁）は大丈夫です。エビ・カニ・貝が入っていない料理をお願いします。</div>
+    <div id="allergy-jp-full" style="display:none;">🦐🚫 エビ・カニなどの甲殻類アレルギーがあります<br><br>魚の出汁は大丈夫ですので、エビ・カニが入っていない料理をお願いします。</div>
     <div class="card small">
       <div class="tl-title">常見甲殼類／貝類食材對照表</div>
       <div class="jp-card" onclick="openJpZoom(this)">
-        エビ蝦 ✕・カニ蟹 ✕・ホタテ扇貝 ✕・アサリ蛤蜊 ✕・シジミ蜆 ✕・カキ牡蠣 ✕・ウニ海膽 ✕・イクラ鮭魚卵 ✕<br>
+        エビ蝦 ✕・カニ蟹 ✕・ウニ海膽 ✕・イクラ鮭魚卵 ✕<br>
         魚のだし（柴魚・昆布・魚介湯底）○ 可以吃
       </div>
     </div>
 
     <div class="section-title">🗣️ 常用日文句</div>
     <div class="card small">
-      <div class="jp-card" onclick="openJpZoom(this)">エビ・カニ・貝のアレルギーがあります</div>
+      <div class="jp-card" onclick="openJpZoom(this)">エビ・カニのアレルギーがあります</div>
       <div class="tl-note" style="margin:0 0 10px;">（我對蝦蟹貝過敏）</div>
-      <div class="jp-card" onclick="openJpZoom(this)">これに甲殻類や貝は入っていますか？</div>
+      <div class="jp-card" onclick="openJpZoom(this)">これに甲殻類は入っていますか？</div>
       <div class="tl-note" style="margin:0 0 10px;">（這個有蝦蟹貝嗎？）</div>
       <div class="jp-card" onclick="openJpZoom(this)">子供用のメニューはありますか？</div>
       <div class="tl-note" style="margin:0 0 10px;">（有兒童餐嗎？）</div>
@@ -192,22 +193,18 @@ v2.0 | 2026-07-28 | 底部導覽列圖示依風格指南v8.0改為SVG（內容�
 
     <div class="section-title">🧳 寄放行李用日文</div>
     <div class="card small">
-      <div class="tl-title">① 尚未辦理入住，先寄放行李（8/26情境）</div>
-      <div class="jp-card" onclick="openJpZoom(this)">お荷物だけ預かっていただけますでしょうか。</div>
+      <div class="tl-title">① 8/26停車場人員（暫停一下，寄放行李）</div>
+      <div class="jp-card" onclick="openJpZoom(this)">チェックインする前に、いったん荷物をフロントに預けたいんです。そのあと、すぐに戻ってくるので、車を少しだけここに止めさせてもらえますか？</div>
     </div>
     <div class="card small">
-      <div class="tl-title">② 辦理退房時直接跟櫃檯說，外出後還會回來取行李（8/28情境，完整版；不用說「已經退房」）</div>
-      <div class="jp-card" onclick="openJpZoom(this)">これから少し出かけますので、荷物だけ預かっていただけますでしょうか。お昼頃に戻って参ります。よろしくお願いいたします。</div>
+      <div class="tl-title">② 8/26櫃檯(須先還車再辦理入住，先寄放行李)</div>
+      <div class="jp-card" onclick="openJpZoom(this)">すみません、先にレンタカーの返却に行かないといけないんです。チェックインは後でしますが、荷物だけ先に預かってもらえますか？</div>
     </div>
     <div class="card small">
-      <div class="tl-title">③ 簡短版（我們的行李可以先寄放嗎？大概11:00左右會回來拿）</div>
+      <div class="tl-title">③ 8/28退房（我們的行李可以先寄放嗎？大概11:00左右會回來拿）</div>
       <div class="jp-card" onclick="openJpZoom(this)">お荷物を先に預けてもよろしいでしょうか。11時頃に戻って参ります。</div>
     </div>
-    <div class="card small">
-      <div class="tl-title">④ 租車情境：先卸行李、暫停車（8/22取車前用）</div>
-      <div class="jp-card" onclick="openJpZoom(this)">先に荷物だけ降ろしたいので、少しの間駐車させていただけますでしょうか。</div>
-    </div>
-
+    
     <div class="section-title">🧳 出發前檢查清單</div>
     <div class="card">
       <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
