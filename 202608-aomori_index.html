@@ -4,7 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>青森親子夏旅 2026｜行程首頁</title>
-<!-- 版本紀錄：v2.0 | 2026-07-28 | 底部導覽列「交通／住宿／錦囊／預算」原為data-soon佔位按鈕（點擊只跳toast「行程定案後建置」），四個子頁HTML已全部建置完成，改為<a>連結指向實際頁面；移除已無用的未建置頁面提示JS -->
+<!-- 版本紀錄：
+v3.1 | 2026-08-17 | 住宿快速導航：8/21–22住宿由Richmond Hotel青森改為東橫INN青森駅前（入住15:00/退房10:00），拆成獨立卡片，8/26–27仍為Richmond Hotel青森
+v3.0 | 2026-07-29 | 底部導覽列新增第6個項目「支付」，連向新建的202608-aomori_payment.html（優惠券、Suica、PayPay帳戶組合、信用卡回饋率）
+v2.0 | 2026-07-28 | 底部導覽列「交通／住宿／錦囊／預算」原為data-soon佔位按鈕（點擊只跳toast「行程定案後建置」），四個子頁HTML已全部建置完成，改為<a>連結指向實際頁面；移除已無用的未建置頁面提示JS
+-->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -308,7 +312,16 @@ h1,h2,h3{font-family:var(--font-display);font-weight:700}
   <h2 class="section-title"><span class="mark" style="background:var(--mizu)"></span>住宿快速導航</h2>
   <div class="hotel-strip">
     <div class="hotel-card">
-      <span class="nights">8/21–22・8/26–27（共4晚）</span>
+      <span class="nights">8/21–22（2晚）</span>
+      <h3>東橫INN青森駅前</h3>
+      <p style="font-size:12.5px;color:var(--ink-soft);margin:-4px 0 8px">入住 15:00｜退房 10:00</p>
+      <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E6%9D%B1%E6%A8%AAINN%E9%9D%92%E6%A3%AE%E9%A7%85%E5%89%8D%20%E9%9D%92%E6%A3%AE%E7%9C%8C%E9%9D%92%E6%A3%AE%E5%B8%82%E5%AE%89%E6%96%B91-3-5" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+        導航
+      </a>
+    </div>
+    <div class="hotel-card">
+      <span class="nights">8/26–27（2晚）</span>
       <h3>Richmond Hotel 青森</h3>
       <p style="font-size:12.5px;color:var(--ink-soft);margin:-4px 0 8px">入住 14:00｜退房 11:00</p>
       <a class="map-btn" href="https://www.google.com/maps/dir/?api=1&destination=%E3%83%AA%E3%83%83%E3%83%81%E3%83%A2%E3%83%B3%E3%83%89%E3%83%9B%E3%83%86%E3%83%AB%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener">
